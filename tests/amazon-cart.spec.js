@@ -47,7 +47,7 @@ async function login(page) {
   await expect(signInLink).toBeVisible({ timeout: 30000 });
   await signInLink.click();
 
-  // Enter email/mobile
+  // Enter email
   const emailInput = page.locator('input[name="email"], #ap_email').first();
   await expect(emailInput).toBeVisible({ timeout: 30000 });
   await emailInput.fill(AMAZON_MOBILE_NUMBER);
@@ -85,11 +85,11 @@ test('Amazon cart flow: login, search laptop, add to cart, verify', async ({ pag
 
   // 3. Search for laptop
   await page.fill('#twotabsearchtextbox', SEARCH_TERM);
-  await page.click('input#nav-search-submit-button');
+  await page.keyboard.press('Enter');
   await page.waitForSelector('.s-main-slot, [data-component-type="s-search-result"]', { timeout: 30000 });
 
   // 4. Select any laptop
-  const productLink = page.locator('[data-component-type="s-search-result"] h2 a').first();
+  const productLink = page.locator('div[data-asin] h2 a').first();
   await expect(productLink).toBeVisible({ timeout: 30000 });
   await productLink.click();
 
