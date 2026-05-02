@@ -1,0 +1,17 @@
+{
+  "name": "aiagent-mcp-playwright",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "npx playwright test --config=playwright.config.js",
+    "test:headed": "npx playwright test --config=playwright.config.js --headed",
+    "test:ui": "npx playwright test --config=playwright.config.js --ui",
+    "install": "npx playwright install"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}

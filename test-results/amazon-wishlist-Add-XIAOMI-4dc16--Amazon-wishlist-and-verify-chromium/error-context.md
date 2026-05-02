@@ -1,0 +1,2398 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: amazon-wishlist.spec.js >> Add XIAOMI Redmi phone to Amazon wishlist and verify
+- Location: tests\amazon-wishlist.spec.js:73:1
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.waitForSelector: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('#add-to-cart-button, button:has-text("Add to list"), a:has-text("Add to list")') to be visible
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - navigation "Shortcuts menu" [ref=e3]:
+    - heading "Skip to" [level=2] [ref=e4]
+    - list "Skip to" [ref=e5]:
+      - listitem [ref=e6]:
+        - link "main content" [ref=e7] [cursor=pointer]:
+          - /url: "#skippedLink"
+          - text: Main content
+      - listitem [ref=e8]:
+        - link "Results" [ref=e9] [cursor=pointer]:
+          - /url: .s-asin a:has(h2)
+    - separator [ref=e10]
+    - heading "Keyboard shortcuts" [level=2] [ref=e11]
+    - list "Keyboard shortcuts" [ref=e12]:
+      - listitem [ref=e13]:
+        - link "Search, alt, forward slash" [ref=e14] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e15]:
+            - generic [ref=e16]: Search
+            - generic [ref=e17]:
+              - generic [ref=e18]: alt
+              - generic [ref=e19]: +
+              - generic [ref=e20]: /
+      - listitem [ref=e21]:
+        - link "Cart, shift, alt, c" [ref=e22] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e23]:
+            - generic [ref=e24]: Cart
+            - generic [ref=e25]:
+              - generic [ref=e26]: shift
+              - generic [ref=e27]: +
+              - generic [ref=e28]: alt
+              - generic [ref=e29]: +
+              - generic [ref=e30]: C
+      - listitem [ref=e31]:
+        - link "Home, shift, alt, h" [ref=e32] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e33]:
+            - generic [ref=e34]: Home
+            - generic [ref=e35]:
+              - generic [ref=e36]: shift
+              - generic [ref=e37]: +
+              - generic [ref=e38]: alt
+              - generic [ref=e39]: +
+              - generic [ref=e40]: H
+      - listitem [ref=e41]:
+        - link "Your orders, shift, alt, o" [ref=e42] [cursor=pointer]:
+          - /url: javascript:void(0)
+          - generic [ref=e43]:
+            - generic [ref=e44]: Orders
+            - generic [ref=e45]:
+              - generic [ref=e46]: shift
+              - generic [ref=e47]: +
+              - generic [ref=e48]: alt
+              - generic [ref=e49]: +
+              - generic [ref=e50]: O
+      - listitem [ref=e51]:
+        - button "Show/hide shortcuts, shift, alt, z" [ref=e52] [cursor=pointer]:
+          - generic [ref=e53]:
+            - generic [ref=e54]: Show/Hide shortcuts
+            - generic [ref=e55]:
+              - generic [ref=e56]: shift
+              - generic [ref=e57]: +
+              - generic [ref=e58]: alt
+              - generic [ref=e59]: +
+              - generic [ref=e60]: Z
+    - generic [ref=e66]: To move between items, use your keyboard's up or down arrows.
+  - banner [ref=e67]:
+    - navigation "Primary" [ref=e68]:
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - link "Amazon.in" [ref=e72] [cursor=pointer]:
+            - /url: /ref=nav_logo
+            - generic: .in
+          - button "Delivering to New Delhi 110012 Update location" [ref=e75] [cursor=pointer]:
+            - generic [ref=e77]:
+              - generic [ref=e78]: Delivering to New Delhi 110012
+              - generic [ref=e79]: Update location
+        - search [ref=e82]:
+          - generic [ref=e85]:
+            - generic [ref=e87]: All
+            - combobox "Select the department you want to search in" [ref=e89] [cursor=pointer]:
+              - option "All Categories" [selected]
+              - option "Alexa Skills"
+              - option "Amazon Devices"
+              - option "Amazon Fashion"
+              - option "Amazon Fresh"
+              - option "Amazon Fresh Meat"
+              - option "Amazon Pharmacy"
+              - option "Appliances"
+              - option "Apps & Games"
+              - option "Audible Audiobooks"
+              - option "Baby"
+              - option "Beauty"
+              - option "Books"
+              - option "Car & Motorbike"
+              - option "Clothing & Accessories"
+              - option "Collectibles"
+              - option "Computers & Accessories"
+              - option "Deals"
+              - option "Electronics"
+              - option "Furniture"
+              - option "Garden & Outdoors"
+              - option "Gift Cards"
+              - option "Grocery & Gourmet Foods"
+              - option "Health & Personal Care"
+              - option "Home & Kitchen"
+              - option "Industrial & Scientific"
+              - option "Jewellery"
+              - option "Kindle Store"
+              - option "Luggage & Bags"
+              - option "Luxury Beauty"
+              - option "Movies & TV Shows"
+              - option "MP3 Music"
+              - option "Music"
+              - option "Musical Instruments"
+              - option "Office Products"
+              - option "Pet Supplies"
+              - option "Prime Video"
+              - option "Shoes & Handbags"
+              - option "Software"
+              - option "Sports, Fitness & Outdoors"
+              - option "Subscribe & Save"
+              - option "Tools & Home Improvement"
+              - option "Toys & Games"
+              - option "Under ₹500"
+              - option "Video Games"
+              - option "Watches"
+          - searchbox "Search Amazon.in" [ref=e92]: XIAOMI Redmi phone
+          - generic "Go" [ref=e95] [cursor=pointer]:
+            - button "Go" [ref=e96]
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - link "Choose a language for shopping in Amazon India. The current selection is English (EN)." [ref=e100] [cursor=pointer]:
+              - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang
+              - generic [ref=e103]:
+                - img "India" [ref=e104]
+                - generic [ref=e105]: EN
+            - button "Expand to Change Language or Country" [ref=e106] [cursor=pointer]
+          - generic [ref=e107]:
+            - link "Hello, Javed Account & Lists" [ref=e108] [cursor=pointer]:
+              - /url: https://www.amazon.in/gp/css/homepage.html?ref_=nav_youraccount_btn
+              - generic [ref=e110]: Hello, Javed
+              - generic [ref=e111]: Account & Lists
+            - button "Expand Account and Lists" [ref=e112] [cursor=pointer]
+          - link "Returns & Orders" [ref=e113] [cursor=pointer]:
+            - /url: /gp/css/order-history?ref_=nav_orders_first
+            - generic [ref=e114]: Returns
+            - generic [ref=e115]: "& Orders"
+          - link "0 items in cart" [ref=e116] [cursor=pointer]:
+            - /url: /gp/cart/view.html?ref_=nav_cart
+            - generic [ref=e118]: "0"
+            - generic [ref=e121]: Cart
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - button "Open All Categories Menu" [ref=e124] [cursor=pointer]:
+            - generic [ref=e126]: All
+          - button "Open Rufus panel" [ref=e127] [cursor=pointer]:
+            - generic [ref=e129]: Rufus
+        - list [ref=e133]:
+          - listitem [ref=e134]:
+            - generic [ref=e135]:
+              - link "Fresh" [ref=e136] [cursor=pointer]:
+                - /url: /fresh?ref_=nav_cs_grocery
+              - button "Fresh Details" [ref=e137] [cursor=pointer]
+          - listitem [ref=e138]:
+            - link "MX Player" [ref=e140] [cursor=pointer]:
+              - /url: /minitv?ref_=nav_avod_desktop_topnav
+          - listitem [ref=e141]:
+            - link "Sell" [ref=e143] [cursor=pointer]:
+              - /url: /b/32702023031?node=32702023031&ld=AZINSOANavDesktop_T3&ref_=nav_cs_sell_T3
+          - listitem [ref=e144]:
+            - link "Amazon Pay" [ref=e146] [cursor=pointer]:
+              - /url: /gp/sva/dashboard?ref_=nav_cs_apay
+          - listitem [ref=e147]:
+            - link "Keep Shopping for" [ref=e149] [cursor=pointer]:
+              - /url: /hz/mobile/mission?ref_=nav_cs_ci_mcx_mi_d_db
+          - listitem [ref=e150]:
+            - link "Bestsellers" [ref=e152] [cursor=pointer]:
+              - /url: /gp/bestsellers/?ref_=nav_cs_bestsellers
+          - listitem [ref=e153]:
+            - link "Buy Again" [ref=e155] [cursor=pointer]:
+              - /url: /gp/buyagain?ie=UTF8&ref_=nav_cs_buy_again
+          - listitem [ref=e156]:
+            - link "Today's Deals" [ref=e158] [cursor=pointer]:
+              - /url: /deals?ref_=nav_cs_gb
+          - listitem [ref=e159]:
+            - generic [ref=e160]:
+              - link "Prime" [ref=e161] [cursor=pointer]:
+                - /url: /prime?ref_=nav_cs_primelink_nonmember
+              - button "Prime Details" [ref=e162] [cursor=pointer]
+          - listitem [ref=e163]:
+            - link "Mobiles" [ref=e165] [cursor=pointer]:
+              - /url: /mobile-phones/b/?ie=UTF8&node=1389401031&ref_=nav_cs_mobiles
+          - listitem [ref=e166]:
+            - link "Customer Service" [ref=e168] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=nav_cs_help
+          - listitem [ref=e169]:
+            - link "Gift Cards" [ref=e171] [cursor=pointer]:
+              - /url: /gift-card-store/b/?ie=UTF8&node=3704982031&ref_=nav_cs_gc
+          - listitem [ref=e172]:
+            - link "Kindle eBooks" [ref=e174] [cursor=pointer]:
+              - /url: /Kindle-eBooks/b/?ie=UTF8&node=1634753031&ref_=nav_cs_kindle_books
+          - listitem [ref=e175]:
+            - link "Flights" [ref=e177] [cursor=pointer]:
+              - /url: /flights?ref_=nav_cs_apay_desktop_topnav_flights
+          - listitem [ref=e178]:
+            - link "New Releases" [ref=e180] [cursor=pointer]:
+              - /url: /gp/new-releases/?ref_=nav_cs_newreleases
+          - listitem [ref=e181]:
+            - link "Fashion" [ref=e183] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6648217031&ref_=nav_cs_fashion
+          - listitem [ref=e184]:
+            - link "Electronics" [ref=e186] [cursor=pointer]:
+              - /url: /electronics/b/?ie=UTF8&node=976419031&ref_=nav_cs_electronics
+          - listitem [ref=e187]:
+            - link "AmazonBasics" [ref=e189] [cursor=pointer]:
+              - /url: /b/?node=6637738031&ref_=nav_cs_amazonbasics
+          - listitem [ref=e190]:
+            - link "Home & Kitchen" [ref=e192] [cursor=pointer]:
+              - /url: /Home-Kitchen/b/?ie=UTF8&node=976442031&ref_=nav_cs_home
+          - listitem [ref=e193]:
+            - link "Home Improvement" [ref=e195] [cursor=pointer]:
+              - /url: /Home-Improvement/b/?ie=UTF8&node=4286640031&ref_=nav_cs_hi
+          - listitem [ref=e196]:
+            - link "Computers" [ref=e198] [cursor=pointer]:
+              - /url: /computers-and-accessories/b/?ie=UTF8&node=976392031&ref_=nav_cs_pc
+          - listitem [ref=e199]:
+            - link "Books" [ref=e201] [cursor=pointer]:
+              - /url: /Books/b/?ie=UTF8&node=976389031&ref_=nav_cs_books
+          - listitem [ref=e202]:
+            - link "Health, Household & Personal Care" [ref=e204] [cursor=pointer]:
+              - /url: /health-and-personal-care/b/?ie=UTF8&node=1350384031&ref_=nav_cs_hpc
+          - listitem [ref=e205]:
+            - link "Toys & Games" [ref=e207] [cursor=pointer]:
+              - /url: /Toys-Games/b/?ie=UTF8&node=1350380031&ref_=nav_cs_toys
+          - listitem [ref=e208]:
+            - link "Beauty & Personal Care" [ref=e210] [cursor=pointer]:
+              - /url: /beauty/b/?ie=UTF8&node=1355016031&ref_=nav_cs_beauty
+          - listitem [ref=e211]:
+            - link "Amazon Pharmacy" [ref=e213] [cursor=pointer]:
+              - /url: /gp/browse.html?node=18049712031&ref_=nav_navx-desco-pharma
+          - listitem [ref=e214]:
+            - link "Car & Motorbike" [ref=e216] [cursor=pointer]:
+              - /url: /Car-Motorbike-Store/b/?ie=UTF8&node=4772060031&ref_=nav_cs_automotive
+          - listitem [ref=e217]:
+            - link "Sports, Fitness & Outdoors" [ref=e219] [cursor=pointer]:
+              - /url: /Sports/b/?ie=UTF8&node=1984443031&ref_=nav_cs_sports
+          - listitem [ref=e220]:
+            - link "Grocery & Gourmet Foods" [ref=e222] [cursor=pointer]:
+              - /url: /Gourmet-Specialty-Foods/b/?ie=UTF8&node=2454178031&ref_=nav_cs_grocery
+          - listitem [ref=e223]:
+            - link "Subscribe & Save" [ref=e225] [cursor=pointer]:
+              - /url: /auto-deliveries/landing?ref_=nav_cs_sns
+          - listitem [ref=e226]:
+            - link "Audible" [ref=e228] [cursor=pointer]:
+              - /url: /Audible-Books-and-Originals/b/?ie=UTF8&node=17941593031&ref_=nav_cs_audible
+          - listitem [ref=e229]:
+            - link "Video Games" [ref=e231] [cursor=pointer]:
+              - /url: /video-games/b/?ie=UTF8&node=976460031&ref_=nav_cs_video_games
+      - dialog [ref=e234]
+  - generic [ref=e236]:
+    - 'heading "1-16 of over 50,000 results for \"XIAOMI Redmi phone\" Sort by: Featured" [level=1] [ref=e239]':
+      - generic [ref=e240]:
+        - heading "1-16 of over 50,000 results for \"XIAOMI Redmi phone\"" [level=2] [ref=e245]
+        - generic [ref=e250]:
+          - generic [ref=e251]: "Sort by:"
+          - combobox "Sort by:" [ref=e252]:
+            - option "Featured" [selected]
+            - 'option "Price: Low to High"'
+            - 'option "Price: High to Low"'
+            - option "Avg. Customer Review"
+            - option "Newest Arrivals"
+            - option "Best Sellers"
+          - generic [ref=e255] [cursor=pointer]: Sort by:Featured
+    - generic [ref=e257]:
+      - generic [ref=e259]:
+        - generic [ref=e261]:
+          - generic [ref=e263]:
+            - generic [ref=e266]:
+              - heading "Results" [level=2] [ref=e267]
+              - generic [ref=e268]: Check each product page for other buying options.
+            - generic:
+              - list:
+                - listitem [ref=e269]:
+                  - generic [ref=e277]:
+                    - link [active] [ref=e283] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYXRmOjMwMTA1NzQ4MDc4MDQzMjo6MDo6&url=%2FStorage-Segments-Slimmest-Smartphone-Smoothest%2Fdp%2FB0GVG27VS7%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-1-spons%26aref%3DoobLPVndA4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=oobLPVndA4&sp_cr=ZAZ
+                      - img [ref=e285]
+                    - generic [ref=e288]:
+                      - generic [ref=e289]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e292] [cursor=pointer]:
+                          - generic [ref=e293]: Sponsored
+                        - heading "Redmi" [level=2] [ref=e297]
+                        - link "Sponsored Ad - A7 Pro 4G (Black, 4GB RAM, 64GB Storage) | Segment's Slimmest Smartphone | Segment's Largest 6300mAh Battery | Segment's Largest 17.53cm and Smoothest 120Hz Display | Charger in the Box" [ref=e298] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYXRmOjMwMTA1NzQ4MDc4MDQzMjo6MDo6&url=%2FStorage-Segments-Slimmest-Smartphone-Smoothest%2Fdp%2FB0GVG27VS7%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-1-spons%26aref%3DoobLPVndA4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=oobLPVndA4&sp_cr=ZAZ
+                          - heading "Sponsored Ad - A7 Pro 4G (Black, 4GB RAM, 64GB Storage) | Segment's Slimmest Smartphone | Segment's Largest 6300mAh Battery | Segment's Largest 17.53cm and Smoothest 120Hz Display | Charger in the Box" [level=2] [ref=e299]: A7 Pro 4G (Black, 4GB RAM, 64GB Storage) | Segment's Slimmest Smartphone | Segment's Largest 6300mAh Battery | Segment's Largest 17.53cm and Smoothest 120Hz Display | Charger in the Box
+                      - generic [ref=e302]:
+                        - generic [ref=e303]:
+                          - link "Limited time deal" [ref=e305] [cursor=pointer]:
+                            - /url: /deals
+                            - generic [ref=e308]: Limited time deal
+                          - generic [ref=e310]:
+                            - generic [ref=e311]: Price, product page
+                            - 'link "₹11,499 M.R.P: ₹15,999 M.R.P: ₹15,999" [ref=e312] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYXRmOjMwMTA1NzQ4MDc4MDQzMjo6MDo6&url=%2FStorage-Segments-Slimmest-Smartphone-Smoothest%2Fdp%2FB0GVG27VS7%2Fref%3Dsr_1_1_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-1-spons%26aref%3DoobLPVndA4%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=oobLPVndA4&sp_cr=ZAZ
+                              - generic [ref=e313]:
+                                - generic [ref=e314]: ₹11,499
+                                - generic [ref=e315]: ₹11,499
+                              - generic [ref=e316]: "M.R.P: ₹15,999"
+                              - generic [ref=e317]:
+                                - text: "M.R.P:"
+                                - generic [ref=e318]:
+                                  - generic [ref=e319]: ₹15,999
+                                  - text: ₹15,999
+                            - text: (28% off)
+                          - generic [ref=e323]:
+                            - generic [ref=e324]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e325]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e328]:
+                          - generic [ref=e331]:
+                            - img "Amazon" [ref=e332]
+                            - text: Fulfilled
+                          - generic [ref=e334]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e336]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e338]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e353] [cursor=pointer]
+                - listitem [ref=e356]:
+                  - generic [ref=e364]:
+                    - link [ref=e370] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYXRmOjMwMTA1NzQ4MDc4MDczMjo6MDo6&url=%2FREDMI-A7-Storage-17-48cm-Display%2Fdp%2FB0GVFVND7C%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-2-spons%26aref%3DQXAl0hUStK%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=QXAl0hUStK&sp_cr=ZAZ
+                      - img [ref=e372]
+                    - generic [ref=e375]:
+                      - generic [ref=e376]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e379] [cursor=pointer]:
+                          - generic [ref=e380]: Sponsored
+                        - heading "Redmi" [level=2] [ref=e384]
+                        - link "Sponsored Ad - A7 4G (Sky Blue, 3 GB RAM, 64GB Storage) | Large 17.48cm (6.88) Smooth 120Hz Display | 5200mAh 2-Day Battery | Royale Design | Charger in the Box" [ref=e385] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYXRmOjMwMTA1NzQ4MDc4MDczMjo6MDo6&url=%2FREDMI-A7-Storage-17-48cm-Display%2Fdp%2FB0GVFVND7C%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-2-spons%26aref%3DQXAl0hUStK%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=QXAl0hUStK&sp_cr=ZAZ
+                          - heading "Sponsored Ad - A7 4G (Sky Blue, 3 GB RAM, 64GB Storage) | Large 17.48cm (6.88) Smooth 120Hz Display | 5200mAh 2-Day Battery | Royale Design | Charger in the Box" [level=2] [ref=e386]: A7 4G (Sky Blue, 3 GB RAM, 64GB Storage) | Large 17.48cm (6.88) Smooth 120Hz Display | 5200mAh 2-Day Battery | Royale Design | Charger in the Box
+                      - generic [ref=e389]:
+                        - generic [ref=e390]:
+                          - link "Limited time deal" [ref=e392] [cursor=pointer]:
+                            - /url: /deals
+                            - generic [ref=e395]: Limited time deal
+                          - generic [ref=e397]:
+                            - generic [ref=e398]: Price, product page
+                            - 'link "₹10,499 M.R.P: ₹14,999 M.R.P: ₹14,999" [ref=e399] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYXRmOjMwMTA1NzQ4MDc4MDczMjo6MDo6&url=%2FREDMI-A7-Storage-17-48cm-Display%2Fdp%2FB0GVFVND7C%2Fref%3Dsr_1_2_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-2-spons%26aref%3DQXAl0hUStK%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9hdGY%26psc%3D1&aref=QXAl0hUStK&sp_cr=ZAZ
+                              - generic [ref=e400]:
+                                - generic [ref=e401]: ₹10,499
+                                - generic [ref=e402]: ₹10,499
+                              - generic [ref=e403]: "M.R.P: ₹14,999"
+                              - generic [ref=e404]:
+                                - text: "M.R.P:"
+                                - generic [ref=e405]:
+                                  - generic [ref=e406]: ₹14,999
+                                  - text: ₹14,999
+                            - text: (30% off)
+                          - generic [ref=e410]:
+                            - generic [ref=e411]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e412]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e415]:
+                          - generic [ref=e418]:
+                            - img "Amazon" [ref=e419]
+                            - text: Fulfilled
+                          - generic [ref=e421]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e423]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e425]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e440] [cursor=pointer]
+                - listitem [ref=e443]:
+                  - generic [ref=e449]:
+                    - link [ref=e455] [cursor=pointer]:
+                      - /url: /Redmi-Jaisalmer-Smoothest-Protection-expandable/dp/B0F3P5KQNS/ref=sr_1_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-3
+                      - img [ref=e457]
+                    - generic [ref=e460]:
+                      - generic [ref=e461]:
+                        - heading "Redmi" [level=2] [ref=e464]
+                        - link "A5 Jaisalmer Gold (3GB RAM 64GB Storage) | Royale Design | Segment's Largest 17.47cm(6.88) and Smoothest 120Hz Display | 5200mAh Large Battery | Expandable Storage up to 2TB" [ref=e465] [cursor=pointer]:
+                          - /url: /Redmi-Jaisalmer-Smoothest-Protection-expandable/dp/B0F3P5KQNS/ref=sr_1_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-3
+                          - heading "A5 Jaisalmer Gold (3GB RAM 64GB Storage) | Royale Design | Segment's Largest 17.47cm(6.88) and Smoothest 120Hz Display | 5200mAh Large Battery | Expandable Storage up to 2TB" [level=2] [ref=e466]
+                      - generic [ref=e467]:
+                        - generic [ref=e468]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e470] [cursor=pointer]:
+                            - generic [ref=e472]: 4.2 out of 5 stars
+                          - link "522 ratings" [ref=e474] [cursor=pointer]:
+                            - /url: /Redmi-Jaisalmer-Smoothest-Protection-expandable/dp/B0F3P5KQNS/ref=sr_1_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-3#customerReviews
+                            - text: (522)
+                        - generic [ref=e475]: 2K+ bought in past month
+                      - generic [ref=e478]:
+                        - generic [ref=e479]:
+                          - generic [ref=e481]:
+                            - generic [ref=e482]: Price, product page
+                            - link "₹8,999" [ref=e483] [cursor=pointer]:
+                              - /url: /Redmi-Jaisalmer-Smoothest-Protection-expandable/dp/B0F3P5KQNS/ref=sr_1_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-3
+                              - generic [ref=e484]:
+                                - generic [ref=e485]: ₹8,999
+                                - generic [ref=e486]: ₹8,999
+                          - generic [ref=e490]:
+                            - generic [ref=e491]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e492]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e495]:
+                          - generic [ref=e498]:
+                            - img "Amazon" [ref=e499]
+                            - text: Fulfilled
+                          - generic [ref=e501]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e503]: Or Prime members get FREE delivery Today 6 pm - 8 pm
+                          - generic [ref=e505]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e520] [cursor=pointer]
+                - listitem [ref=e523]:
+                  - generic [ref=e529]:
+                    - link [ref=e535] [cursor=pointer]:
+                      - /url: /Redmi-15-Midnight-Segments-Snapdragon/dp/B0FJFSHJ6Z/ref=sr_1_4?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-4
+                      - img [ref=e537]
+                    - generic [ref=e540]:
+                      - generic [ref=e541]:
+                        - heading "Redmi" [level=2] [ref=e544]
+                        - link "15 5G Midnight Black 8GB + 256GB | Segment's Largest 7000mAhA Battery | Segment's Largest Display 17.53cm(6.9) Up to 144Hz | Snapdragon 6s Gen 3 | 18W Reverse Charging | 50MP AI Dual Camera" [ref=e545] [cursor=pointer]:
+                          - /url: /Redmi-15-Midnight-Segments-Snapdragon/dp/B0FJFSHJ6Z/ref=sr_1_4?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-4
+                          - heading "15 5G Midnight Black 8GB + 256GB | Segment's Largest 7000mAhA Battery | Segment's Largest Display 17.53cm(6.9) Up to 144Hz | Snapdragon 6s Gen 3 | 18W Reverse Charging | 50MP AI Dual Camera" [level=2] [ref=e546]
+                      - generic [ref=e547]:
+                        - generic [ref=e548]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e550] [cursor=pointer]:
+                            - generic [ref=e552]: 4.1 out of 5 stars
+                          - link "1,792 ratings" [ref=e554] [cursor=pointer]:
+                            - /url: /Redmi-15-Midnight-Segments-Snapdragon/dp/B0FJFSHJ6Z/ref=sr_1_4?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-4#customerReviews
+                            - text: (1.7K)
+                        - generic [ref=e555]: 500+ bought in past month
+                      - generic [ref=e558]:
+                        - generic [ref=e559]:
+                          - link "Limited time deal" [ref=e561] [cursor=pointer]:
+                            - /url: /deals
+                            - generic [ref=e564]: Limited time deal
+                          - generic [ref=e566]:
+                            - generic [ref=e567]: Price, product page
+                            - 'link "₹22,499 M.R.P: ₹36,999 M.R.P: ₹36,999" [ref=e568] [cursor=pointer]':
+                              - /url: /Redmi-15-Midnight-Segments-Snapdragon/dp/B0FJFSHJ6Z/ref=sr_1_4?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-4
+                              - generic [ref=e569]:
+                                - generic [ref=e570]: ₹22,499
+                                - generic [ref=e571]: ₹22,499
+                              - generic [ref=e572]: "M.R.P: ₹36,999"
+                              - generic [ref=e573]:
+                                - text: "M.R.P:"
+                                - generic [ref=e574]:
+                                  - generic [ref=e575]: ₹36,999
+                                  - text: ₹36,999
+                            - text: (39% off)
+                          - generic [ref=e579]:
+                            - generic [ref=e580]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e581]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e584]:
+                          - generic [ref=e587]:
+                            - img "Amazon" [ref=e588]
+                            - text: Fulfilled
+                          - generic [ref=e590]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e592]: Or Prime members get FREE delivery Today 6 pm - 8 pm
+                          - generic [ref=e594]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e609] [cursor=pointer]
+                        - group "colours available" [ref=e611]:
+                          - list [ref=e612]:
+                            - generic [ref=e613]:
+                              - listitem:
+                                - link "Midnight Black":
+                                  - /url: /Redmi-15-Midnight-Segments-Snapdragon/dp/B0FJFSHJ6Z/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-4
+                            - generic [ref=e616]:
+                              - listitem:
+                                - link "Frosted White":
+                                  - /url: /Redmi-15-Midnight-Segments-Snapdragon/dp/B0FJFVBSF4/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-4
+                            - generic [ref=e619]:
+                              - listitem:
+                                - link "Sandy Purple":
+                                  - /url: /Redmi-15-Midnight-Segments-Snapdragon/dp/B0FJFRYXFK/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-4
+                - listitem [ref=e624]:
+                  - generic [ref=e630]:
+                    - link [ref=e636] [cursor=pointer]:
+                      - /url: /Redmi-Orchid-128GB-Without-Offer/dp/B0F1NDMXVF/ref=sr_1_5?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-5
+                      - img [ref=e638]
+                    - generic [ref=e641]:
+                      - generic [ref=e642]:
+                        - heading "Redmi" [level=2] [ref=e645]
+                        - link "13 5G Orchid Pink 8GB RAM 128GB ROM (Without Offer)" [ref=e646] [cursor=pointer]:
+                          - /url: /Redmi-Orchid-128GB-Without-Offer/dp/B0F1NDMXVF/ref=sr_1_5?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-5
+                          - heading "13 5G Orchid Pink 8GB RAM 128GB ROM (Without Offer)" [level=2] [ref=e647]
+                      - generic [ref=e648]:
+                        - generic [ref=e649]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e651] [cursor=pointer]:
+                            - generic [ref=e653]: 4.1 out of 5 stars
+                          - link "33 ratings" [ref=e655] [cursor=pointer]:
+                            - /url: /Redmi-Orchid-128GB-Without-Offer/dp/B0F1NDMXVF/ref=sr_1_5?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-5#customerReviews
+                            - text: (33)
+                        - generic [ref=e656]: 50+ bought in past month
+                      - generic [ref=e659]:
+                        - generic [ref=e660]:
+                          - generic [ref=e662]:
+                            - generic [ref=e663]: Price, product page
+                            - 'link "₹17,945 M.R.P: ₹19,990 M.R.P: ₹19,990" [ref=e664] [cursor=pointer]':
+                              - /url: /Redmi-Orchid-128GB-Without-Offer/dp/B0F1NDMXVF/ref=sr_1_5?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-5
+                              - generic [ref=e665]:
+                                - generic [ref=e666]: ₹17,945
+                                - generic [ref=e667]: ₹17,945
+                              - generic [ref=e668]: "M.R.P: ₹19,990"
+                              - generic [ref=e669]:
+                                - text: "M.R.P:"
+                                - generic [ref=e670]:
+                                  - generic [ref=e671]: ₹19,990
+                                  - text: ₹19,990
+                            - text: (10% off)
+                          - generic [ref=e675]:
+                            - generic [ref=e676]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e677]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e680]:
+                          - generic [ref=e683]:
+                            - img "Amazon" [ref=e684]
+                            - text: Fulfilled
+                          - generic [ref=e686]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e688]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e703] [cursor=pointer]
+                - listitem [ref=e706]:
+                  - generic [ref=e712]:
+                    - link [ref=e718] [cursor=pointer]:
+                      - /url: /Redmi-Note-14-SE-Crimson/dp/B0FR2G7KJT/ref=sr_1_6?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-6
+                      - img [ref=e720]
+                    - generic [ref=e723]:
+                      - generic [ref=e724]:
+                        - heading "Redmi" [level=2] [ref=e727]
+                        - link "Note 14 SE 5G, Crimson Art (6GB, 128GB)" [ref=e728] [cursor=pointer]:
+                          - /url: /Redmi-Note-14-SE-Crimson/dp/B0FR2G7KJT/ref=sr_1_6?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-6
+                          - heading "Note 14 SE 5G, Crimson Art (6GB, 128GB)" [level=2] [ref=e729]
+                      - generic [ref=e731]:
+                        - text: "4.1"
+                        - button "4.1 out of 5 stars, rating details" [ref=e733] [cursor=pointer]:
+                          - generic [ref=e735]: 4.1 out of 5 stars
+                        - link "118 ratings" [ref=e737] [cursor=pointer]:
+                          - /url: /Redmi-Note-14-SE-Crimson/dp/B0FR2G7KJT/ref=sr_1_6?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-6#customerReviews
+                          - text: (118)
+                      - generic [ref=e740]:
+                        - generic [ref=e741]:
+                          - generic [ref=e743]:
+                            - generic [ref=e744]: Price, product page
+                            - 'link "₹18,999 M.R.P: ₹19,999 M.R.P: ₹19,999" [ref=e745] [cursor=pointer]':
+                              - /url: /Redmi-Note-14-SE-Crimson/dp/B0FR2G7KJT/ref=sr_1_6?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-6
+                              - generic [ref=e746]:
+                                - generic [ref=e747]: ₹18,999
+                                - generic [ref=e748]: ₹18,999
+                              - generic [ref=e749]: "M.R.P: ₹19,999"
+                              - generic [ref=e750]:
+                                - text: "M.R.P:"
+                                - generic [ref=e751]:
+                                  - generic [ref=e752]: ₹19,999
+                                  - text: ₹19,999
+                            - text: (5% off)
+                          - generic [ref=e756]:
+                            - generic [ref=e757]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e758]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e761]:
+                          - generic [ref=e764]:
+                            - img "Amazon" [ref=e765]
+                            - text: Fulfilled
+                          - generic [ref=e767]: FREE delivery 6 - 14 May
+                        - button "Add to cart" [ref=e782] [cursor=pointer]
+                - listitem [ref=e785]:
+                  - generic [ref=e791]:
+                    - link [ref=e797] [cursor=pointer]:
+                      - /url: /Redmi-Storage-Corning-Mediatek-Dimensity/dp/B0F5BW7JRP/ref=sr_1_7?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-7
+                      - img [ref=e799]
+                    - generic [ref=e802]:
+                      - generic [ref=e803]:
+                        - heading "Redmi" [level=2] [ref=e806]
+                        - link "Note 14 Pro 5G Prime Edition (Ivy Green, 8GB RAM, 128GB Storage) | 50 MP Sony Camera Setup | Corning Gorilla Glass Victus 2 | 1.5K 3D Curved AMOLED | Mediatek Dimensity 7300- Ultra" [ref=e807] [cursor=pointer]:
+                          - /url: /Redmi-Storage-Corning-Mediatek-Dimensity/dp/B0F5BW7JRP/ref=sr_1_7?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-7
+                          - heading "Note 14 Pro 5G Prime Edition (Ivy Green, 8GB RAM, 128GB Storage) | 50 MP Sony Camera Setup | Corning Gorilla Glass Victus 2 | 1.5K 3D Curved AMOLED | Mediatek Dimensity 7300- Ultra" [level=2] [ref=e808]
+                      - generic [ref=e809]:
+                        - generic [ref=e810]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e812] [cursor=pointer]:
+                            - generic [ref=e814]: 4.2 out of 5 stars
+                          - link "932 ratings" [ref=e816] [cursor=pointer]:
+                            - /url: /Redmi-Storage-Corning-Mediatek-Dimensity/dp/B0F5BW7JRP/ref=sr_1_7?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-7#customerReviews
+                            - text: (932)
+                        - generic [ref=e817]: 100+ bought in past month
+                      - generic [ref=e820]:
+                        - generic [ref=e821]:
+                          - generic [ref=e823]:
+                            - generic [ref=e824]: Price, product page
+                            - 'link "₹26,999 M.R.P: ₹28,999 M.R.P: ₹28,999" [ref=e825] [cursor=pointer]':
+                              - /url: /Redmi-Storage-Corning-Mediatek-Dimensity/dp/B0F5BW7JRP/ref=sr_1_7?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-7
+                              - generic [ref=e826]:
+                                - generic [ref=e827]: ₹26,999
+                                - generic [ref=e828]: ₹26,999
+                              - generic [ref=e829]: "M.R.P: ₹28,999"
+                              - generic [ref=e830]:
+                                - text: "M.R.P:"
+                                - generic [ref=e831]:
+                                  - generic [ref=e832]: ₹28,999
+                                  - text: ₹28,999
+                            - text: (7% off)
+                          - generic [ref=e836]:
+                            - generic [ref=e837]: Save extra with No Cost EMI
+                            - generic [ref=e838]: Save extra with No Cost EMI
+                        - generic [ref=e841]:
+                          - generic [ref=e844]:
+                            - img "Amazon" [ref=e845]
+                            - text: Fulfilled
+                          - generic [ref=e847]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e849]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e851]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e866] [cursor=pointer]
+                        - group "colours available" [ref=e868]:
+                          - list [ref=e869]:
+                            - generic [ref=e870]:
+                              - listitem:
+                                - link "green":
+                                  - /url: /Redmi-Storage-Corning-Mediatek-Dimensity/dp/B0F5BW7JRP/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-7
+                            - generic [ref=e873]:
+                              - listitem:
+                                - link "Phantom Purple":
+                                  - /url: /Redmi-Storage-Corning-Mediatek-Dimensity/dp/B0DQVH9QGQ/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-7
+                            - generic [ref=e876]:
+                              - listitem:
+                                - link "Titan Black":
+                                  - /url: /Redmi-Storage-Corning-Mediatek-Dimensity/dp/B0DQVK5X4K/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-7
+                            - generic [ref=e879]:
+                              - listitem:
+                                - link "Champagne Gold":
+                                  - /url: /Redmi-Storage-Corning-Mediatek-Dimensity/dp/B0FDW81P71/ref=cs_sr_dp_4?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-7
+                - listitem [ref=e884]:
+                  - generic [ref=e890]:
+                    - link [ref=e896] [cursor=pointer]:
+                      - /url: /Storage-Snapdragon-Segments-Slimmest-Charging/dp/B0G5G25YBQ/ref=sr_1_8?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-8
+                      - img [ref=e898]
+                    - generic [ref=e901]:
+                      - generic [ref=e902]:
+                        - heading "Redmi" [level=2] [ref=e905]
+                        - link "Note 15 5G (Black, 8GB RAM 256GB Storage) | 108MP OIS Camera | Snapdragon 6 Gen 3 | 17.2cm Tough Curved AMOLED Screen | Segment's Slimmest Phone | 5520mAh Battery | 45W Fast Charging" [ref=e906] [cursor=pointer]:
+                          - /url: /Storage-Snapdragon-Segments-Slimmest-Charging/dp/B0G5G25YBQ/ref=sr_1_8?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-8
+                          - heading "Note 15 5G (Black, 8GB RAM 256GB Storage) | 108MP OIS Camera | Snapdragon 6 Gen 3 | 17.2cm Tough Curved AMOLED Screen | Segment's Slimmest Phone | 5520mAh Battery | 45W Fast Charging" [level=2] [ref=e907]
+                      - generic [ref=e908]:
+                        - generic [ref=e909]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e911] [cursor=pointer]:
+                            - generic [ref=e913]: 4.2 out of 5 stars
+                          - link "615 ratings" [ref=e915] [cursor=pointer]:
+                            - /url: /Storage-Snapdragon-Segments-Slimmest-Charging/dp/B0G5G25YBQ/ref=sr_1_8?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-8#customerReviews
+                            - text: (615)
+                        - generic [ref=e916]: 200+ bought in past month
+                      - generic [ref=e919]:
+                        - generic [ref=e920]:
+                          - generic [ref=e922]:
+                            - generic [ref=e923]: Price, product page
+                            - 'link "₹27,999 M.R.P: ₹28,999 M.R.P: ₹28,999" [ref=e924] [cursor=pointer]':
+                              - /url: /Storage-Snapdragon-Segments-Slimmest-Charging/dp/B0G5G25YBQ/ref=sr_1_8?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-8
+                              - generic [ref=e925]:
+                                - generic [ref=e926]: ₹27,999
+                                - generic [ref=e927]: ₹27,999
+                              - generic [ref=e928]: "M.R.P: ₹28,999"
+                              - generic [ref=e929]:
+                                - text: "M.R.P:"
+                                - generic [ref=e930]:
+                                  - generic [ref=e931]: ₹28,999
+                                  - text: ₹28,999
+                            - text: (3% off)
+                          - generic [ref=e935]:
+                            - generic [ref=e936]: 10% Off on select cards
+                            - generic [ref=e937]: 10% Off on select cards
+                        - generic [ref=e940]:
+                          - generic [ref=e943]:
+                            - img "Amazon" [ref=e944]
+                            - text: Fulfilled
+                          - generic [ref=e946]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e948]: Or Prime members get FREE delivery Today 6 pm - 8 pm
+                          - generic [ref=e950]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e965] [cursor=pointer]
+                        - group "colours available" [ref=e967]:
+                          - list [ref=e968]:
+                            - generic [ref=e969]:
+                              - listitem:
+                                - link "Black":
+                                  - /url: /Storage-Snapdragon-Segments-Slimmest-Charging/dp/B0G5G25YBQ/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-8
+                            - generic [ref=e972]:
+                              - listitem:
+                                - link "Glacier Blue":
+                                  - /url: /Storage-Snapdragon-Segments-Slimmest-Charging/dp/B0G5G7LNCV/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-8
+                            - generic [ref=e975]:
+                              - listitem:
+                                - link "Mist Purple":
+                                  - /url: /Storage-Snapdragon-Segments-Slimmest-Charging/dp/B0G5G2KMQN/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-8
+                - listitem [ref=e980]:
+                  - generic [ref=e986]:
+                    - link [ref=e992] [cursor=pointer]:
+                      - /url: /Redmi-Spectre-128GB-Without-Offer/dp/B0F7LWQFJ5/ref=sr_1_9?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-9
+                      - img [ref=e994]
+                    - generic [ref=e997]:
+                      - generic [ref=e998]:
+                        - heading "Redmi" [level=2] [ref=e1001]
+                        - link "Note 14 Pro+ 5G Spectre Blue 8GB RAM 128GB ROM(Without Offer)" [ref=e1002] [cursor=pointer]:
+                          - /url: /Redmi-Spectre-128GB-Without-Offer/dp/B0F7LWQFJ5/ref=sr_1_9?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-9
+                          - heading "Note 14 Pro+ 5G Spectre Blue 8GB RAM 128GB ROM(Without Offer)" [level=2] [ref=e1003]
+                      - generic [ref=e1005]:
+                        - text: "5.0"
+                        - button "5.0 out of 5 stars, rating details" [ref=e1007] [cursor=pointer]:
+                          - generic [ref=e1009]: 5.0 out of 5 stars
+                        - link "2 ratings" [ref=e1011] [cursor=pointer]:
+                          - /url: /Redmi-Spectre-128GB-Without-Offer/dp/B0F7LWQFJ5/ref=sr_1_9?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-9#customerReviews
+                          - text: (2)
+                      - generic [ref=e1014]:
+                        - generic [ref=e1015]:
+                          - generic [ref=e1017]:
+                            - generic [ref=e1018]: Price, product page
+                            - 'link "₹27,999 M.R.P: ₹34,999 M.R.P: ₹34,999" [ref=e1019] [cursor=pointer]':
+                              - /url: /Redmi-Spectre-128GB-Without-Offer/dp/B0F7LWQFJ5/ref=sr_1_9?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-9
+                              - generic [ref=e1020]:
+                                - generic [ref=e1021]: ₹27,999
+                                - generic [ref=e1022]: ₹27,999
+                              - generic [ref=e1023]: "M.R.P: ₹34,999"
+                              - generic [ref=e1024]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1025]:
+                                  - generic [ref=e1026]: ₹34,999
+                                  - text: ₹34,999
+                            - text: (20% off)
+                          - generic [ref=e1030]:
+                            - generic [ref=e1031]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1032]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1035]:
+                          - generic [ref=e1038]:
+                            - img "Amazon" [ref=e1039]
+                            - text: Fulfilled
+                          - generic [ref=e1041]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e1043]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1045]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1060] [cursor=pointer]
+                        - generic [ref=e1062]:
+                          - text: More Buying Choices
+                          - text: ₹27,949
+                          - link "(3 new offers)" [ref=e1064] [cursor=pointer]:
+                            - /url: /gp/offer-listing/B0F7LWQFJ5/ref=sr_1_9_olp?keywords=XIAOMI+Redmi+phone&dib_tag=se&dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&qid=1777713793&sr=8-9
+                - listitem [ref=e1067]:
+                  - generic [ref=e1073]:
+                    - link [ref=e1079] [cursor=pointer]:
+                      - /url: /Xiaomi-Note-14-Pro-5G/dp/B0DQLTWBH7/ref=sr_1_10?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-10
+                      - img [ref=e1081]
+                    - generic [ref=e1084]:
+                      - generic [ref=e1085]:
+                        - heading "Redmi" [level=2] [ref=e1088]
+                        - link "Note 14 Pro+ 5G Prime Edition (Spectre Blue, 8GB RAM, 128GB Storage) | Snapdragon 7s Gen 3 Processor | AMOLED Display | Dual Nano-SIM | 6200mAh Battery | Corning Gorilla Glass Victus 2" [ref=e1089] [cursor=pointer]:
+                          - /url: /Xiaomi-Note-14-Pro-5G/dp/B0DQLTWBH7/ref=sr_1_10?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-10
+                          - heading "Note 14 Pro+ 5G Prime Edition (Spectre Blue, 8GB RAM, 128GB Storage) | Snapdragon 7s Gen 3 Processor | AMOLED Display | Dual Nano-SIM | 6200mAh Battery | Corning Gorilla Glass Victus 2" [level=2] [ref=e1090]
+                      - generic [ref=e1091]:
+                        - generic [ref=e1092]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e1094] [cursor=pointer]:
+                            - generic [ref=e1096]: 4.2 out of 5 stars
+                          - link "559 ratings" [ref=e1098] [cursor=pointer]:
+                            - /url: /Xiaomi-Note-14-Pro-5G/dp/B0DQLTWBH7/ref=sr_1_10?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-10#customerReviews
+                            - text: (559)
+                        - generic [ref=e1099]: 100+ bought in past month
+                      - generic [ref=e1102]:
+                        - generic [ref=e1103]:
+                          - generic [ref=e1105]:
+                            - generic [ref=e1106]: Price, product page
+                            - 'link "₹31,999 M.R.P: ₹34,999 M.R.P: ₹34,999" [ref=e1107] [cursor=pointer]':
+                              - /url: /Xiaomi-Note-14-Pro-5G/dp/B0DQLTWBH7/ref=sr_1_10?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-10
+                              - generic [ref=e1108]:
+                                - generic [ref=e1109]: ₹31,999
+                                - generic [ref=e1110]: ₹31,999
+                              - generic [ref=e1111]: "M.R.P: ₹34,999"
+                              - generic [ref=e1112]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1113]:
+                                  - generic [ref=e1114]: ₹34,999
+                                  - text: ₹34,999
+                            - text: (9% off)
+                          - generic [ref=e1118]:
+                            - generic [ref=e1119]: Save extra with No Cost EMI
+                            - generic [ref=e1120]: Save extra with No Cost EMI
+                        - generic [ref=e1123]:
+                          - generic [ref=e1126]:
+                            - img "Amazon" [ref=e1127]
+                            - text: Fulfilled
+                          - generic [ref=e1129]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e1131]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1133]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1148] [cursor=pointer]
+                        - group "colours available" [ref=e1150]:
+                          - list [ref=e1151]:
+                            - generic [ref=e1152]:
+                              - listitem:
+                                - link "Spectre Blue":
+                                  - /url: /Xiaomi-Note-14-Pro-5G/dp/B0DQLTWBH7/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-10
+                            - generic [ref=e1155]:
+                              - listitem:
+                                - link "Champagne Gold":
+                                  - /url: /Xiaomi-Note-14-Pro-5G/dp/B0FDW146QZ/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-10
+                            - generic [ref=e1158]:
+                              - listitem:
+                                - link "Phantom Purple":
+                                  - /url: /Xiaomi-Note-14-Pro-5G/dp/B0F7M1338H/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-10
+                            - generic [ref=e1161]:
+                              - listitem:
+                                - link "Titan Black":
+                                  - /url: /Xiaomi-Note-14-Pro-5G/dp/B0DQLVWRVX/ref=cs_sr_dp_4?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-10
+                - listitem [ref=e1166]:
+                  - generic [ref=e1174]:
+                    - link [ref=e1180] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDk2MjE2MjM0MzYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-11-spons%26aref%3DnS2KRpSP6m%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=nS2KRpSP6m&sp_cr=ZAZ
+                      - img [ref=e1182]
+                    - generic [ref=e1185]:
+                      - generic [ref=e1186]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e1189] [cursor=pointer]:
+                          - generic [ref=e1190]: Sponsored
+                        - heading "Lava" [level=2] [ref=e1194]
+                        - link "Sponsored Ad - Bold N2 (Siachen White, 4 GB RAM, 64 GB Storage) | 13MP AI Dual Rear Camera | Largest 6.75\" HD+ Display | 5000 mAh Battery & 10W Charging | IP64 Water & Dust Proof | Charger & Phone-Case in Box" [ref=e1195] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDk2MjE2MjM0MzYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-11-spons%26aref%3DnS2KRpSP6m%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=nS2KRpSP6m&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Bold N2 (Siachen White, 4 GB RAM, 64 GB Storage) | 13MP AI Dual Rear Camera | Largest 6.75\" HD+ Display | 5000 mAh Battery & 10W Charging | IP64 Water & Dust Proof | Charger & Phone-Case in Box" [level=2] [ref=e1196]: Bold N2 (Siachen White, 4 GB RAM, 64 GB Storage) | 13MP AI Dual Rear Camera | Largest 6.75" HD+ Display | 5000 mAh Battery & 10W Charging | IP64 Water & Dust Proof | Charger & Phone-Case in Box
+                      - generic [ref=e1197]:
+                        - generic [ref=e1198]:
+                          - text: "3.6"
+                          - button "3.6 out of 5 stars, rating details" [ref=e1200] [cursor=pointer]:
+                            - generic [ref=e1202]: 3.6 out of 5 stars
+                          - link "72 ratings" [ref=e1204] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDk2MjE2MjM0MzYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-11-spons%26aref%3DnS2KRpSP6m%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=nS2KRpSP6m&sp_cr=ZAZ#customerReviews
+                            - text: (72)
+                        - generic [ref=e1205]: 500+ bought in past month
+                      - generic [ref=e1208]:
+                        - generic [ref=e1209]:
+                          - generic [ref=e1211]:
+                            - generic [ref=e1212]: Price, product page
+                            - 'link "₹8,899 M.R.P: ₹9,499 M.R.P: ₹9,499" [ref=e1213] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDk2MjE2MjM0MzYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-11-spons%26aref%3DnS2KRpSP6m%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=nS2KRpSP6m&sp_cr=ZAZ
+                              - generic [ref=e1214]:
+                                - generic [ref=e1215]: ₹8,899
+                                - generic [ref=e1216]: ₹8,899
+                              - generic [ref=e1217]: "M.R.P: ₹9,499"
+                              - generic [ref=e1218]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1219]:
+                                  - generic [ref=e1220]: ₹9,499
+                                  - text: ₹9,499
+                            - text: (6% off)
+                          - generic [ref=e1224]:
+                            - generic [ref=e1225]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1226]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1229]:
+                          - generic [ref=e1232]:
+                            - img "Amazon" [ref=e1233]
+                            - text: Fulfilled
+                          - generic [ref=e1235]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e1237]: Or Prime members get FREE delivery Today 6 pm - 8 pm
+                          - generic [ref=e1239]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1254] [cursor=pointer]
+                        - group "colours available" [ref=e1256]:
+                          - list
+                          - link "+1 other color/pattern" [ref=e1258] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDk2MjE2MjM0MzYzMjo6MDo6&url=%2FLava-Siachen-Storage-Charging-Phone-Case%2Fdp%2FB0GL1JFK48%2Fref%3Dsr_1_11_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-11-spons%26aref%3DnS2KRpSP6m%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=nS2KRpSP6m&sp_cr=ZAZ
+                - listitem [ref=e1261]:
+                  - generic [ref=e1269]:
+                    - link [ref=e1275] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDg2NDY1MTA0ODkzMjo6MDo6&url=%2FOnePlus-15R-Snapdragon%25C2%25AE-Personalised-Game-changing%2Fdp%2FB0FZT1D63F%2Fref%3Dsr_1_12_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-12-spons%26aref%3DLfQgya39V3%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=LfQgya39V3&sp_cr=ZAZ
+                      - img [ref=e1277]
+                    - generic [ref=e1280]:
+                      - generic [ref=e1281]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e1284] [cursor=pointer]:
+                          - generic [ref=e1285]: Sponsored
+                        - heading "OnePlus" [level=2] [ref=e1289]
+                        - link "Sponsored Ad - 15R - ACE Edition | 12GB+256GB | Electric Violet | World's First Snapdragon® 8 Gen 5 | 7400mAh Battery| Personalised AI | Game-changing 165Hz Display | IP68 IP69 IP66 & IP69K | 4K 120fps video" [ref=e1290] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDg2NDY1MTA0ODkzMjo6MDo6&url=%2FOnePlus-15R-Snapdragon%25C2%25AE-Personalised-Game-changing%2Fdp%2FB0FZT1D63F%2Fref%3Dsr_1_12_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-12-spons%26aref%3DLfQgya39V3%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=LfQgya39V3&sp_cr=ZAZ
+                          - heading "Sponsored Ad - 15R - ACE Edition | 12GB+256GB | Electric Violet | World's First Snapdragon® 8 Gen 5 | 7400mAh Battery| Personalised AI | Game-changing 165Hz Display | IP68 IP69 IP66 & IP69K | 4K 120fps video" [level=2] [ref=e1291]: 15R - ACE Edition | 12GB+256GB | Electric Violet | World's First Snapdragon® 8 Gen 5 | 7400mAh Battery| Personalised AI | Game-changing 165Hz Display | IP68 IP69 IP66 & IP69K | 4K 120fps video
+                      - generic [ref=e1292]:
+                        - generic [ref=e1293]:
+                          - text: "4.5"
+                          - button "4.5 out of 5 stars, rating details" [ref=e1295] [cursor=pointer]:
+                            - generic [ref=e1297]: 4.5 out of 5 stars
+                          - link "1,225 ratings" [ref=e1299] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDg2NDY1MTA0ODkzMjo6MDo6&url=%2FOnePlus-15R-Snapdragon%25C2%25AE-Personalised-Game-changing%2Fdp%2FB0FZT1D63F%2Fref%3Dsr_1_12_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-12-spons%26aref%3DLfQgya39V3%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=LfQgya39V3&sp_cr=ZAZ#customerReviews
+                            - text: (1.2K)
+                        - generic [ref=e1300]: 500+ bought in past month
+                      - generic [ref=e1303]:
+                        - generic [ref=e1304]:
+                          - generic [ref=e1306]:
+                            - generic [ref=e1307]: Price, product page
+                            - 'link "₹52,999 M.R.P: ₹54,999 M.R.P: ₹54,999" [ref=e1308] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDg2NDY1MTA0ODkzMjo6MDo6&url=%2FOnePlus-15R-Snapdragon%25C2%25AE-Personalised-Game-changing%2Fdp%2FB0FZT1D63F%2Fref%3Dsr_1_12_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-12-spons%26aref%3DLfQgya39V3%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=LfQgya39V3&sp_cr=ZAZ
+                              - generic [ref=e1309]:
+                                - generic [ref=e1310]: ₹52,999
+                                - generic [ref=e1311]: ₹52,999
+                              - generic [ref=e1312]: "M.R.P: ₹54,999"
+                              - generic [ref=e1313]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1314]:
+                                  - generic [ref=e1315]: ₹54,999
+                                  - text: ₹54,999
+                            - text: (4% off)
+                          - generic [ref=e1319]:
+                            - generic [ref=e1320]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1321]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1324]:
+                          - generic [ref=e1327]:
+                            - img "Amazon" [ref=e1328]
+                            - text: Fulfilled
+                          - generic [ref=e1330]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e1332]: Or Prime members get FREE delivery Today 6 pm - 8 pm
+                          - generic [ref=e1334]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1349] [cursor=pointer]
+                        - group "colours available" [ref=e1351]:
+                          - list
+                          - link "+2 other colors/patterns" [ref=e1353] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfbXRmOjMwMDg2NDY1MTA0ODkzMjo6MDo6&url=%2FOnePlus-15R-Snapdragon%25C2%25AE-Personalised-Game-changing%2Fdp%2FB0FZT1D63F%2Fref%3Dsr_1_12_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-12-spons%26aref%3DLfQgya39V3%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9tdGY%26psc%3D1&aref=LfQgya39V3&sp_cr=ZAZ
+                - listitem [ref=e1356]:
+                  - generic [ref=e1362]:
+                    - link [ref=e1368] [cursor=pointer]:
+                      - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF1V7BCC/ref=sr_1_13?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-13
+                      - img [ref=e1370]
+                    - generic [ref=e1373]:
+                      - generic [ref=e1374]:
+                        - heading "Redmi" [level=2] [ref=e1377]
+                        - link "Note 15 Pro 5G (Mirage Blue, 8GB+128GB) | 200MasterPixel OIS Camera | Dimensity 7400-Ultra | 17.3cm CrystalRes AMOLED Screen | IP66/68/69/69K | Mega 6580mAh Si/C Battery | 45W Fast Charging" [ref=e1378] [cursor=pointer]:
+                          - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF1V7BCC/ref=sr_1_13?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-13
+                          - heading "Note 15 Pro 5G (Mirage Blue, 8GB+128GB) | 200MasterPixel OIS Camera | Dimensity 7400-Ultra | 17.3cm CrystalRes AMOLED Screen | IP66/68/69/69K | Mega 6580mAh Si/C Battery | 45W Fast Charging" [level=2] [ref=e1379]
+                      - generic [ref=e1380]:
+                        - generic [ref=e1381]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e1383] [cursor=pointer]:
+                            - generic [ref=e1385]: 4.1 out of 5 stars
+                          - link "217 ratings" [ref=e1387] [cursor=pointer]:
+                            - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF1V7BCC/ref=sr_1_13?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-13#customerReviews
+                            - text: (217)
+                        - generic [ref=e1388]: 100+ bought in past month
+                      - generic [ref=e1391]:
+                        - generic [ref=e1392]:
+                          - generic [ref=e1394]:
+                            - generic [ref=e1395]: Price, product page
+                            - 'link "₹31,999 M.R.P: ₹33,999 M.R.P: ₹33,999" [ref=e1396] [cursor=pointer]':
+                              - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF1V7BCC/ref=sr_1_13?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-13
+                              - generic [ref=e1397]:
+                                - generic [ref=e1398]: ₹31,999
+                                - generic [ref=e1399]: ₹31,999
+                              - generic [ref=e1400]: "M.R.P: ₹33,999"
+                              - generic [ref=e1401]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1402]:
+                                  - generic [ref=e1403]: ₹33,999
+                                  - text: ₹33,999
+                            - text: (6% off)
+                          - generic [ref=e1407]:
+                            - generic [ref=e1408]: Save extra with No Cost EMI
+                            - generic [ref=e1409]: Save extra with No Cost EMI
+                        - generic [ref=e1412]:
+                          - generic [ref=e1415]:
+                            - img "Amazon" [ref=e1416]
+                            - text: Fulfilled
+                          - generic [ref=e1418]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e1420]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1422]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1437] [cursor=pointer]
+                        - group "colours available" [ref=e1439]:
+                          - list [ref=e1440]:
+                            - generic [ref=e1441]:
+                              - listitem:
+                                - link "Mirage Blue":
+                                  - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF1V7BCC/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-13
+                            - generic [ref=e1444]:
+                              - listitem:
+                                - link "Carbon Black":
+                                  - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF24LR6D/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-13
+                            - generic [ref=e1447]:
+                              - listitem:
+                                - link "Silver Ash":
+                                  - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF29GBSQ/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-13
+                - listitem [ref=e1452]:
+                  - generic [ref=e1458]:
+                    - link [ref=e1464] [cursor=pointer]:
+                      - /url: /Redmi-Celestial-Snapdragon-Processor-Charging/dp/B0FGDM1YR3/ref=sr_1_14?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-14
+                      - img [ref=e1466]
+                    - generic [ref=e1469]:
+                      - generic [ref=e1470]:
+                        - heading "Redmi" [level=2] [ref=e1473]
+                        - link "Mi 11X 5G (Celestial Silver, 6GB RAM, 128GB Storage) | 6.67\" E4 AMOLED 120Hz | Snapdragon 870 5G Processor | 48MP Triple Rear Camera | 20MP Front Camera | 4520mAh | 33W Fast Charging" [ref=e1474] [cursor=pointer]:
+                          - /url: /Redmi-Celestial-Snapdragon-Processor-Charging/dp/B0FGDM1YR3/ref=sr_1_14?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-14
+                          - heading "Mi 11X 5G (Celestial Silver, 6GB RAM, 128GB Storage) | 6.67\" E4 AMOLED 120Hz | Snapdragon 870 5G Processor | 48MP Triple Rear Camera | 20MP Front Camera | 4520mAh | 33W Fast Charging" [level=2] [ref=e1475]
+                      - generic [ref=e1477]:
+                        - text: "4.0"
+                        - button "4.0 out of 5 stars, rating details" [ref=e1479] [cursor=pointer]:
+                          - generic [ref=e1481]: 4.0 out of 5 stars
+                        - link "11,421 ratings" [ref=e1483] [cursor=pointer]:
+                          - /url: /Redmi-Celestial-Snapdragon-Processor-Charging/dp/B0FGDM1YR3/ref=sr_1_14?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-14#customerReviews
+                          - text: (11.4K)
+                      - generic [ref=e1486]:
+                        - generic [ref=e1487]:
+                          - generic [ref=e1489]:
+                            - generic [ref=e1490]: Price, product page
+                            - 'link "₹28,950 M.R.P: ₹33,999 M.R.P: ₹33,999" [ref=e1491] [cursor=pointer]':
+                              - /url: /Redmi-Celestial-Snapdragon-Processor-Charging/dp/B0FGDM1YR3/ref=sr_1_14?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-14
+                              - generic [ref=e1492]:
+                                - generic [ref=e1493]: ₹28,950
+                                - generic [ref=e1494]: ₹28,950
+                              - generic [ref=e1495]: "M.R.P: ₹33,999"
+                              - generic [ref=e1496]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1497]:
+                                  - generic [ref=e1498]: ₹33,999
+                                  - text: ₹33,999
+                            - text: (15% off)
+                          - generic [ref=e1502]:
+                            - generic [ref=e1503]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1504]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1505]:
+                          - generic [ref=e1507]:
+                            - generic [ref=e1510]:
+                              - img "Amazon" [ref=e1511]
+                              - text: Fulfilled
+                            - generic [ref=e1513]: FREE delivery Fri, 8 May
+                            - generic [ref=e1515]: Arrives before Mother's Day
+                          - generic "Only 1 left in stock." [ref=e1517]
+                        - button "Add to cart" [ref=e1532] [cursor=pointer]
+                - listitem [ref=e1535]:
+                  - generic [ref=e1541]:
+                    - link [ref=e1547] [cursor=pointer]:
+                      - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF24HNK2/ref=sr_1_15?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-15
+                      - img [ref=e1549]
+                    - generic [ref=e1552]:
+                      - generic [ref=e1553]:
+                        - heading "Redmi" [level=2] [ref=e1556]
+                        - link "Note 15 Pro+ 5G (Carbon Black, 12GB + 256GB) | 200MasterPixel OIS Camera | Snapdragon 7s Gen 4 | CrystalRes AMOLED | IP69/69K | 6500mAh Si/C Battery | 100W HyperCharge" [ref=e1557] [cursor=pointer]:
+                          - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF24HNK2/ref=sr_1_15?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-15
+                          - heading "Note 15 Pro+ 5G (Carbon Black, 12GB + 256GB) | 200MasterPixel OIS Camera | Snapdragon 7s Gen 4 | CrystalRes AMOLED | IP69/69K | 6500mAh Si/C Battery | 100W HyperCharge" [level=2] [ref=e1558]
+                      - generic [ref=e1559]:
+                        - generic [ref=e1560]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e1562] [cursor=pointer]:
+                            - generic [ref=e1564]: 4.2 out of 5 stars
+                          - link "207 ratings" [ref=e1566] [cursor=pointer]:
+                            - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF24HNK2/ref=sr_1_15?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-15#customerReviews
+                            - text: (207)
+                        - generic [ref=e1567]: 100+ bought in past month
+                      - generic [ref=e1570]:
+                        - generic [ref=e1571]:
+                          - generic [ref=e1573]:
+                            - generic [ref=e1574]: Price, product page
+                            - link "₹41,999" [ref=e1575] [cursor=pointer]:
+                              - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF24HNK2/ref=sr_1_15?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-15
+                              - generic [ref=e1576]:
+                                - generic [ref=e1577]: ₹41,999
+                                - generic [ref=e1578]: ₹41,999
+                          - generic [ref=e1582]:
+                            - generic [ref=e1583]: Save extra with No Cost EMI
+                            - generic [ref=e1584]: Save extra with No Cost EMI
+                        - generic [ref=e1587]:
+                          - generic [ref=e1590]:
+                            - img "Amazon" [ref=e1591]
+                            - text: Fulfilled
+                          - generic [ref=e1593]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e1595]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1597]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1612] [cursor=pointer]
+                        - group "colours available" [ref=e1614]:
+                          - list [ref=e1615]:
+                            - generic [ref=e1616]:
+                              - listitem:
+                                - link "Carbon Black":
+                                  - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF24HNK2/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-15
+                            - generic [ref=e1619]:
+                              - listitem:
+                                - link "Coffee Mocha":
+                                  - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF25NBWT/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-15
+                            - generic [ref=e1622]:
+                              - listitem:
+                                - link "Mirage Blue":
+                                  - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF27G7WW/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-15
+                - listitem [ref=e1627]:
+                  - generic [ref=e1633]:
+                    - link [ref=e1639] [cursor=pointer]:
+                      - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF23R9B6/ref=sr_1_16?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-16
+                      - img [ref=e1641]
+                    - generic [ref=e1644]:
+                      - generic [ref=e1645]:
+                        - heading "Redmi" [level=2] [ref=e1648]
+                        - link "Note 15 Pro 5G (Carbon Black, 8GB+256GB) | 200MasterPixel OIS Camera | Dimensity 7400-Ultra | 17.3cm CrystalRes AMOLED Screen | IP66/68/69/69K | Mega 6580mAh Si/C Battery | 45W Fast Charging" [ref=e1649] [cursor=pointer]:
+                          - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF23R9B6/ref=sr_1_16?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-16
+                          - heading "Note 15 Pro 5G (Carbon Black, 8GB+256GB) | 200MasterPixel OIS Camera | Dimensity 7400-Ultra | 17.3cm CrystalRes AMOLED Screen | IP66/68/69/69K | Mega 6580mAh Si/C Battery | 45W Fast Charging" [level=2] [ref=e1650]
+                      - generic [ref=e1651]:
+                        - generic [ref=e1652]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e1654] [cursor=pointer]:
+                            - generic [ref=e1656]: 4.1 out of 5 stars
+                          - link "217 ratings" [ref=e1658] [cursor=pointer]:
+                            - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF23R9B6/ref=sr_1_16?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-16#customerReviews
+                            - text: (217)
+                        - generic [ref=e1659]: 500+ bought in past month
+                      - generic [ref=e1662]:
+                        - link "See options" [ref=e1671] [cursor=pointer]:
+                          - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF23R9B6/ref=sr_1_16_opt_CELLULAR_PHONE?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-16
+                        - generic [ref=e1673]:
+                          - text: No featured offers available
+                          - text: ₹33,999
+                          - link "(1 new offer)" [ref=e1675] [cursor=pointer]:
+                            - /url: /gp/offer-listing/B0GF23R9B6/ref=sr_1_16_olp?keywords=XIAOMI+Redmi+phone&dib_tag=se&dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&qid=1777713793&sr=8-16
+                        - group "colours available" [ref=e1677]:
+                          - list [ref=e1678]:
+                            - generic [ref=e1679]:
+                              - listitem:
+                                - link "Carbon Black":
+                                  - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF23R9B6/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-16
+                            - generic [ref=e1682]:
+                              - listitem:
+                                - link "Mirage Blue":
+                                  - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF2D2RKY/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-16
+                            - generic [ref=e1685]:
+                              - listitem:
+                                - link "Silver Ash":
+                                  - /url: /200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging/dp/B0GF22T5WM/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-16
+                - listitem [ref=e1690]:
+                  - generic [ref=e1696]:
+                    - link [ref=e1702] [cursor=pointer]:
+                      - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF27G7WW/ref=sr_1_17?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-17
+                      - img [ref=e1704]
+                    - generic [ref=e1707]:
+                      - generic [ref=e1708]:
+                        - heading "Redmi" [level=2] [ref=e1711]
+                        - link "Note 15 Pro+ 5G (Mirage Blue, 12GB + 256GB) | 200MasterPixel OIS Camera | Snapdragon 7s Gen 4 | CrystalRes AMOLED | IP69/69K | 6500mAh Si/C Battery | 100W HyperCharge" [ref=e1712] [cursor=pointer]:
+                          - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF27G7WW/ref=sr_1_17?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-17
+                          - heading "Note 15 Pro+ 5G (Mirage Blue, 12GB + 256GB) | 200MasterPixel OIS Camera | Snapdragon 7s Gen 4 | CrystalRes AMOLED | IP69/69K | 6500mAh Si/C Battery | 100W HyperCharge" [level=2] [ref=e1713]
+                      - generic [ref=e1714]:
+                        - generic [ref=e1715]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e1717] [cursor=pointer]:
+                            - generic [ref=e1719]: 4.2 out of 5 stars
+                          - link "207 ratings" [ref=e1721] [cursor=pointer]:
+                            - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF27G7WW/ref=sr_1_17?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-17#customerReviews
+                            - text: (207)
+                        - generic [ref=e1722]: 100+ bought in past month
+                      - generic [ref=e1725]:
+                        - generic [ref=e1726]:
+                          - generic [ref=e1728]:
+                            - generic [ref=e1729]: Price, product page
+                            - link "₹41,999" [ref=e1730] [cursor=pointer]:
+                              - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF27G7WW/ref=sr_1_17?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-17
+                              - generic [ref=e1731]:
+                                - generic [ref=e1732]: ₹41,999
+                                - generic [ref=e1733]: ₹41,999
+                          - generic [ref=e1737]:
+                            - generic [ref=e1738]: Save extra with No Cost EMI
+                            - generic [ref=e1739]: Save extra with No Cost EMI
+                        - generic [ref=e1742]:
+                          - generic [ref=e1745]:
+                            - img "Amazon" [ref=e1746]
+                            - text: Fulfilled
+                          - generic [ref=e1748]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e1750]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1752]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1767] [cursor=pointer]
+                        - group "colours available" [ref=e1769]:
+                          - list [ref=e1770]:
+                            - generic [ref=e1771]:
+                              - listitem:
+                                - link "Mirage Blue":
+                                  - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF27G7WW/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-17
+                            - generic [ref=e1774]:
+                              - listitem:
+                                - link "Carbon Black":
+                                  - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF24HNK2/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-17
+                            - generic [ref=e1777]:
+                              - listitem:
+                                - link "Coffee Mocha":
+                                  - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF25NBWT/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-17
+                - listitem [ref=e1782]:
+                  - generic [ref=e1788]:
+                    - link [ref=e1794] [cursor=pointer]:
+                      - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF1ZHRGG/ref=sr_1_18?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-18
+                      - img [ref=e1796]
+                    - generic [ref=e1799]:
+                      - generic [ref=e1800]:
+                        - heading "Redmi" [level=2] [ref=e1803]
+                        - link "Note 15 Pro+ 5G (Carbon Black, 12GB + 512GB) | 200MasterPixel OIS Camera | Snapdragon 7s Gen 4 | CrystalRes AMOLED | IP69/69K | 6500mAh Si/C Battery | 100W HyperCharge" [ref=e1804] [cursor=pointer]:
+                          - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF1ZHRGG/ref=sr_1_18?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-18
+                          - heading "Note 15 Pro+ 5G (Carbon Black, 12GB + 512GB) | 200MasterPixel OIS Camera | Snapdragon 7s Gen 4 | CrystalRes AMOLED | IP69/69K | 6500mAh Si/C Battery | 100W HyperCharge" [level=2] [ref=e1805]
+                      - generic [ref=e1806]:
+                        - generic [ref=e1807]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e1809] [cursor=pointer]:
+                            - generic [ref=e1811]: 4.2 out of 5 stars
+                          - link "207 ratings" [ref=e1813] [cursor=pointer]:
+                            - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF1ZHRGG/ref=sr_1_18?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-18#customerReviews
+                            - text: (207)
+                        - generic [ref=e1814]: 100+ bought in past month
+                      - generic [ref=e1817]:
+                        - generic [ref=e1818]:
+                          - generic [ref=e1820]:
+                            - generic [ref=e1821]: Price, product page
+                            - link "₹44,999" [ref=e1822] [cursor=pointer]:
+                              - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF1ZHRGG/ref=sr_1_18?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-18
+                              - generic [ref=e1823]:
+                                - generic [ref=e1824]: ₹44,999
+                                - generic [ref=e1825]: ₹44,999
+                          - generic [ref=e1829]:
+                            - generic [ref=e1830]: Save extra with No Cost EMI
+                            - generic [ref=e1831]: Save extra with No Cost EMI
+                        - generic [ref=e1834]:
+                          - generic [ref=e1837]:
+                            - img "Amazon" [ref=e1838]
+                            - text: Fulfilled
+                          - generic [ref=e1840]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e1842]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e1844]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e1859] [cursor=pointer]
+                        - group "colours available" [ref=e1861]:
+                          - list [ref=e1862]:
+                            - generic [ref=e1863]:
+                              - listitem:
+                                - link "Carbon Black":
+                                  - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF1ZHRGG/ref=cs_sr_dp_1?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-18
+                            - generic [ref=e1866]:
+                              - listitem:
+                                - link "Coffee Mocha":
+                                  - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF2H24ZJ/ref=cs_sr_dp_2?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-18
+                            - generic [ref=e1869]:
+                              - listitem:
+                                - link "Mirage Blue":
+                                  - /url: /200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge/dp/B0GF24NJHN/ref=cs_sr_dp_3?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-18
+                - listitem [ref=e1874]:
+                  - generic [ref=e1880]:
+                    - link [ref=e1886] [cursor=pointer]:
+                      - /url: /Redmi-Dimond-Black-128GB-Without/dp/B0F2MLQKQX/ref=sr_1_19?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-19
+                      - img [ref=e1888]
+                    - generic [ref=e1891]:
+                      - generic [ref=e1892]:
+                        - heading "Redmi" [level=2] [ref=e1895]
+                        - link "13 5G Dimond Black 8GB RAM 128GB ROM (Without Offer)" [ref=e1896] [cursor=pointer]:
+                          - /url: /Redmi-Dimond-Black-128GB-Without/dp/B0F2MLQKQX/ref=sr_1_19?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-19
+                          - heading "13 5G Dimond Black 8GB RAM 128GB ROM (Without Offer)" [level=2] [ref=e1897]
+                      - generic [ref=e1899]:
+                        - text: "3.5"
+                        - button "3.5 out of 5 stars, rating details" [ref=e1901] [cursor=pointer]:
+                          - generic [ref=e1903]: 3.5 out of 5 stars
+                        - link "32 ratings" [ref=e1905] [cursor=pointer]:
+                          - /url: /Redmi-Dimond-Black-128GB-Without/dp/B0F2MLQKQX/ref=sr_1_19?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-19#customerReviews
+                          - text: (32)
+                      - generic [ref=e1908]:
+                        - link "See options" [ref=e1917] [cursor=pointer]:
+                          - /url: /Redmi-Dimond-Black-128GB-Without/dp/B0F2MLQKQX/ref=sr_1_19_opt_CELLULAR_PHONE?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-19
+                        - generic [ref=e1919]:
+                          - text: No featured offers available
+                          - text: ₹17,990
+                          - link "(2 new offers)" [ref=e1921] [cursor=pointer]:
+                            - /url: /gp/offer-listing/B0F2MLQKQX/ref=sr_1_19_olp?keywords=XIAOMI+Redmi+phone&dib_tag=se&dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&qid=1777713793&sr=8-19
+                - listitem [ref=e1924]:
+                  - generic [ref=e1930]:
+                    - link [ref=e1936] [cursor=pointer]:
+                      - /url: /11X-Celestial-Silver-128GB-Storage/dp/B085J1DRPF/ref=sr_1_20?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-20
+                      - img [ref=e1938]
+                    - generic [ref=e1941]:
+                      - link "Mi 11X 5G (Celestial Silver, 6GB RAM, 128GB Storage) | SD 870 | DisplayMate A+ rated 120Hz E4 AMOLED | 48MP Sony sensor" [ref=e1943] [cursor=pointer]:
+                        - /url: /11X-Celestial-Silver-128GB-Storage/dp/B085J1DRPF/ref=sr_1_20?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-20
+                        - heading "Mi 11X 5G (Celestial Silver, 6GB RAM, 128GB Storage) | SD 870 | DisplayMate A+ rated 120Hz E4 AMOLED | 48MP Sony sensor" [level=2] [ref=e1944]
+                      - generic [ref=e1946]:
+                        - text: "4.1"
+                        - button "4.1 out of 5 stars, rating details" [ref=e1948] [cursor=pointer]:
+                          - generic [ref=e1950]: 4.1 out of 5 stars
+                        - link "19,552 ratings" [ref=e1952] [cursor=pointer]:
+                          - /url: /11X-Celestial-Silver-128GB-Storage/dp/B085J1DRPF/ref=sr_1_20?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-20#customerReviews
+                          - text: (19.5K)
+                      - generic [ref=e1955]:
+                        - generic [ref=e1956]:
+                          - generic [ref=e1958]:
+                            - generic [ref=e1959]: Price, product page
+                            - 'link "₹29,999 M.R.P: ₹33,999 M.R.P: ₹33,999" [ref=e1960] [cursor=pointer]':
+                              - /url: /11X-Celestial-Silver-128GB-Storage/dp/B085J1DRPF/ref=sr_1_20?dib=eyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA&dib_tag=se&keywords=XIAOMI+Redmi+phone&qid=1777713793&sr=8-20
+                              - generic [ref=e1961]:
+                                - generic [ref=e1962]: ₹29,999
+                                - generic [ref=e1963]: ₹29,999
+                              - generic [ref=e1964]: "M.R.P: ₹33,999"
+                              - generic [ref=e1965]:
+                                - text: "M.R.P:"
+                                - generic [ref=e1966]:
+                                  - generic [ref=e1967]: ₹33,999
+                                  - text: ₹33,999
+                            - text: (12% off)
+                          - generic [ref=e1971]:
+                            - generic [ref=e1972]: Up to 5% back with Amazon Pay ICICI card
+                            - generic [ref=e1973]: Up to 5% back with Amazon Pay ICI...
+                        - generic [ref=e1974]:
+                          - generic [ref=e1976]:
+                            - generic [ref=e1979]:
+                              - img "Amazon" [ref=e1980]
+                              - text: Fulfilled
+                            - generic [ref=e1982]: FREE delivery Tomorrow, 3 May
+                            - generic [ref=e1984]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                            - generic [ref=e1986]: Arrives before Mother's Day
+                          - generic "Only 2 left in stock." [ref=e1988]
+                        - button "Add to cart" [ref=e2003] [cursor=pointer]
+                - listitem [ref=e2006]:
+                  - generic [ref=e2014]:
+                    - link [ref=e2020] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjgzMjo6MDo6&url=%2F200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging%2Fdp%2FB0GF24LR6D%2Fref%3Dsr_1_21_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-21-spons%26aref%3Dhj68nnX9UM%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=hj68nnX9UM&sp_cr=ZAZ
+                      - img [ref=e2022]
+                    - generic [ref=e2025]:
+                      - generic [ref=e2026]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e2029] [cursor=pointer]:
+                          - generic [ref=e2030]: Sponsored
+                        - heading "Redmi" [level=2] [ref=e2034]
+                        - link "Sponsored Ad - Note 15 Pro 5G (Carbon Black, 8GB+128GB) | 200MasterPixel OIS Camera | Dimensity 7400-Ultra | 17.3cm CrystalRes AMOLED Screen | IP66/68/69/69K | Mega 6580mAh Si/C Battery | 45W Fast Charging" [ref=e2035] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjgzMjo6MDo6&url=%2F200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging%2Fdp%2FB0GF24LR6D%2Fref%3Dsr_1_21_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-21-spons%26aref%3Dhj68nnX9UM%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=hj68nnX9UM&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Note 15 Pro 5G (Carbon Black, 8GB+128GB) | 200MasterPixel OIS Camera | Dimensity 7400-Ultra | 17.3cm CrystalRes AMOLED Screen | IP66/68/69/69K | Mega 6580mAh Si/C Battery | 45W Fast Charging" [level=2] [ref=e2036]: Note 15 Pro 5G (Carbon Black, 8GB+128GB) | 200MasterPixel OIS Camera | Dimensity 7400-Ultra | 17.3cm CrystalRes AMOLED Screen | IP66/68/69/69K | Mega 6580mAh Si/C Battery | 45W Fast Charging
+                      - generic [ref=e2037]:
+                        - generic [ref=e2038]:
+                          - text: "4.1"
+                          - button "4.1 out of 5 stars, rating details" [ref=e2040] [cursor=pointer]:
+                            - generic [ref=e2042]: 4.1 out of 5 stars
+                          - link "217 ratings" [ref=e2044] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjgzMjo6MDo6&url=%2F200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging%2Fdp%2FB0GF24LR6D%2Fref%3Dsr_1_21_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-21-spons%26aref%3Dhj68nnX9UM%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=hj68nnX9UM&sp_cr=ZAZ#customerReviews
+                            - text: (217)
+                        - generic [ref=e2045]: 100+ bought in past month
+                      - generic [ref=e2048]:
+                        - generic [ref=e2049]:
+                          - generic [ref=e2051]:
+                            - generic [ref=e2052]: Price, product page
+                            - 'link "₹31,999 M.R.P: ₹33,999 M.R.P: ₹33,999" [ref=e2053] [cursor=pointer]':
+                              - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjgzMjo6MDo6&url=%2F200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging%2Fdp%2FB0GF24LR6D%2Fref%3Dsr_1_21_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-21-spons%26aref%3Dhj68nnX9UM%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=hj68nnX9UM&sp_cr=ZAZ
+                              - generic [ref=e2054]:
+                                - generic [ref=e2055]: ₹31,999
+                                - generic [ref=e2056]: ₹31,999
+                              - generic [ref=e2057]: "M.R.P: ₹33,999"
+                              - generic [ref=e2058]:
+                                - text: "M.R.P:"
+                                - generic [ref=e2059]:
+                                  - generic [ref=e2060]: ₹33,999
+                                  - text: ₹33,999
+                            - text: (6% off)
+                          - generic [ref=e2064]:
+                            - generic [ref=e2065]: Save extra with No Cost EMI
+                            - generic [ref=e2066]: Save extra with No Cost EMI
+                        - generic [ref=e2069]:
+                          - generic [ref=e2072]:
+                            - img "Amazon" [ref=e2073]
+                            - text: Fulfilled
+                          - generic [ref=e2075]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e2077]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e2079]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e2094] [cursor=pointer]
+                        - group "colours available" [ref=e2096]:
+                          - list
+                          - link "+2 other colors/patterns" [ref=e2098] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjgzMjo6MDo6&url=%2F200MasterPixel-Dimensity-7400-Ultra-CrystalRes-Charging%2Fdp%2FB0GF24LR6D%2Fref%3Dsr_1_21_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-21-spons%26aref%3Dhj68nnX9UM%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=hj68nnX9UM&sp_cr=ZAZ
+                - listitem [ref=e2101]:
+                  - generic [ref=e2109]:
+                    - link [ref=e2115] [cursor=pointer]:
+                      - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjAzMjo6MDo6&url=%2F200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge%2Fdp%2FB0GF25NBWT%2Fref%3Dsr_1_22_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-22-spons%26aref%3DfP4llGelJI%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=fP4llGelJI&sp_cr=ZAZ
+                      - img [ref=e2117]
+                    - generic [ref=e2120]:
+                      - generic [ref=e2121]:
+                        - button "View Sponsored information or leave ad feedback" [ref=e2124] [cursor=pointer]:
+                          - generic [ref=e2125]: Sponsored
+                        - heading "Redmi" [level=2] [ref=e2129]
+                        - link "Sponsored Ad - Note 15 Pro+ 5G (Coffee Mocha, 12GB + 256GB) | 200MasterPixel OIS Camera | Snapdragon 7s Gen 4 | CrystalRes AMOLED | IP69/69K | 6500mAh Si/C Battery | 100W HyperCharge" [ref=e2130] [cursor=pointer]:
+                          - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjAzMjo6MDo6&url=%2F200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge%2Fdp%2FB0GF25NBWT%2Fref%3Dsr_1_22_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-22-spons%26aref%3DfP4llGelJI%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=fP4llGelJI&sp_cr=ZAZ
+                          - heading "Sponsored Ad - Note 15 Pro+ 5G (Coffee Mocha, 12GB + 256GB) | 200MasterPixel OIS Camera | Snapdragon 7s Gen 4 | CrystalRes AMOLED | IP69/69K | 6500mAh Si/C Battery | 100W HyperCharge" [level=2] [ref=e2131]: Note 15 Pro+ 5G (Coffee Mocha, 12GB + 256GB) | 200MasterPixel OIS Camera | Snapdragon 7s Gen 4 | CrystalRes AMOLED | IP69/69K | 6500mAh Si/C Battery | 100W HyperCharge
+                      - generic [ref=e2132]:
+                        - generic [ref=e2133]:
+                          - text: "4.2"
+                          - button "4.2 out of 5 stars, rating details" [ref=e2135] [cursor=pointer]:
+                            - generic [ref=e2137]: 4.2 out of 5 stars
+                          - link "207 ratings" [ref=e2139] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjAzMjo6MDo6&url=%2F200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge%2Fdp%2FB0GF25NBWT%2Fref%3Dsr_1_22_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-22-spons%26aref%3DfP4llGelJI%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=fP4llGelJI&sp_cr=ZAZ#customerReviews
+                            - text: (207)
+                        - generic [ref=e2140]: 100+ bought in past month
+                      - generic [ref=e2143]:
+                        - generic [ref=e2144]:
+                          - generic [ref=e2146]:
+                            - generic [ref=e2147]: Price, product page
+                            - link "₹41,999" [ref=e2148] [cursor=pointer]:
+                              - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjAzMjo6MDo6&url=%2F200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge%2Fdp%2FB0GF25NBWT%2Fref%3Dsr_1_22_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-22-spons%26aref%3DfP4llGelJI%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=fP4llGelJI&sp_cr=ZAZ
+                              - generic [ref=e2149]:
+                                - generic [ref=e2150]: ₹41,999
+                                - generic [ref=e2151]: ₹41,999
+                          - generic [ref=e2155]:
+                            - generic [ref=e2156]: Save extra with No Cost EMI
+                            - generic [ref=e2157]: Save extra with No Cost EMI
+                        - generic [ref=e2160]:
+                          - generic [ref=e2163]:
+                            - img "Amazon" [ref=e2164]
+                            - text: Fulfilled
+                          - generic [ref=e2166]: FREE delivery Tomorrow, 3 May
+                          - generic [ref=e2168]: Or Prime members get FREE delivery Tomorrow 8 am - 12 pm
+                          - generic [ref=e2170]: Arrives before Mother's Day
+                        - button "Add to cart" [ref=e2185] [cursor=pointer]
+                        - group "colours available" [ref=e2187]:
+                          - list
+                          - link "+2 other colors/patterns" [ref=e2189] [cursor=pointer]:
+                            - /url: /sspa/click?ie=UTF8&spc=MTo0NjE1NjkzMDAyMzc1MzgxOjE3Nzc3MTM3OTM6c3BfYnRmOjMwMDkxNTEzNzY4NjAzMjo6MDo6&url=%2F200MasterPixel-Snapdragon-CrystalRes-6500mAh-HyperCharge%2Fdp%2FB0GF25NBWT%2Fref%3Dsr_1_22_sspa%3Fdib%3DeyJ2IjoiMSJ9.ngp1NPrZKvSyWWkoUjpKdb0HzSkx1tzXkSmfXQ8fN_yVts87V92JcmdFnWurZJ8SzQlJaqhgVmXxmQLBSe88DmYqDaM-J16gRkAGVVqHrz7e_7t4OOUlQeZouTkU_X6pmX-3EU5ZfJtCNH9a4Xgv_gd2dsSwsBCihKwVZ-Lm6C2Bzoh55Yn5InSdK2WWY0kDV_py99RmP5ElBRbSqkv6Wze6mn9KFvb4G-yR_gYjElk.LrZAC1SWdHJxt-YUUKlCrLrTnCq_Jt0kkD8UTxSGhYA%26dib_tag%3Dse%26keywords%3DXIAOMI%2BRedmi%2Bphone%26qid%3D1777713793%26sr%3D8-22-spons%26aref%3DfP4llGelJI%26sp_csd%3Dd2lkZ2V0TmFtZT1zcF9idGY%26psc%3D1&aref=fP4llGelJI&sp_cr=ZAZ
+          - navigation "pagination" [ref=e2194]:
+            - list [ref=e2196]:
+              - listitem [ref=e2197]:
+                - button "Previous" [disabled] [ref=e2199]:
+                  - img [ref=e2200]
+                  - text: Previous
+              - listitem [ref=e2202]:
+                - button "Page 1" [ref=e2204]: "1"
+              - listitem [ref=e2205]:
+                - button "Go to page 2" [ref=e2207] [cursor=pointer]: "2"
+              - listitem [ref=e2208]:
+                - button "Go to page 3" [ref=e2210] [cursor=pointer]: "3"
+              - button [disabled] [ref=e2211]:
+                - img [ref=e2212]: ...
+              - button "20" [disabled] [ref=e2214]
+              - listitem [ref=e2215]:
+                - button "Go to next page, page 2" [ref=e2217] [cursor=pointer]:
+                  - text: Next
+                  - img [ref=e2218]
+          - generic [ref=e2222]:
+            - separator [ref=e2223]
+            - generic [ref=e2224]:
+              - heading "Items related to your search" [ref=e2225]
+              - button "Leave feedback on Sponsored ad" [ref=e2230] [cursor=pointer]: Sponsored
+              - generic [ref=e2234]:
+                - generic [ref=e2236]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JFWzD_9AxU0UC5iQFDE4UxIAAAGd5__MaQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICCLRi3-/clv1c_ek-wwvfTLcbWDvnNUU3pLWbe-bMjvotZuLS66_P_hwnj--3jCzaURwG72t5IPw9JC4j2AqZ6YXsTQxY7CxSFo3uPs1tDTe67bCe5BfagqPB028iA6H_qDGaYQlo18BDz8a4Vs_LtePOe4N4O1ZRj8YAbot-Ydv0ichRxqTRpSozmySlZSFMKUDUAhaKidugCGOSO-nFR6w3adTRJafni-ia9S80ykgaUvpVlIpT3YXqtvJZo0AZE0gLaAVpMIlSwU3bgbNivzNayXRdW34RH1gl2jPl2AYTgTtCQbSr9JuycDnEGb0aBBydnRGr1b9f4z5r6Nsig73uR8endhEuqlWidg-O8tCrk-y3a4BezvJ1H-35OocRUpBV8IoWL-HBtqtjvybYc0ZY7JytcSMtZhgELXqtNIiaNUUTDRoWHsNzu7S6K5V3BNr1KyMezFPZajawxhSPssPgJMP-Me2yDL-2t6CAIYVXhWXgEGxdXsUKDQedUnYOo_riHA9FdIREv21UGdyB8neksrXFWWhbi-DABtNxSaRcvhP7z-8OuwK03XjDTclTsqGR5dRPMEdvOxjr_q3uJH9ullYfpN0CEwfyjQtk1b-l98EKisYDapfhualGfha7WImF41lvMgUPlMI3YcXRhQe2KW9CYkcbcT0RMLO8TU-Q32VLQBeSvyFVi2Z-HRMxfMttLPhB8t_yu0UvBq0KUl4JXWLr_K4dBdwnD6WX7AQYIEBVu9-oMOE9KWie8ER1t3httppiBB1WEWUVZSDguyGT8X5eCOLq69mhgvZddyZSmVoCcGSLJSVXBiruoYRKP_xledveoPfMSvCWXToI8H88n9XCQUxX1XAvujQWnzC9rh-S3T3NmlqmFUmc9er6B80rSxTNBhshrynTyuRQus13vyCun8iQP_eVWOP-v7UN_1GLZjMuLmfm2N_uL36NarieefIVaCm63WBoHyjfx86UXFppnyY2ZfzFs6e2bFgJwqkYH5pmpCXhYFi0kfa3g7F5udqfzARwGK7iuNTfSbUChfSOlXjArb2X373ExIS1sjF5knUo0wMuMBEBLONmA/https://www.amazon.in/stores/page/6608D4D2-EC22-4E8C-B404-776C9E4A12CA/?_encoding=UTF8&store_ref=SB_A08096271MX4O2DXD6LTH-A043631333RBXJSK4H8U6&pd_rd_plhdr=t&aaxitk=88f2f2d58cf6b12b596820abda7910c5&hsa_cr_id=0&lp_asins=B08P9HD7JB%2CB09VDQ2ZS9%2CB0B8DQRHFB&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=HigdRbHCrO&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                      - link "Hola" [ref=e2237] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JFWzD_9AxU0UC5iQFDE4UxIAAAGd5__MaQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICCLRi3-/clv1c_ek-wwvfTLcbWDvnNUU3pLWbe-bMjvotZuLS66_P_hwnj--3jCzaURwG72t5IPw9JC4j2AqZ6YXsTQxY7CxSFo3uPs1tDTe67bCe5BfagqPB028iA6H_qDGaYQlo18BDz8a4Vs_LtePOe4N4O1ZRj8YAbot-Ydv0ichRxqTRpSozmySlZSFMKUDUAhaKidugCGOSO-nFR6w3adTRJafni-ia9S80ykgaUvpVlIpT3YXqtvJZo0AZE0gLaAVpMIlSwU3bgbNivzNayXRdW34RH1gl2jPl2AYTgTtCQbSr9JuycDnEGb0aBBydnRGr1b9f4z5r6Nsig73uR8endhEuqlWidg-O8tCrk-y3a4BezvJ1H-35OocRUpBV8IoWL-HBtqtjvybYc0ZY7JytcSMtZhgELXqtNIiaNUUTDRoWHsNzu7S6K5V3BNr1KyMezFPZajawxhSPssPgJMP-Me2yDL-2t6CAIYVXhWXgEGxdXsUKDQedUnYOo_riHA9FdIREv21UGdyB8neksrXFWWhbi-DABtNxSaRcvhP7z-8OuwK03XjDTclTsqGR5dRPMEdvOxjr_q3uJH9ullYfpN0CEwfyjQtk1b-l98EKisYDapfhualGfha7WImF41lvMgUPlMI3YcXRhQe2KW9CYkcbcT0RMLO8TU-Q32VLQBeSvyFVi2Z-HRMxfMttLPhB8t_yu0UvBq0KUl4JXWLr_K4dBdwnD6WX7AQYIEBVu9-oMOE9KWie8ER1t3httppiBB1WEWUVZSDguyGT8X5eCOLq69mhgvZddyZSmVoCcGSLJSVXBiruoYRKP_xledveoPfMSvCWXToI8H88n9XCQUxX1XAvujQWnzC9rh-S3T3NmlqmFUmc9er6B80rSxTNBhshrynTyuRQus13vyCun8iQP_eVWOP-v7UN_1GLZjMuLmfm2N_uL36NarieefIVaCm63WBoHyjfx86UXFppnyY2ZfzFs6e2bFgJwqkYH5pmpCXhYFi0kfa3g7F5udqfzARwGK7iuNTfSbUChfSOlXjArb2X373ExIS1sjF5knUo0wMuMBEBLONmA/https://www.amazon.in/stores/page/6608D4D2-EC22-4E8C-B404-776C9E4A12CA/?_encoding=UTF8&store_ref=SB_A08096271MX4O2DXD6LTH-A043631333RBXJSK4H8U6&pd_rd_plhdr=t&aaxitk=88f2f2d58cf6b12b596820abda7910c5&hsa_cr_id=0&lp_asins=B08P9HD7JB%2CB09VDQ2ZS9%2CB0B8DQRHFB&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=HigdRbHCrO&ref_=sbx_be_s_3psl_mbd_mb0_ls&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                        - img "Hola" [ref=e2238]
+                      - generic [ref=e2240]:
+                        - generic [ref=e2241]:
+                          - link [ref=e2242] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFWzD_9AxU0UC5iQFDE4UxIAAAGd5__MaQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICCLRi3-/clv1c_ek-wwvfTLcbWDvnNUU3pLWbe-bMjvotZuLS66_P_hwnj--3jCzaURwG72t5IPw9JC4j2AqZ6YXsTQxY7CxSFo3uPs1tDTe67bCe5BfagqPB028iA6H_qDGaYQlo18BDz8a4Vs_LtePOe4N4O1ZRj8YAbot-Ydv0ichRxqTRpSozmySlZSFMKUDUAhaKidugCGOSO-nFR6w3adTRJafni-ia9S80ykgaUvpVlIpT3YXqtvJZo0AZE0gLaAVpMIlSwU3bgbNivzNayXRdW34RH1gl2jPl2AYTgTtCQbSr9JuycDnEGb0aBBydnRGr1b9f4z5r6Nsig73uR8endhEuqlWidg-O8tCrk-y3a4BezvJ1H-35OocRUpBV8IoWL-HBtqtjvybYc0ZY7JytcSMtZhgELXqtNIiaNUUTDRoWHsNzu7S6K5V3BNr1KyMezFPZajawxhSPssPgJMP-Me2yDL-2t6CAIYVXhWXgEGxdXsUKDQedUnYOo_riHA9FdIREv21UGdyB8neksrXFWWhbi-DABtNxSaRcvhP7z-8OuwK03XjDTclTsqGR5dRPMEdvOxjr_q3uJH9ullYfpN0CEwfyjQtk1b-l98EKisYDapfhualGfha7WImF41lvMgUPlMI3YcXRhQe2KW9CYkcbcT0RMLO8TU-Q32VLQBeSvyFVi2Z-HRMxfMttLPhB8t_yu0UvBq0KUl4JXWLr_K4dBdwnD6WX7AQYIEBVu9-oMOE9KWie8ER1t3httppiBB1WEWUVZSDguyGT8X5eCOLq69mhgvZddyZSmVoCcGSLJSVXBiruoYRKP_xledveoPfMSvCWXToI8H88n9XCQUxX1XAvujQWnzC9rh-S3T3NmlqmFUmc9er6B80rSxTNBhshrynTyuRQus13vyCun8iQP_eVWOP-v7UN_1GLZjMuLmfm2N_uL36NarieefIVaCm63WBoHyjfx86UXFppnyY2ZfzFs6e2bFgJwqkYH5pmpCXhYFi0kfa3g7F5udqfzARwGK7iuNTfSbUChfSOlXjArb2X373ExIS1sjF5knUo0wMuMBEBLONmA/https://www.amazon.in/stores/page/6608D4D2-EC22-4E8C-B404-776C9E4A12CA/?_encoding=UTF8&store_ref=SB_A08096271MX4O2DXD6LTH-A043631333RBXJSK4H8U6&pd_rd_plhdr=t&aaxitk=88f2f2d58cf6b12b596820abda7910c5&hsa_cr_id=0&lp_asins=B08P9HD7JB%2CB09VDQ2ZS9%2CB0B8DQRHFB&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=HigdRbHCrO&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                          - link "Hola" [ref=e2243] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFWzD_9AxU0UC5iQFDE4UxIAAAGd5__MaQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICCLRi3-/clv1c_ek-wwvfTLcbWDvnNUU3pLWbe-bMjvotZuLS66_P_hwnj--3jCzaURwG72t5IPw9JC4j2AqZ6YXsTQxY7CxSFo3uPs1tDTe67bCe5BfagqPB028iA6H_qDGaYQlo18BDz8a4Vs_LtePOe4N4O1ZRj8YAbot-Ydv0ichRxqTRpSozmySlZSFMKUDUAhaKidugCGOSO-nFR6w3adTRJafni-ia9S80ykgaUvpVlIpT3YXqtvJZo0AZE0gLaAVpMIlSwU3bgbNivzNayXRdW34RH1gl2jPl2AYTgTtCQbSr9JuycDnEGb0aBBydnRGr1b9f4z5r6Nsig73uR8endhEuqlWidg-O8tCrk-y3a4BezvJ1H-35OocRUpBV8IoWL-HBtqtjvybYc0ZY7JytcSMtZhgELXqtNIiaNUUTDRoWHsNzu7S6K5V3BNr1KyMezFPZajawxhSPssPgJMP-Me2yDL-2t6CAIYVXhWXgEGxdXsUKDQedUnYOo_riHA9FdIREv21UGdyB8neksrXFWWhbi-DABtNxSaRcvhP7z-8OuwK03XjDTclTsqGR5dRPMEdvOxjr_q3uJH9ullYfpN0CEwfyjQtk1b-l98EKisYDapfhualGfha7WImF41lvMgUPlMI3YcXRhQe2KW9CYkcbcT0RMLO8TU-Q32VLQBeSvyFVi2Z-HRMxfMttLPhB8t_yu0UvBq0KUl4JXWLr_K4dBdwnD6WX7AQYIEBVu9-oMOE9KWie8ER1t3httppiBB1WEWUVZSDguyGT8X5eCOLq69mhgvZddyZSmVoCcGSLJSVXBiruoYRKP_xledveoPfMSvCWXToI8H88n9XCQUxX1XAvujQWnzC9rh-S3T3NmlqmFUmc9er6B80rSxTNBhshrynTyuRQus13vyCun8iQP_eVWOP-v7UN_1GLZjMuLmfm2N_uL36NarieefIVaCm63WBoHyjfx86UXFppnyY2ZfzFs6e2bFgJwqkYH5pmpCXhYFi0kfa3g7F5udqfzARwGK7iuNTfSbUChfSOlXjArb2X373ExIS1sjF5knUo0wMuMBEBLONmA/https://www.amazon.in/stores/page/6608D4D2-EC22-4E8C-B404-776C9E4A12CA/?_encoding=UTF8&store_ref=SB_A08096271MX4O2DXD6LTH-A043631333RBXJSK4H8U6&pd_rd_plhdr=t&aaxitk=88f2f2d58cf6b12b596820abda7910c5&hsa_cr_id=0&lp_asins=B08P9HD7JB%2CB09VDQ2ZS9%2CB0B8DQRHFB&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=HigdRbHCrO&ref_=sbx_be_s_3psl_mbd_mb0_logo&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                            - img "Hola" [ref=e2245]
+                        - generic [ref=e2246]:
+                          - link [ref=e2247] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFWzD_9AxU0UC5iQFDE4UxIAAAGd5__MaQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICCLRi3-/clv1c_ek-wwvfTLcbWDvnNUU3pLWbe-bMjvotZuLS66_P_hwnj--3jCzaURwG72t5IPw9JC4j2AqZ6YXsTQxY7CxSFo3uPs1tDTe67bCe5BfagqPB028iA6H_qDGaYQlo18BDz8a4Vs_LtePOe4N4O1ZRj8YAbot-Ydv0ichRxqTRpSozmySlZSFMKUDUAhaKidugCGOSO-nFR6w3adTRJafni-ia9S80ykgaUvpVlIpT3YXqtvJZo0AZE0gLaAVpMIlSwU3bgbNivzNayXRdW34RH1gl2jPl2AYTgTtCQbSr9JuycDnEGb0aBBydnRGr1b9f4z5r6Nsig73uR8endhEuqlWidg-O8tCrk-y3a4BezvJ1H-35OocRUpBV8IoWL-HBtqtjvybYc0ZY7JytcSMtZhgELXqtNIiaNUUTDRoWHsNzu7S6K5V3BNr1KyMezFPZajawxhSPssPgJMP-Me2yDL-2t6CAIYVXhWXgEGxdXsUKDQedUnYOo_riHA9FdIREv21UGdyB8neksrXFWWhbi-DABtNxSaRcvhP7z-8OuwK03XjDTclTsqGR5dRPMEdvOxjr_q3uJH9ullYfpN0CEwfyjQtk1b-l98EKisYDapfhualGfha7WImF41lvMgUPlMI3YcXRhQe2KW9CYkcbcT0RMLO8TU-Q32VLQBeSvyFVi2Z-HRMxfMttLPhB8t_yu0UvBq0KUl4JXWLr_K4dBdwnD6WX7AQYIEBVu9-oMOE9KWie8ER1t3httppiBB1WEWUVZSDguyGT8X5eCOLq69mhgvZddyZSmVoCcGSLJSVXBiruoYRKP_xledveoPfMSvCWXToI8H88n9XCQUxX1XAvujQWnzC9rh-S3T3NmlqmFUmc9er6B80rSxTNBhshrynTyuRQus13vyCun8iQP_eVWOP-v7UN_1GLZjMuLmfm2N_uL36NarieefIVaCm63WBoHyjfx86UXFppnyY2ZfzFs6e2bFgJwqkYH5pmpCXhYFi0kfa3g7F5udqfzARwGK7iuNTfSbUChfSOlXjArb2X373ExIS1sjF5knUo0wMuMBEBLONmA/https://www.amazon.in/stores/page/6608D4D2-EC22-4E8C-B404-776C9E4A12CA/?_encoding=UTF8&store_ref=SB_A08096271MX4O2DXD6LTH-A043631333RBXJSK4H8U6&pd_rd_plhdr=t&aaxitk=88f2f2d58cf6b12b596820abda7910c5&hsa_cr_id=0&lp_asins=B08P9HD7JB%2CB09VDQ2ZS9%2CB0B8DQRHFB&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=HigdRbHCrO&ref_=sbx_be_s_3psl_mbd_mb0_bkgd&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                          - link "Hola - Lets Talk" [ref=e2248] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JFWzD_9AxU0UC5iQFDE4UxIAAAGd5__MaQoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICCLRi3-/clv1c_ek-wwvfTLcbWDvnNUU3pLWbe-bMjvotZuLS66_P_hwnj--3jCzaURwG72t5IPw9JC4j2AqZ6YXsTQxY7CxSFo3uPs1tDTe67bCe5BfagqPB028iA6H_qDGaYQlo18BDz8a4Vs_LtePOe4N4O1ZRj8YAbot-Ydv0ichRxqTRpSozmySlZSFMKUDUAhaKidugCGOSO-nFR6w3adTRJafni-ia9S80ykgaUvpVlIpT3YXqtvJZo0AZE0gLaAVpMIlSwU3bgbNivzNayXRdW34RH1gl2jPl2AYTgTtCQbSr9JuycDnEGb0aBBydnRGr1b9f4z5r6Nsig73uR8endhEuqlWidg-O8tCrk-y3a4BezvJ1H-35OocRUpBV8IoWL-HBtqtjvybYc0ZY7JytcSMtZhgELXqtNIiaNUUTDRoWHsNzu7S6K5V3BNr1KyMezFPZajawxhSPssPgJMP-Me2yDL-2t6CAIYVXhWXgEGxdXsUKDQedUnYOo_riHA9FdIREv21UGdyB8neksrXFWWhbi-DABtNxSaRcvhP7z-8OuwK03XjDTclTsqGR5dRPMEdvOxjr_q3uJH9ullYfpN0CEwfyjQtk1b-l98EKisYDapfhualGfha7WImF41lvMgUPlMI3YcXRhQe2KW9CYkcbcT0RMLO8TU-Q32VLQBeSvyFVi2Z-HRMxfMttLPhB8t_yu0UvBq0KUl4JXWLr_K4dBdwnD6WX7AQYIEBVu9-oMOE9KWie8ER1t3httppiBB1WEWUVZSDguyGT8X5eCOLq69mhgvZddyZSmVoCcGSLJSVXBiruoYRKP_xledveoPfMSvCWXToI8H88n9XCQUxX1XAvujQWnzC9rh-S3T3NmlqmFUmc9er6B80rSxTNBhshrynTyuRQus13vyCun8iQP_eVWOP-v7UN_1GLZjMuLmfm2N_uL36NarieefIVaCm63WBoHyjfx86UXFppnyY2ZfzFs6e2bFgJwqkYH5pmpCXhYFi0kfa3g7F5udqfzARwGK7iuNTfSbUChfSOlXjArb2X373ExIS1sjF5knUo0wMuMBEBLONmA/https://www.amazon.in/stores/page/6608D4D2-EC22-4E8C-B404-776C9E4A12CA/?_encoding=UTF8&store_ref=SB_A08096271MX4O2DXD6LTH-A043631333RBXJSK4H8U6&pd_rd_plhdr=t&aaxitk=88f2f2d58cf6b12b596820abda7910c5&hsa_cr_id=0&lp_asins=B08P9HD7JB%2CB09VDQ2ZS9%2CB0B8DQRHFB&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=HigdRbHCrO&ref_=sbx_be_s_3psl_mbd_mb0_hl&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                            - generic [ref=e2250]:
+                              - generic [ref=e2251]: Hola - Lets Talk
+                              - generic [ref=e2252]: Hola - Lets Talk
+                - generic [ref=e2254]:
+                  - generic:
+                    - generic:
+                      - link:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JGgdm7xe2X0weJq4xyArFx8AAAGd5__MawoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICDkwwf3/clv1c_ek-wwvfTLcbSTLnKWU3bPVZOGL-jvu9ZuEi1S_j_x51geo2ejtdCPutAZZ-rAYyxxlJvIgkXOi5nYm7mmVrf0eVVTHW6dgZ7dHyVpRPliNkcUEibqav3B0Roc9mXrAHSEJu9-gytM21DCy7r5oZm-fiboN4I11ZnnuDrpwH-BD1idzcU3wO-lDC8knqvLjqnl-G_1Fm_ERXgvWLdf2pwvsy3NGl0cL8OGZ-D-U1O-fwxmyaxJhBBkMxuDF_0T8QlpsbkF3SeWRowz1-g8JjyPS0oc0unl60hhq0qvwohBwq2TZeQDB7QXZMpOvKD6IHdjSAEbhE1nzIc7lhIGvyYuNGkyA7S-Imw6xmW4Kn7LmmY1-A9qOYMgw9kJMFftlBQks4MymDv2uaAeR7_uMRgkczfrWkiZBTNtje_t3EYm6FSdDnBSY9jZSsjUyR2FFHxHQS2oZu9DWYwZrZUKPo6lw5vUDDnSutZOkcAwUYeSAd19Fpcq_1cTUE44HJ6sMdoVer2JXrfgBipWVW7lXwMYuYGEWjGUPjnLZ8jM2Y-Yr_G-i1R3-2CTXrPgxxd2Lh5P8J43o184RvBbcGsso6A6a2xgpObWPxraQaaUVll1VwlEEZeSw7ZH2KNfdPdOuJqb7pLPZpO8YByyNTCeADH1tWWBKGuyvIhcqGsFqbV-ES7mAOOHmq1tbCJlxVaNyVue-ORe1uvJi5cHo_21rjaOAZ0ICxfRTr3eXGazVl_EcixlN8SzxyXCSZlmp0Cta-5RpYG6a532ocXCL3ZGhi4dE4jTHWxzbHGmfynMdE2StlcqRgaMeJQ1inpvKT_HqDUxfy6wt_Skf6toVNR8TRV3e7gLAr925kr6gJUCQ17vegB4-5OymK2AxFXKZ5Bd9RSu6vsfree5y47wQD8TWKW9GIOyz5eSYZualJXW5c-W0Da6v717O6nWLxzwgRWTKWCV5pnU2iPLFHg1r3-46dLhLBZ8TTvtcTjf_T04zh6NXLViZEpcxN65Dzy4Ivfsdg9MB0_0jRiLVvqZSOQeTEubb-_wJkBvPKxrYSSeHwIcmnH5T1R43vKTJ4/https://www.amazon.in/stores/page/57954A1D-0433-484F-BB8E-93B93F04CC9A/?_encoding=UTF8&store_ref=SB_A0575146JKF9EW1HFDOY-A00182252Q9BHKQV2C34F&pd_rd_plhdr=t&aaxitk=4773367dbae5763487166490445c0b71&hsa_cr_id=1766684600502&lp_asins=9351198766%2C9350040093%2C9351194175&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=G3sEkW9bE3&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                      - link "Wiley" [ref=e2255] [cursor=pointer]:
+                        - /url: https://aax-eu-zaz.amazon.in/x/c/JGgdm7xe2X0weJq4xyArFx8AAAGd5__MawoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICDkwwf3/clv1c_ek-wwvfTLcbSTLnKWU3bPVZOGL-jvu9ZuEi1S_j_x51geo2ejtdCPutAZZ-rAYyxxlJvIgkXOi5nYm7mmVrf0eVVTHW6dgZ7dHyVpRPliNkcUEibqav3B0Roc9mXrAHSEJu9-gytM21DCy7r5oZm-fiboN4I11ZnnuDrpwH-BD1idzcU3wO-lDC8knqvLjqnl-G_1Fm_ERXgvWLdf2pwvsy3NGl0cL8OGZ-D-U1O-fwxmyaxJhBBkMxuDF_0T8QlpsbkF3SeWRowz1-g8JjyPS0oc0unl60hhq0qvwohBwq2TZeQDB7QXZMpOvKD6IHdjSAEbhE1nzIc7lhIGvyYuNGkyA7S-Imw6xmW4Kn7LmmY1-A9qOYMgw9kJMFftlBQks4MymDv2uaAeR7_uMRgkczfrWkiZBTNtje_t3EYm6FSdDnBSY9jZSsjUyR2FFHxHQS2oZu9DWYwZrZUKPo6lw5vUDDnSutZOkcAwUYeSAd19Fpcq_1cTUE44HJ6sMdoVer2JXrfgBipWVW7lXwMYuYGEWjGUPjnLZ8jM2Y-Yr_G-i1R3-2CTXrPgxxd2Lh5P8J43o184RvBbcGsso6A6a2xgpObWPxraQaaUVll1VwlEEZeSw7ZH2KNfdPdOuJqb7pLPZpO8YByyNTCeADH1tWWBKGuyvIhcqGsFqbV-ES7mAOOHmq1tbCJlxVaNyVue-ORe1uvJi5cHo_21rjaOAZ0ICxfRTr3eXGazVl_EcixlN8SzxyXCSZlmp0Cta-5RpYG6a532ocXCL3ZGhi4dE4jTHWxzbHGmfynMdE2StlcqRgaMeJQ1inpvKT_HqDUxfy6wt_Skf6toVNR8TRV3e7gLAr925kr6gJUCQ17vegB4-5OymK2AxFXKZ5Bd9RSu6vsfree5y47wQD8TWKW9GIOyz5eSYZualJXW5c-W0Da6v717O6nWLxzwgRWTKWCV5pnU2iPLFHg1r3-46dLhLBZ8TTvtcTjf_T04zh6NXLViZEpcxN65Dzy4Ivfsdg9MB0_0jRiLVvqZSOQeTEubb-_wJkBvPKxrYSSeHwIcmnH5T1R43vKTJ4/https://www.amazon.in/stores/page/57954A1D-0433-484F-BB8E-93B93F04CC9A/?_encoding=UTF8&store_ref=SB_A0575146JKF9EW1HFDOY-A00182252Q9BHKQV2C34F&pd_rd_plhdr=t&aaxitk=4773367dbae5763487166490445c0b71&hsa_cr_id=1766684600502&lp_asins=9351198766%2C9350040093%2C9351194175&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=G3sEkW9bE3&ref_=sbx_be_s_3psl_mbd_mb1_ls&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                        - img "Wiley" [ref=e2256]
+                      - generic [ref=e2258]:
+                        - generic [ref=e2259]:
+                          - link [ref=e2260] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JGgdm7xe2X0weJq4xyArFx8AAAGd5__MawoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICDkwwf3/clv1c_ek-wwvfTLcbSTLnKWU3bPVZOGL-jvu9ZuEi1S_j_x51geo2ejtdCPutAZZ-rAYyxxlJvIgkXOi5nYm7mmVrf0eVVTHW6dgZ7dHyVpRPliNkcUEibqav3B0Roc9mXrAHSEJu9-gytM21DCy7r5oZm-fiboN4I11ZnnuDrpwH-BD1idzcU3wO-lDC8knqvLjqnl-G_1Fm_ERXgvWLdf2pwvsy3NGl0cL8OGZ-D-U1O-fwxmyaxJhBBkMxuDF_0T8QlpsbkF3SeWRowz1-g8JjyPS0oc0unl60hhq0qvwohBwq2TZeQDB7QXZMpOvKD6IHdjSAEbhE1nzIc7lhIGvyYuNGkyA7S-Imw6xmW4Kn7LmmY1-A9qOYMgw9kJMFftlBQks4MymDv2uaAeR7_uMRgkczfrWkiZBTNtje_t3EYm6FSdDnBSY9jZSsjUyR2FFHxHQS2oZu9DWYwZrZUKPo6lw5vUDDnSutZOkcAwUYeSAd19Fpcq_1cTUE44HJ6sMdoVer2JXrfgBipWVW7lXwMYuYGEWjGUPjnLZ8jM2Y-Yr_G-i1R3-2CTXrPgxxd2Lh5P8J43o184RvBbcGsso6A6a2xgpObWPxraQaaUVll1VwlEEZeSw7ZH2KNfdPdOuJqb7pLPZpO8YByyNTCeADH1tWWBKGuyvIhcqGsFqbV-ES7mAOOHmq1tbCJlxVaNyVue-ORe1uvJi5cHo_21rjaOAZ0ICxfRTr3eXGazVl_EcixlN8SzxyXCSZlmp0Cta-5RpYG6a532ocXCL3ZGhi4dE4jTHWxzbHGmfynMdE2StlcqRgaMeJQ1inpvKT_HqDUxfy6wt_Skf6toVNR8TRV3e7gLAr925kr6gJUCQ17vegB4-5OymK2AxFXKZ5Bd9RSu6vsfree5y47wQD8TWKW9GIOyz5eSYZualJXW5c-W0Da6v717O6nWLxzwgRWTKWCV5pnU2iPLFHg1r3-46dLhLBZ8TTvtcTjf_T04zh6NXLViZEpcxN65Dzy4Ivfsdg9MB0_0jRiLVvqZSOQeTEubb-_wJkBvPKxrYSSeHwIcmnH5T1R43vKTJ4/https://www.amazon.in/stores/page/57954A1D-0433-484F-BB8E-93B93F04CC9A/?_encoding=UTF8&store_ref=SB_A0575146JKF9EW1HFDOY-A00182252Q9BHKQV2C34F&pd_rd_plhdr=t&aaxitk=4773367dbae5763487166490445c0b71&hsa_cr_id=1766684600502&lp_asins=9351198766%2C9350040093%2C9351194175&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=G3sEkW9bE3&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                          - link "Wiley" [ref=e2261] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JGgdm7xe2X0weJq4xyArFx8AAAGd5__MawoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICDkwwf3/clv1c_ek-wwvfTLcbSTLnKWU3bPVZOGL-jvu9ZuEi1S_j_x51geo2ejtdCPutAZZ-rAYyxxlJvIgkXOi5nYm7mmVrf0eVVTHW6dgZ7dHyVpRPliNkcUEibqav3B0Roc9mXrAHSEJu9-gytM21DCy7r5oZm-fiboN4I11ZnnuDrpwH-BD1idzcU3wO-lDC8knqvLjqnl-G_1Fm_ERXgvWLdf2pwvsy3NGl0cL8OGZ-D-U1O-fwxmyaxJhBBkMxuDF_0T8QlpsbkF3SeWRowz1-g8JjyPS0oc0unl60hhq0qvwohBwq2TZeQDB7QXZMpOvKD6IHdjSAEbhE1nzIc7lhIGvyYuNGkyA7S-Imw6xmW4Kn7LmmY1-A9qOYMgw9kJMFftlBQks4MymDv2uaAeR7_uMRgkczfrWkiZBTNtje_t3EYm6FSdDnBSY9jZSsjUyR2FFHxHQS2oZu9DWYwZrZUKPo6lw5vUDDnSutZOkcAwUYeSAd19Fpcq_1cTUE44HJ6sMdoVer2JXrfgBipWVW7lXwMYuYGEWjGUPjnLZ8jM2Y-Yr_G-i1R3-2CTXrPgxxd2Lh5P8J43o184RvBbcGsso6A6a2xgpObWPxraQaaUVll1VwlEEZeSw7ZH2KNfdPdOuJqb7pLPZpO8YByyNTCeADH1tWWBKGuyvIhcqGsFqbV-ES7mAOOHmq1tbCJlxVaNyVue-ORe1uvJi5cHo_21rjaOAZ0ICxfRTr3eXGazVl_EcixlN8SzxyXCSZlmp0Cta-5RpYG6a532ocXCL3ZGhi4dE4jTHWxzbHGmfynMdE2StlcqRgaMeJQ1inpvKT_HqDUxfy6wt_Skf6toVNR8TRV3e7gLAr925kr6gJUCQ17vegB4-5OymK2AxFXKZ5Bd9RSu6vsfree5y47wQD8TWKW9GIOyz5eSYZualJXW5c-W0Da6v717O6nWLxzwgRWTKWCV5pnU2iPLFHg1r3-46dLhLBZ8TTvtcTjf_T04zh6NXLViZEpcxN65Dzy4Ivfsdg9MB0_0jRiLVvqZSOQeTEubb-_wJkBvPKxrYSSeHwIcmnH5T1R43vKTJ4/https://www.amazon.in/stores/page/57954A1D-0433-484F-BB8E-93B93F04CC9A/?_encoding=UTF8&store_ref=SB_A0575146JKF9EW1HFDOY-A00182252Q9BHKQV2C34F&pd_rd_plhdr=t&aaxitk=4773367dbae5763487166490445c0b71&hsa_cr_id=1766684600502&lp_asins=9351198766%2C9350040093%2C9351194175&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=G3sEkW9bE3&ref_=sbx_be_s_3psl_mbd_mb1_logo&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                            - img "Wiley" [ref=e2263]
+                        - generic [ref=e2264]:
+                          - link [ref=e2265] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JGgdm7xe2X0weJq4xyArFx8AAAGd5__MawoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICDkwwf3/clv1c_ek-wwvfTLcbSTLnKWU3bPVZOGL-jvu9ZuEi1S_j_x51geo2ejtdCPutAZZ-rAYyxxlJvIgkXOi5nYm7mmVrf0eVVTHW6dgZ7dHyVpRPliNkcUEibqav3B0Roc9mXrAHSEJu9-gytM21DCy7r5oZm-fiboN4I11ZnnuDrpwH-BD1idzcU3wO-lDC8knqvLjqnl-G_1Fm_ERXgvWLdf2pwvsy3NGl0cL8OGZ-D-U1O-fwxmyaxJhBBkMxuDF_0T8QlpsbkF3SeWRowz1-g8JjyPS0oc0unl60hhq0qvwohBwq2TZeQDB7QXZMpOvKD6IHdjSAEbhE1nzIc7lhIGvyYuNGkyA7S-Imw6xmW4Kn7LmmY1-A9qOYMgw9kJMFftlBQks4MymDv2uaAeR7_uMRgkczfrWkiZBTNtje_t3EYm6FSdDnBSY9jZSsjUyR2FFHxHQS2oZu9DWYwZrZUKPo6lw5vUDDnSutZOkcAwUYeSAd19Fpcq_1cTUE44HJ6sMdoVer2JXrfgBipWVW7lXwMYuYGEWjGUPjnLZ8jM2Y-Yr_G-i1R3-2CTXrPgxxd2Lh5P8J43o184RvBbcGsso6A6a2xgpObWPxraQaaUVll1VwlEEZeSw7ZH2KNfdPdOuJqb7pLPZpO8YByyNTCeADH1tWWBKGuyvIhcqGsFqbV-ES7mAOOHmq1tbCJlxVaNyVue-ORe1uvJi5cHo_21rjaOAZ0ICxfRTr3eXGazVl_EcixlN8SzxyXCSZlmp0Cta-5RpYG6a532ocXCL3ZGhi4dE4jTHWxzbHGmfynMdE2StlcqRgaMeJQ1inpvKT_HqDUxfy6wt_Skf6toVNR8TRV3e7gLAr925kr6gJUCQ17vegB4-5OymK2AxFXKZ5Bd9RSu6vsfree5y47wQD8TWKW9GIOyz5eSYZualJXW5c-W0Da6v717O6nWLxzwgRWTKWCV5pnU2iPLFHg1r3-46dLhLBZ8TTvtcTjf_T04zh6NXLViZEpcxN65Dzy4Ivfsdg9MB0_0jRiLVvqZSOQeTEubb-_wJkBvPKxrYSSeHwIcmnH5T1R43vKTJ4/https://www.amazon.in/stores/page/57954A1D-0433-484F-BB8E-93B93F04CC9A/?_encoding=UTF8&store_ref=SB_A0575146JKF9EW1HFDOY-A00182252Q9BHKQV2C34F&pd_rd_plhdr=t&aaxitk=4773367dbae5763487166490445c0b71&hsa_cr_id=1766684600502&lp_asins=9351198766%2C9350040093%2C9351194175&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=G3sEkW9bE3&ref_=sbx_be_s_3psl_mbd_mb1_bkgd&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                          - link "Easy to Understand J2EE Books" [ref=e2266] [cursor=pointer]:
+                            - /url: https://aax-eu-zaz.amazon.in/x/c/JGgdm7xe2X0weJq4xyArFx8AAAGd5__MawoAAAH2AQBvbm9fdHhuX2JpZDMgICBvbm9fdHhuX2ltcDIgICDkwwf3/clv1c_ek-wwvfTLcbSTLnKWU3bPVZOGL-jvu9ZuEi1S_j_x51geo2ejtdCPutAZZ-rAYyxxlJvIgkXOi5nYm7mmVrf0eVVTHW6dgZ7dHyVpRPliNkcUEibqav3B0Roc9mXrAHSEJu9-gytM21DCy7r5oZm-fiboN4I11ZnnuDrpwH-BD1idzcU3wO-lDC8knqvLjqnl-G_1Fm_ERXgvWLdf2pwvsy3NGl0cL8OGZ-D-U1O-fwxmyaxJhBBkMxuDF_0T8QlpsbkF3SeWRowz1-g8JjyPS0oc0unl60hhq0qvwohBwq2TZeQDB7QXZMpOvKD6IHdjSAEbhE1nzIc7lhIGvyYuNGkyA7S-Imw6xmW4Kn7LmmY1-A9qOYMgw9kJMFftlBQks4MymDv2uaAeR7_uMRgkczfrWkiZBTNtje_t3EYm6FSdDnBSY9jZSsjUyR2FFHxHQS2oZu9DWYwZrZUKPo6lw5vUDDnSutZOkcAwUYeSAd19Fpcq_1cTUE44HJ6sMdoVer2JXrfgBipWVW7lXwMYuYGEWjGUPjnLZ8jM2Y-Yr_G-i1R3-2CTXrPgxxd2Lh5P8J43o184RvBbcGsso6A6a2xgpObWPxraQaaUVll1VwlEEZeSw7ZH2KNfdPdOuJqb7pLPZpO8YByyNTCeADH1tWWBKGuyvIhcqGsFqbV-ES7mAOOHmq1tbCJlxVaNyVue-ORe1uvJi5cHo_21rjaOAZ0ICxfRTr3eXGazVl_EcixlN8SzxyXCSZlmp0Cta-5RpYG6a532ocXCL3ZGhi4dE4jTHWxzbHGmfynMdE2StlcqRgaMeJQ1inpvKT_HqDUxfy6wt_Skf6toVNR8TRV3e7gLAr925kr6gJUCQ17vegB4-5OymK2AxFXKZ5Bd9RSu6vsfree5y47wQD8TWKW9GIOyz5eSYZualJXW5c-W0Da6v717O6nWLxzwgRWTKWCV5pnU2iPLFHg1r3-46dLhLBZ8TTvtcTjf_T04zh6NXLViZEpcxN65Dzy4Ivfsdg9MB0_0jRiLVvqZSOQeTEubb-_wJkBvPKxrYSSeHwIcmnH5T1R43vKTJ4/https://www.amazon.in/stores/page/57954A1D-0433-484F-BB8E-93B93F04CC9A/?_encoding=UTF8&store_ref=SB_A0575146JKF9EW1HFDOY-A00182252Q9BHKQV2C34F&pd_rd_plhdr=t&aaxitk=4773367dbae5763487166490445c0b71&hsa_cr_id=1766684600502&lp_asins=9351198766%2C9350040093%2C9351194175&lp_query=XIAOMI%20Redmi%20phone&lp_slot=desktop-hsa-3psl&aref=G3sEkW9bE3&ref_=sbx_be_s_3psl_mbd_mb1_hl&pd_rd_w=1WjEy&content-id=amzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391%3Aamzn1.sym.302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_p=302b41b4-ce85-4496-a41e-0894a8c89391&pf_rd_r=7TC3A4S5ZK5XHZ0VS49E&pd_rd_wg=sTV2Y&pd_rd_r=791152c8-4e1b-457a-aa0d-eaa8e218c75d
+                            - generic [ref=e2268]:
+                              - generic [ref=e2269]: Easy to Understand J2EE Books
+                              - generic [ref=e2270]: Easy to Understand J2EE Books
+          - generic [ref=e2276]:
+            - heading "Need help?" [level=2] [ref=e2279]
+            - generic [ref=e2280]:
+              - link "Visit the help section" [ref=e2281] [cursor=pointer]:
+                - /url: /gp/help/customer/display.html?nodeId=201889520
+              - text: or
+              - link "contact us" [ref=e2282] [cursor=pointer]:
+                - /url: /gp/help/customer/contact-us
+          - generic [ref=e2285]:
+            - iframe [ref=e2286]:
+              - generic [ref=f3e4]:
+                - generic [ref=f3e5]: Click to navigate to product detail page Sponsored Ad. Product image. Branded image. Layers Anarc Smart Watch–1.85” AMOLED Octagonal Display I Stainless Steel–Designed in London I HiSilicon Processor I 6-axis Motion Sensor I Precise Heart Rate & SpO2 Monitoring I IP68 Water Resistant. 4799.
+                - generic [ref=f3e8]:
+                  - img "Brand logo" [ref=f3e13]
+                  - img "Product image" [ref=f3e18]
+                - link "Click to navigate to product detail page" [ref=f3e22] [cursor=pointer]:
+                  - /url: https://aax-eu-zaz.amazon.in/x/c/ROopNOFjiVbeV2k04IqDdxYAAAGd5__MUwoAAAH_AQBvbm9fdHhuX2JpZDEgICBvbm9fdHhuX2ltcDEgICAstxXa/clv1c_ek-4wvHXLcTWDVVPFJUjfiiJo0ayK5AVdO0wD_4216YJF8yIm30IgulT3GHVpi-wyLYPmqsJtd3r_xNqUJuEYkIONFd72SJu2x0tzpYj8QrzkxGxJup0iugmZuJhmn4l_x6NbkXQ_M1wPl2pMvqxtB34pNbYhpXpn4D19Tv7nAQMugjYqqQDy4smvnzW9qXVI_a5dQBS_SNuh9kqe2N-dWCjEUunRob21qnIKbqb1nLjVyWjOPsA0gRtrrpF0De4C9cZ2TLrE2aSTYz6hRzmyAJDnEcb5itT5KFv4jmievwu76dPS7dE3iNKNPu1IFR73lYkx7fWa_PMTbUAwGll6UB_6cixjWFwOg77moKxQ55i8l2NUteMh_09kZnQGy1Cl_8GgCmdyLokgm1V5lGtoRX_NmPh4VnKSZVkoZHyBKCAAwN327-EGcZXkOQNZAwe34HhBWwIUGvtFVv4fTn6z-FFOaV7UBoNCKXUjmamAj3JbiWovEJHqMFY48S7oT3TSCi1fOf2pt2STYnwlo0QAtYNe-A93SSi8Y3sqTulU5qh7y7mQOXXHNB9QbhxFYw5bJIFDAzcaGMkgnO_8rehWYqqCz98iFl7GgxNsjifMVntze-C4LdZyyG-FWHib2xcZ1tarQAUaHGVO_uSKE9GFA3TTV54uRP4i0-s7NmCwTvyLgdsE0FHRe8_AZL_jWCvM9hdRMvXC3AEae3RDOLOlhxmI5jbdJKJO1Qw856YJXQfnM_PpqYOjSM8onw1sxQeruOHI9zi3Zytlu2RSgD82EUKxZ6-c6lnSmJ91gGphWaQf3QkcQJWLxEcDID4rA4XUtG9ngGgZ6hGIp4zOvlEH3_jXqAbrL69nQ7FskZA7mAWcwmozF2VjGHGwbfB30-e3VsbUaWZ9evrKfqLPx39crfU43mfa4nc2RHnHpNJp74FFZQ7OkMKK2hAc95dh35qDYBx6gFvPAJr3yoWOIgKbZPCZVhSEBrjB2g4nLyq_i1XIJ5INP5N_jlnbsIDx8WvZxSS9oOdE9P-zFih-WUb_lTDE3gbODmdZZS9ygNrqH8gYAUElIwR4yYn6LL5vYWXBE-wxSsZba2hpOnuCdELKXv75YkEm9JBoAdBVQRIuBg2JzFUkouZ_G5cY4wCV8h8qeyuARCnwJ9BSw/http://www.amazon.in/dp/B0DVC8QQ3X/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=MMSHANeGPM
+            - button "Leave feedback on Sponsored advertisement" [ref=e2288] [cursor=pointer]:
+              - generic [ref=e2289]: Sponsored
+        - link "Go back to filtering menu" [ref=e2291] [cursor=pointer]:
+          - /url: "#s-skipLinkTargetForFilterOptions"
+      - dialog "Filters" [ref=e2292]:
+        - generic [ref=e2293]:
+          - link "Skip to main search results" [ref=e2294] [cursor=pointer]:
+            - /url: "#s-skipLinkTargetForMainSearchResults"
+          - generic [ref=e2296]:
+            - generic [ref=e2300]:
+              - group "Delivery Day" [ref=e2301]:
+                - heading "Delivery Day" [level=2] [ref=e2302]
+                - list "Delivery Day" [ref=e2303]:
+                  - listitem [ref=e2304]:
+                    - link "Apply the filter Get It in 2 Days to narrow results" [ref=e2306] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_90%3A20912642031&dc&qid=1777713793&rnid=6741116031&ref=sr_nr_p_90_1&ds=v1%3AbvikT%2FI%2Fh3Wd2GHmvkjGG8l9mb45qM%2BkFmOTvyefdwo
+                      - checkbox [ref=e2309]
+                      - text: Get It in 2 Days
+                - heading "Eligible for Free Delivery" [level=2] [ref=e2311]
+                - list "Eligible for Free Delivery" [ref=e2312]:
+                  - listitem [ref=e2313]:
+                    - link "Apply the filter Free Shipping to narrow results" [ref=e2315] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_free_shipping_eligible%3A205563695031&dc&qid=1777713793&rnid=205563694031&ref=sr_nr_p_n_free_shipping_eligible_1&ds=v1%3A6bQClZw1tJEwe2oIUkJV2ciKKbWRyuwkcO7jExk%2BZVA
+                      - checkbox [ref=e2318]
+                      - text: Free Shipping
+                      - generic [ref=e2320]: Get FREE Shipping on eligible orders shipped by Amazon
+              - group [ref=e2321]:
+                - generic [ref=e2322]:
+                  - generic [ref=e2323]: Price
+                  - generic [ref=e2326]:
+                    - generic [ref=e2327]:
+                      - generic [ref=e2328]: ₹98
+                      - generic [ref=e2329]: –
+                      - generic [ref=e2330]: ₹27,200+
+                    - generic [ref=e2332]:
+                      - generic:
+                        - slider "Minimum price": "0"
+                      - generic [ref=e2333]:
+                        - slider "Maximum price": "184"
+                - list [ref=e2334]:
+                  - listitem [ref=e2335]:
+                    - link "Up to ₹150" [ref=e2337] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_36%3A-15000&dc&qid=1777713793&rnid=1318502031&ref=sr_nr_p_36_1&ds=v1%3ASUo2NcQCWz0cN6sdeKIvOvHUxbOBe96bwW%2BM%2BDHztIs
+                  - listitem [ref=e2338]:
+                    - link "₹150 - ₹200" [ref=e2340] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_36%3A15000-20000&dc&qid=1777713793&rnid=1318502031&ref=sr_nr_p_36_2&ds=v1%3ADRlcl7xS7MF%2B2TeymZesCZlrkpJGD6JN7gitCDChxEw
+                  - listitem [ref=e2341]:
+                    - link "₹200 - ₹700" [ref=e2343] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_36%3A20000-70000&dc&qid=1777713793&rnid=1318502031&ref=sr_nr_p_36_3&ds=v1%3AP%2BYMMOq43tMJ%2FcpXXeqovIMalM1G73m%2FX1RUIsvqP2A
+                  - listitem [ref=e2344]:
+                    - link "₹700 - ₹11,500" [ref=e2346] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_36%3A70000-1150000&dc&qid=1777713793&rnid=1318502031&ref=sr_nr_p_36_4&ds=v1%3AMDKSwE54kxlBx84vGoKPbjwd0IZ%2B6qzz8wclcSvjusI
+                  - listitem [ref=e2347]:
+                    - link "Over ₹11,500" [ref=e2349] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_36%3A1150000-&dc&qid=1777713793&rnid=1318502031&ref=sr_nr_p_36_5&ds=v1%3AdTaM%2Ftod5u5jvBePdLehsrMK4UvPUBMXyPj9Jal%2FMgk
+                - heading "Deals & Discounts" [level=2] [ref=e2350]
+                - list "Deals & Discounts" [ref=e2351]:
+                  - listitem [ref=e2352]:
+                    - link "All Discounts" [ref=e2354] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_deal_type%3A26921226031&dc&qid=1777713793&rnid=26921223031&ref=sr_nr_p_n_deal_type_1&ds=v1%3ADJiOp4t2lz3XyctmE%2B5Zfh0Nd%2Byyco%2Flbb%2Fg1k2FPUg
+                  - listitem [ref=e2355]:
+                    - link "Buy More, Save More" [ref=e2357] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_deal_type%3A210770213031&dc&qid=1777713793&rnid=26921223031&ref=sr_nr_p_n_deal_type_2&ds=v1%3A%2BYtW6wYIVU7P6ibqynyB28D%2FTppMRLVAxURqem36oS4
+                  - listitem [ref=e2358]:
+                    - link "Coupons" [ref=e2360] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_deal_type%3A210770212031&dc&qid=1777713793&rnid=26921223031&ref=sr_nr_p_n_deal_type_3&ds=v1%3AHcdz6BTiCL3xPoaygjHPk6siM0UDHDkq2Ge46Kwrieg
+                  - listitem [ref=e2361]:
+                    - link "Today's Deals" [ref=e2363] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_deal_type%3A26921224031&dc&qid=1777713793&rnid=26921223031&ref=sr_nr_p_n_deal_type_4&ds=v1%3ASqq8FHSL9Yjxr%2FRZZQ%2FyyIMa6WPWGrmitImth%2F2MG48
+              - group "Brands" [ref=e2364]:
+                - heading "Brands" [level=2] [ref=e2365]
+                - list "Brands" [ref=e2366]:
+                  - listitem [ref=e2367]:
+                    - link "Apply the filter Redmi to narrow results" [ref=e2369] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_123%3A339703&dc&qid=1777713793&rnid=91049095031&ref=sr_nr_p_123_1&ds=v1%3AW7%2F77J7Bhz5vQUOcL1KLbzJEOHzEL9mNDga17egkrY8
+                      - checkbox [ref=e2372]
+                      - text: Redmi
+                  - listitem [ref=e2374]:
+                    - link "Apply the filter POCO to narrow results" [ref=e2376] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_123%3A499290&dc&qid=1777713793&rnid=91049095031&ref=sr_nr_p_123_2&ds=v1%3AB%2BH2ZGLYLq8w9fO%2FkHGgaiD4aizVZP%2BU9hAHkBtxEQ0
+                      - checkbox [ref=e2379]
+                      - text: POCO
+              - group "Customer Reviews" [ref=e2381]:
+                - heading "Customer Reviews" [level=2] [ref=e2382]
+                - list "Customer Reviews" [ref=e2383]:
+                  - listitem [ref=e2384]:
+                    - link "Apply the filter 4 Stars & Up to narrow results" [ref=e2387] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_72%3A1318476031&dc&qid=1777713793&rnid=1318475031&ref=sr_nr_p_72_1&ds=v1%3AabWoJyoWZwwxMQVDUzxCU7XPYRhZz5lLtEbIZw5cAIg
+                      - generic [ref=e2389]: 4 Stars
+                      - text: "& Up"
+              - group "Storage Capacity" [ref=e2390]:
+                - heading "Storage Capacity" [level=2] [ref=e2391]
+                - list "Storage Capacity" [ref=e2392]:
+                  - listitem [ref=e2393]:
+                    - link "Apply the filter 64 GB to narrow results" [ref=e2395] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003492455111%3A81332998031&dc&qid=1777713793&rnid=44349045031&ref=sr_nr_p_n_g-1003492455111_1&ds=v1%3A2mhrbC2YWmMEnqyHohBvE4aEEa49fi1dexMQYXAhXwM
+                      - checkbox [ref=e2398]
+                      - text: 64 GB
+                  - listitem [ref=e2400]:
+                    - link "Apply the filter 128 GB to narrow results" [ref=e2402] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003492455111%3A81332994031&dc&qid=1777713793&rnid=44349045031&ref=sr_nr_p_n_g-1003492455111_2&ds=v1%3AvcWBt3G6N9dYAjmxRSIj55vJ%2BRnHPSyhiBzcHMTrGZ8
+                      - checkbox [ref=e2405]
+                      - text: 128 GB
+                  - listitem [ref=e2407]:
+                    - link "Apply the filter 256 GB to narrow results" [ref=e2409] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003492455111%3A81332996031&dc&qid=1777713793&rnid=44349045031&ref=sr_nr_p_n_g-1003492455111_3&ds=v1%3AHhglBP%2BpR1hzs51cTz40ge5P5NWrmZ%2Fb0k%2BegT747hc
+                      - checkbox [ref=e2412]
+                      - text: 256 GB
+              - group "RAM Size" [ref=e2414]:
+                - heading "RAM Size" [level=2] [ref=e2415]
+                - list "RAM Size" [ref=e2416]:
+                  - listitem [ref=e2417]:
+                    - link "Apply the filter 4 to 5.9 GB to narrow results" [ref=e2419] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003495121111%3A44897296031&dc&qid=1777713793&rnid=44897277031&ref=sr_nr_p_n_g-1003495121111_1&ds=v1%3AZCH9Buk1%2BCXZMYbytiXxeS1uhG8%2FJ3EVqcimmcFRuf4
+                      - checkbox [ref=e2422]
+                      - text: 4 to 5.9 GB
+                  - listitem [ref=e2424]:
+                    - link "Apply the filter 6 to 7.9 GB to narrow results" [ref=e2426] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003495121111%3A44897287031&dc&qid=1777713793&rnid=44897277031&ref=sr_nr_p_n_g-1003495121111_2&ds=v1%3AQIvWTH%2FENAU4HRP0s11BSj%2F46v25rcrn8s%2FyGfUb%2Fps
+                      - checkbox [ref=e2429]
+                      - text: 6 to 7.9 GB
+                  - listitem [ref=e2431]:
+                    - link "Apply the filter 8 to 9.9 GB to narrow results" [ref=e2433] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003495121111%3A44897288031&dc&qid=1777713793&rnid=44897277031&ref=sr_nr_p_n_g-1003495121111_3&ds=v1%3A5rJquIknza6bwvEz6sjZL6xVRR%2BMpf8tlx0751OSvKs
+                      - checkbox [ref=e2436]
+                      - text: 8 to 9.9 GB
+              - group "Cellular Technology" [ref=e2438]:
+                - heading "Cellular Technology" [level=2] [ref=e2439]
+                - list "Cellular Technology" [ref=e2440]:
+                  - listitem [ref=e2441]:
+                    - link "Apply the filter 4G to narrow results" [ref=e2443] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003469290111%3A33962379031&dc&qid=1777713793&rnid=33962288031&ref=sr_nr_p_n_g-1003469290111_1&ds=v1%3AYgqkbXX6iylf6WA0wlA%2BhOyYJ7klBXuPctiPU%2BI%2Fr1A
+                      - checkbox [ref=e2446]
+                      - text: 4G
+                  - listitem [ref=e2448]:
+                    - link "Apply the filter 5G to narrow results" [ref=e2450] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003469290111%3A33962382031&dc&qid=1777713793&rnid=33962288031&ref=sr_nr_p_n_g-1003469290111_2&ds=v1%3A18kYj%2FpKMljpRs49AhT6P%2BJ0jxoO94uQuUmJaJQjtzM
+                      - checkbox [ref=e2453]
+                      - text: 5G
+              - group "Battery Capacity" [ref=e2455]:
+                - heading "Battery Capacity" [level=2] [ref=e2456]
+                - list "Battery Capacity" [ref=e2457]:
+                  - listitem [ref=e2458]:
+                    - link "Apply the filter 5,000 to 5,999 mAh to narrow results" [ref=e2460] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015098008111%3A91805326031&dc&qid=1777713793&rnid=91805324031&ref=sr_nr_p_n_g-101015098008111_1&ds=v1%3AnTFDbGnM1RaI1nOVskmRi3gA6CHI2YskdfGT5yf%2FhD8
+                      - checkbox [ref=e2463]
+                      - text: 5,000 to 5,999 mAh
+                  - listitem [ref=e2465]:
+                    - link "Apply the filter 6,000 mAh & Above to narrow results" [ref=e2467] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015098008111%3A92071917031&dc&qid=1777713793&rnid=91805324031&ref=sr_nr_p_n_g-101015098008111_2&ds=v1%3ABRt7Mq5wp95JDQcW55SrxH7%2F%2Feh%2Bi1cr2TGvDSV3w1U
+                      - checkbox [ref=e2470]
+                      - text: 6,000 mAh & Above
+              - group "Item Condition" [ref=e2472]:
+                - heading "Item Condition" [level=2] [ref=e2473]
+                - list "Item Condition" [ref=e2474]:
+                  - listitem [ref=e2475]:
+                    - link "Apply the filter New to narrow results" [ref=e2477] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_condition-type%3A8609960031&dc&qid=1777713793&rnid=8609959031&ref=sr_nr_p_n_condition-type_1&ds=v1%3Ab1KQwfqRUz2GHiw1Tbmykzl5Y2Ssftu82eG4uQx0hM4
+                      - checkbox [ref=e2480]
+                      - text: New
+              - group "Display Type" [ref=e2482]:
+                - heading "Display Type" [level=2] [ref=e2483]
+                - list "Display Type" [ref=e2484]:
+                  - listitem [ref=e2485]:
+                    - link "Apply the filter AMOLED to narrow results" [ref=e2487] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101013595158111%3A66009619031&dc&qid=1777713793&rnid=66009617031&ref=sr_nr_p_n_g-101013595158111_1&ds=v1%3AR1KC3BtghRDaD6s%2FiCE1lqotL5OOO6ATy3RU3GNWvXY
+                      - checkbox [ref=e2490]
+                      - text: AMOLED
+                  - listitem [ref=e2492]:
+                    - link "Apply the filter LCD to narrow results" [ref=e2494] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101013595158111%3A66009618031&dc&qid=1777713793&rnid=66009617031&ref=sr_nr_p_n_g-101013595158111_2&ds=v1%3A91mAVGRItBJ5f3smSCZo%2BdSIIc3Bwqa2A0FS8cUw5B0
+                      - checkbox [ref=e2497]
+                      - text: LCD
+              - group "Processor Speed" [ref=e2499]:
+                - heading "Processor Speed" [level=2] [ref=e2500]
+                - list "Processor Speed" [ref=e2501]:
+                  - listitem [ref=e2502]:
+                    - link "Apply the filter 2 - 2.4 GHz to narrow results" [ref=e2504] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_feature_nine_browse-bin%3A8561126031&dc&qid=1777713793&rnid=8561123031&ref=sr_nr_p_n_feature_nine_browse-bin_1&ds=v1%3AT9lnS9slQtcrCDYOdfeY0EGWRWEnXTBgI3fYc4ZbIw8
+                      - checkbox [ref=e2507]
+                      - text: 2 - 2.4 GHz
+                  - listitem [ref=e2509]:
+                    - link "Apply the filter 2.5 GHz & Above to narrow results" [ref=e2511] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_feature_nine_browse-bin%3A8561127031&dc&qid=1777713793&rnid=8561123031&ref=sr_nr_p_n_feature_nine_browse-bin_2&ds=v1%3AlijyccSVvfHWwRI1aYHKo0V27OF5fHN8UBi53Te9REo
+                      - checkbox [ref=e2514]
+                      - text: 2.5 GHz & Above
+              - group "Discount" [ref=e2516]:
+                - heading "Discount" [level=2] [ref=e2517]
+                - list "Discount" [ref=e2518]:
+                  - listitem [ref=e2519]:
+                    - link "10% Off or more" [ref=e2521] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_pct-off-with-tax%3A2665399031&dc&qid=1777713793&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_1&ds=v1%3AnaBKTvSDts1M23tod%2BeHS%2B040n%2B40RFUeBNeNgSsabc
+                  - listitem [ref=e2522]:
+                    - link "25% Off or more" [ref=e2524] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_pct-off-with-tax%3A2665400031&dc&qid=1777713793&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_2&ds=v1%3Aq6bQXa3JeC1wFk8lgfSYf9U1bHcMv%2BvzNX13IGKVlEk
+                  - listitem [ref=e2525]:
+                    - link "35% Off or more" [ref=e2527] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_pct-off-with-tax%3A2665402031&dc&qid=1777713793&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_3&ds=v1%3ATNEgMRTEEuUO1QELq%2Bkwf%2BtgcAFCXbgrnnB8lh0vqIM
+                  - listitem [ref=e2528]:
+                    - link "50% Off or more" [ref=e2530] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_pct-off-with-tax%3A2665401031&dc&qid=1777713793&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_4&ds=v1%3AdaiqW%2B7bMWMAe0BBpNNZeY6E7jP67GfffqpnHkSSaok
+                  - listitem [ref=e2531]:
+                    - link "60% Off or more" [ref=e2533] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_pct-off-with-tax%3A27060456031&dc&qid=1777713793&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_5&ds=v1%3A64AT6QF9s0zt4PqOKWDCHbK733%2BwZ6tHFsFpZg0NrBM
+                  - listitem [ref=e2534]:
+                    - link "70% Off or more" [ref=e2536] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_pct-off-with-tax%3A27060457031&dc&qid=1777713793&rnid=2665398031&ref=sr_nr_p_n_pct-off-with-tax_6&ds=v1%3AtQMNR2yNroYIg6gBq3pS04RShnVjthwDLstiSzV4zHA
+              - group "Screen Size" [ref=e2537]:
+                - heading "Screen Size" [level=2] [ref=e2538]
+                - list "Screen Size" [ref=e2539]:
+                  - listitem [ref=e2540]:
+                    - link "Apply the filter 15 to 17.9 cm to narrow results" [ref=e2542] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_feature_browse-bin%3A212266964031&dc&qid=1777713793&rnid=212266959031&ref=sr_nr_p_n_feature_browse-bin_1&ds=v1%3AIxbKrXwgcVP9RXOUhHFoBU0QPrXQB8DtFP28EmmrwPY
+                      - checkbox [ref=e2545]
+                      - text: 15 to 17.9 cm
+              - group "Mobile Phone Primary Camera Resolution" [ref=e2547]:
+                - heading "Mobile Phone Primary Camera Resolution" [level=2] [ref=e2548]
+                - list "Mobile Phone Primary Camera Resolution" [ref=e2549]:
+                  - listitem [ref=e2550]:
+                    - link "Apply the filter 32 MP & Above to narrow results" [ref=e2552] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_feature_fourteen_browse-bin%3A21329559031&dc&qid=1777713793&rnid=21345983031&ref=sr_nr_p_n_feature_fourteen_browse-bin_1&ds=v1%3A3qEKDHV%2Fwg98fbEZAfimZkivypk7VLpu%2Fe2lWv8PoWM
+                      - checkbox [ref=e2555]
+                      - text: 32 MP & Above
+              - group "Camera Resolution" [ref=e2557]:
+                - heading "Camera Resolution" [level=2] [ref=e2558]
+                - list "Camera Resolution" [ref=e2559]:
+                  - listitem [ref=e2560]:
+                    - link "Apply the filter 20 MP & above to narrow results" [ref=e2562] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1004151207091%3A1898707031&dc&qid=1777713793&rnid=1898694031&ref=sr_nr_p_n_g-1004151207091_1&ds=v1%3AZ19R80oaL%2Fe0I9BuNhKurn6NrcB5lo8qYNEWtGUW%2B34
+                      - checkbox [ref=e2565]
+                      - text: 20 MP & above
+              - group "Operating System" [ref=e2567]:
+                - heading "Operating System" [level=2] [ref=e2568]
+                - list "Operating System" [ref=e2569]:
+                  - listitem [ref=e2570]:
+                    - link "Apply the filter Android 14 to narrow results" [ref=e2572] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003517064111%3A206818075031&dc&qid=1777713793&rnid=51258619031&ref=sr_nr_p_n_g-1003517064111_1&ds=v1%3AJaYJM07xyLanyhGhHFHnQJY557GCwhW9yFzGw5jnznw
+                      - checkbox [ref=e2575]
+                      - text: Android 14
+              - group "Cell Phone Brands" [ref=e2577]:
+                - heading "Cell Phone Brands" [level=2] [ref=e2578]
+                - list "Cell Phone Brands" [ref=e2579]:
+                  - listitem [ref=e2580]:
+                    - link "Apply the filter Top Brands to narrow results" [ref=e2582] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_format_browse-bin%3A30678580031&dc&qid=1777713793&rnid=30678573031&ref=sr_nr_p_n_format_browse-bin_1&ds=v1%3A%2Bq0SkL74lt9f2jCb1NUmPtjBW5hUfLWn0UHk0F8uvuk
+                      - checkbox [ref=e2585]
+                      - text: Top Brands
+              - group "SIM Card Slot Count" [ref=e2587]:
+                - heading "SIM Card Slot Count" [level=2] [ref=e2588]
+                - list "SIM Card Slot Count" [ref=e2589]:
+                  - listitem [ref=e2590]:
+                    - link "Apply the filter Dual SIM to narrow results" [ref=e2592] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1002989427111%3A27179459031&dc&qid=1777713793&rnid=27179439031&ref=sr_nr_p_n_g-1002989427111_1&ds=v1%3ABsKU5CcKlLvBjSajcSXzUkVXJl%2BFfRhMbsmsn50amHs
+                      - checkbox [ref=e2595]
+                      - text: Dual SIM
+              - group "Connector Type" [ref=e2597]:
+                - heading "Connector Type" [level=2] [ref=e2598]
+                - list "Connector Type" [ref=e2599]:
+                  - listitem [ref=e2600]:
+                    - link "Apply the filter USB Type C to narrow results" [ref=e2602] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1002085485111%3A27403491031&dc&qid=1777713793&rnid=27403487031&ref=sr_nr_p_n_g-1002085485111_1&ds=v1%3AfneJRIw8q7zPqeHLx8BA0eRcSRxMd0jVClgvbiuUb0E
+                      - checkbox [ref=e2605]
+                      - text: USB Type C
+              - group "New Arrivals" [ref=e2607]:
+                - heading "New Arrivals" [level=2] [ref=e2608]
+                - list "New Arrivals" [ref=e2609]:
+                  - listitem [ref=e2610]:
+                    - link "Last 30 days" [ref=e2612] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_date_first_available_absolute%3A1318487031&dc&qid=1777713793&rnid=1318486031&ref=sr_nr_p_n_date_first_available_absolute_1&ds=v1%3A70GvduH8poMGq6TMwA75O7KUEli6RFyRueLs1LI1%2BI8
+                  - listitem [ref=e2613]:
+                    - link "Last 90 days" [ref=e2615] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_date_first_available_absolute%3A1318488031&dc&qid=1777713793&rnid=1318486031&ref=sr_nr_p_n_date_first_available_absolute_2&ds=v1%3APlJ7u4P24%2BwUq64SJ7QLl3gTsPKADpSaxrBEqTMZgtE
+              - group "Front Camera Resolution" [ref=e2616]:
+                - heading "Front Camera Resolution" [level=2] [ref=e2617]
+                - list "Front Camera Resolution" [ref=e2618]:
+                  - listitem [ref=e2619]:
+                    - link "Apply the filter 7.0 to 9.9 MP to narrow results" [ref=e2621] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003565058111%3A61505201031&dc&qid=1777713793&rnid=61505195031&ref=sr_nr_p_n_g-1003565058111_1&ds=v1%3AwWiqr1oL2WIRerUP7HIHOnYZX5jNqe8FWHpUlCePjxI
+                      - checkbox [ref=e2624]
+                      - text: 7.0 to 9.9 MP
+                  - listitem [ref=e2626]:
+                    - link "Apply the filter 13.0 MP & above to narrow results" [ref=e2628] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003565058111%3A61505197031&dc&qid=1777713793&rnid=61505195031&ref=sr_nr_p_n_g-1003565058111_2&ds=v1%3AGQ8eEQGH7TU4VtmXgnIJHsS3Qzp75X%2BouxcjpDAwmwA
+                      - checkbox [ref=e2631]
+                      - text: 13.0 MP & above
+              - group "Pay On Delivery" [ref=e2633]:
+                - heading "Pay On Delivery" [level=2] [ref=e2634]
+                - list "Pay On Delivery" [ref=e2635]:
+                  - listitem [ref=e2636]:
+                    - link "Apply the filter Eligible for Pay On Delivery to narrow results" [ref=e2638] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_is_cod_eligible%3A4931671031&dc&qid=1777713793&rnid=4931670031&ref=sr_nr_p_n_is_cod_eligible_1&ds=v1%3AjeR8HMJ3ohe2rr8U5MCBd13TZ9hjc8fPH1SLITiqRYw
+                      - checkbox [ref=e2641]
+                      - text: Eligible for Pay On Delivery
+              - group "Colour" [ref=e2643]:
+                - heading "Colour" [level=2] [ref=e2644]
+                - list "Colour" [ref=e2645]:
+                  - listitem [ref=e2646]:
+                    - generic:
+                      - link "Apply the filter Transparent to narrow results":
+                        - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_size_two_browse-vebin%3A15564012031&dc&qid=1777713793&rnid=15563994031&ref=sr_nr_p_n_size_two_browse-vebin_1&ds=v1%3AoqLVnX3Ld1KoEgXbpX9hpNeCNBgLP3y2uZBdOTUkDAI
+                  - listitem [ref=e2648]:
+                    - generic:
+                      - link "Apply the filter Black to narrow results":
+                        - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_size_two_browse-vebin%3A15563995031&dc&qid=1777713793&rnid=15563994031&ref=sr_nr_p_n_size_two_browse-vebin_2&ds=v1%3ACB89Q5ONhrjq7iuFSJ0tu3Mv2zEt1NGnO9ps6l4IeQk
+                  - listitem [ref=e2650]:
+                    - generic:
+                      - link "Apply the filter Blue to narrow results":
+                        - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_size_two_browse-vebin%3A15564007031&dc&qid=1777713793&rnid=15563994031&ref=sr_nr_p_n_size_two_browse-vebin_3&ds=v1%3Av6IV3XkjTJoy8Y%2FhmqJc4hIpCue5RtYwkcEcK%2FFl2WM
+                  - listitem [ref=e2652]:
+                    - generic:
+                      - link "Apply the filter Green to narrow results":
+                        - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_size_two_browse-vebin%3A15564005031&dc&qid=1777713793&rnid=15563994031&ref=sr_nr_p_n_size_two_browse-vebin_4&ds=v1%3Ay5TwntXs4%2FmoX9guOSN60D6rK3aQRO%2BVbb3HzgEwPlw
+                  - listitem [ref=e2654]:
+                    - generic:
+                      - link "Apply the filter Purple to narrow results":
+                        - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_size_two_browse-vebin%3A15564008031&dc&qid=1777713793&rnid=15563994031&ref=sr_nr_p_n_size_two_browse-vebin_5&ds=v1%3APJU7AaEMlPZ0vGEo3aEUdzVXU3Mrw7AIwn3Ul4WJPXk
+              - group "Battery Life" [ref=e2656]:
+                - heading "Battery Life" [level=2] [ref=e2657]
+                - list "Battery Life" [ref=e2658]:
+                  - listitem [ref=e2659]:
+                    - link "Apply the filter 7 to 12.9 h to narrow results" [ref=e2661] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003486052111%3A42062131031&dc&qid=1777713793&rnid=42062008031&ref=sr_nr_p_n_g-1003486052111_1&ds=v1%3A7PPHnkCJR%2FKwnvhmHWujrYsq5BHPweJd%2FUGm8FQTJH8
+                      - checkbox [ref=e2664]
+                      - text: 7 to 12.9 h
+              - group "Security Feature" [ref=e2666]:
+                - heading "Security Feature" [level=2] [ref=e2667]
+                - list "Security Feature" [ref=e2668]:
+                  - listitem [ref=e2669]:
+                    - link "Apply the filter Fingerprint Recognition to narrow results" [ref=e2671] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1002085472111%3A27355812031&dc&qid=1777713793&rnid=27355796031&ref=sr_nr_p_n_g-1002085472111_1&ds=v1%3AYsmo%2F5WCeZIaa9Ab39FrqDaw3mC1n09E1GvrOlg6CXY
+                      - checkbox [ref=e2674]
+                      - text: Fingerprint Recognition
+                  - listitem [ref=e2676]:
+                    - link "Apply the filter Face Recognition to narrow results" [ref=e2678] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1002085472111%3A27355807031&dc&qid=1777713793&rnid=27355796031&ref=sr_nr_p_n_g-1002085472111_2&ds=v1%3AgwWmhQCPYvpPHF5wPeKt%2F63rcasYO5Wp%2BbZJF%2BSqzJE
+                      - checkbox [ref=e2681]
+                      - text: Face Recognition
+              - group "Rear Camera Photo Sensor Resolution" [ref=e2683]:
+                - heading "Rear Camera Photo Sensor Resolution" [level=2] [ref=e2684]
+                - list "Rear Camera Photo Sensor Resolution" [ref=e2685]:
+                  - listitem [ref=e2686]:
+                    - link "Apply the filter 16 MP & Above to narrow results" [ref=e2688] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003477899111%3A42253778031&dc&qid=1777713793&rnid=42253749031&ref=sr_nr_p_n_g-1003477899111_1&ds=v1%3A81svdm6DrtIi70PoHMmSsZfTPdO8HWNDmD5WyAuQpaE
+                      - checkbox [ref=e2691]
+                      - text: 16 MP & Above
+              - group "Input" [ref=e2693]:
+                - heading "Input" [level=2] [ref=e2694]
+                - list "Input" [ref=e2695]:
+                  - listitem [ref=e2696]:
+                    - link "Apply the filter Touchscreen to narrow results" [ref=e2698] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1002097072111%3A27362061031&dc&qid=1777713793&rnid=27362059031&ref=sr_nr_p_n_g-1002097072111_1&ds=v1%3A%2FTKiXAA8%2FNbREcujpYmiAkKDJg88bz8iCLClo9A%2Fq54
+                      - checkbox [ref=e2701]
+                      - text: Touchscreen
+              - group "Video Capture Resolution" [ref=e2703]:
+                - heading "Video Capture Resolution" [level=2] [ref=e2704]
+                - list "Video Capture Resolution" [ref=e2705]:
+                  - listitem [ref=e2706]:
+                    - link "Apply the filter 1080p to narrow results" [ref=e2708] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003305462111%3A28430295031&dc&qid=1777713793&rnid=28430291031&ref=sr_nr_p_n_g-1003305462111_1&ds=v1%3A7s7ZRPJr26RzOrYmUSQtodzrDja3W2hP%2BQMCrnjNu4k
+                      - checkbox [ref=e2711]
+                      - text: 1080p
+                  - listitem [ref=e2713]:
+                    - link "Apply the filter 720p to narrow results" [ref=e2715] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003305462111%3A28430293031&dc&qid=1777713793&rnid=28430291031&ref=sr_nr_p_n_g-1003305462111_2&ds=v1%3AnmzSleuqcWjIuV%2FxGz72jVQ4%2BbFN1IE%2FtlanBFvlv00
+                      - checkbox [ref=e2718]
+                      - text: 720p
+              - group "Connectivity" [ref=e2720]:
+                - heading "Connectivity" [level=2] [ref=e2721]
+                - list "Connectivity" [ref=e2722]:
+                  - listitem [ref=e2723]:
+                    - link "Apply the filter Bluetooth to narrow results" [ref=e2725] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1002112230111%3A27363277031&dc&qid=1777713793&rnid=27363274031&ref=sr_nr_p_n_g-1002112230111_1&ds=v1%3AYTFgpc5LuaPivKKAdq7VzV94jkqrI6etPL3vvxh9J5o
+                      - checkbox [ref=e2728]
+                      - text: Bluetooth
+                  - listitem [ref=e2730]:
+                    - link "Apply the filter USB to narrow results" [ref=e2732] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1002112230111%3A27363276031&dc&qid=1777713793&rnid=27363274031&ref=sr_nr_p_n_g-1002112230111_2&ds=v1%3A7gdj4Jaz0ZDMPlwxsGkno5%2BIZtSxNSCQAvnSVmOQs3M
+                      - checkbox [ref=e2735]
+                      - text: USB
+                  - listitem [ref=e2737]:
+                    - link "Apply the filter Wi-Fi to narrow results" [ref=e2739] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1002112230111%3A27363278031&dc&qid=1777713793&rnid=27363274031&ref=sr_nr_p_n_g-1002112230111_3&ds=v1%3ATl7Zskjih6QSYfgSnsrTOgtwMSSoPLtjnf5mhzPAtmc
+                      - checkbox [ref=e2742]
+                      - text: Wi-Fi
+              - group "Weight" [ref=e2744]:
+                - heading "Weight" [level=2] [ref=e2745]
+                - list "Weight" [ref=e2746]:
+                  - listitem [ref=e2747]:
+                    - link "Apply the filter Up to 141.9 g to narrow results" [ref=e2749] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003491669111%3A42659590031&dc&qid=1777713793&rnid=42659587031&ref=sr_nr_p_n_g-1003491669111_1&ds=v1%3ANHfAOGYFOeW3YtTilXGuk5Fvt7DQIkdefhpzTwcb6vQ
+                      - checkbox [ref=e2752]
+                      - text: Up to 141.9 g
+                  - listitem [ref=e2754]:
+                    - link "Apply the filter 198 to 254.9 g to narrow results" [ref=e2756] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1003491669111%3A42659589031&dc&qid=1777713793&rnid=42659587031&ref=sr_nr_p_n_g-1003491669111_2&ds=v1%3Aul9xLNI5K6MS36a9iNnvOukbcKKA7TIJakYGTwOeJZs
+                      - checkbox [ref=e2759]
+                      - text: 198 to 254.9 g
+              - group "Availability" [ref=e2761]:
+                - heading "Availability" [level=2] [ref=e2762]
+                - list "Availability" [ref=e2763]:
+                  - listitem [ref=e2764]:
+                    - link "Apply the filter Include Out of Stock to narrow results" [ref=e2766] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_availability%3A1318485031&dc&qid=1777713793&rnid=1318483031&ref=sr_nr_p_n_availability_2&ds=v1%3AnzeSSDwIP5qqx%2F%2B9jCy1Cvg6bBLVVN6xvXwCI0UUeAg
+                      - checkbox [ref=e2769]
+                      - text: Include Out of Stock
+              - group "Display Refresh Rate in Hertz" [ref=e2771]:
+                - heading "Display Refresh Rate in Hertz" [level=2] [ref=e2772]
+                - list "Display Refresh Rate in Hertz" [ref=e2773]:
+                  - listitem [ref=e2774]:
+                    - link "Apply the filter 120 to narrow results" [ref=e2776] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101017397158111%3A214852071031&dc&qid=1777713793&rnid=214852064031&ref=sr_nr_p_n_g-101017397158111_1&ds=v1%3AcWyH4UB1Blxa4SP1gOp%2F36CH1ve%2BT%2BqqAgXmgMAG4Z0
+                      - checkbox [ref=e2779]
+                      - text: "120"
+              - group "Wireless Network Technology" [ref=e2781]:
+                - heading "Wireless Network Technology" [level=2] [ref=e2782]
+                - list "Wireless Network Technology" [ref=e2783]:
+                  - listitem [ref=e2784]:
+                    - link "Apply the filter LTE to narrow results" [ref=e2786] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015498571111%3A100436153031&dc&qid=1777713793&rnid=100436133031&ref=sr_nr_p_n_g-101015498571111_1&ds=v1%3ADuJmiXuT5WTbTCGC6Eaj7RcU1oGKSV9NrRqffjZwosc
+                      - checkbox [ref=e2789]
+                      - text: LTE
+                  - listitem [ref=e2791]:
+                    - link "Apply the filter GSM to narrow results" [ref=e2793] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015498571111%3A100436155031&dc&qid=1777713793&rnid=100436133031&ref=sr_nr_p_n_g-101015498571111_2&ds=v1%3AOsZuOi7nXeVKSxCAoae8f3Gr3F2fPL1IqfLUY1OEAFQ
+                      - checkbox [ref=e2796]
+                      - text: GSM
+                  - listitem [ref=e2798]:
+                    - link "Apply the filter Wi-Fi to narrow results" [ref=e2800] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015498571111%3A100436151031&dc&qid=1777713793&rnid=100436133031&ref=sr_nr_p_n_g-101015498571111_3&ds=v1%3AfKZ8H30dB1NTla6EbQhat85dZlMHeOf8ptMZz%2BDuqmQ
+                      - checkbox [ref=e2803]
+                      - text: Wi-Fi
+              - group "Supported Satellite Navigation System" [ref=e2805]:
+                - heading "Supported Satellite Navigation System" [level=2] [ref=e2806]
+                - list "Supported Satellite Navigation System" [ref=e2807]:
+                  - listitem [ref=e2808]:
+                    - link "Apply the filter GPS to narrow results" [ref=e2810] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015498432111%3A100424905031&dc&qid=1777713793&rnid=100424895031&ref=sr_nr_p_n_g-101015498432111_1&ds=v1%3A4lcIsa2Uqewy6hCyMTlhxKN1EC1Dvq2TAch%2BBSDWt6Q
+                      - checkbox [ref=e2813]
+                      - text: GPS
+                  - listitem [ref=e2815]:
+                    - link "Apply the filter GLONASS to narrow results" [ref=e2817] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015498432111%3A100424903031&dc&qid=1777713793&rnid=100424895031&ref=sr_nr_p_n_g-101015498432111_2&ds=v1%3AZFwKXUIZP%2FzwR5Ks2%2FKrORCpoJwpBiEGbu3crvQeUkg
+                      - checkbox [ref=e2820]
+                      - text: GLONASS
+                  - listitem [ref=e2822]:
+                    - link "Apply the filter Galileo to narrow results" [ref=e2824] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015498432111%3A100424904031&dc&qid=1777713793&rnid=100424895031&ref=sr_nr_p_n_g-101015498432111_3&ds=v1%3Aw5qwR13z1sIelacc89VW7JCqEHyNlau8soZcTfurOcA
+                      - checkbox [ref=e2827]
+                      - text: Galileo
+              - group "Sim Card Size" [ref=e2829]:
+                - heading "Sim Card Size" [level=2] [ref=e2830]
+                - list "Sim Card Size" [ref=e2831]:
+                  - listitem [ref=e2832]:
+                    - link "Apply the filter Nano to narrow results" [ref=e2834] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-1002989370111%3A27179455031&dc&qid=1777713793&rnid=27179438031&ref=sr_nr_p_n_g-1002989370111_1&ds=v1%3Ap9K4tisCXXTY34YbCLAMmI9LoaslCwKYPv9wfTyIWQw
+                      - checkbox [ref=e2837]
+                      - text: Nano
+              - group "GPS Navigation" [ref=e2839]:
+                - heading "GPS Navigation" [level=2] [ref=e2840]
+                - list "GPS Navigation" [ref=e2841]:
+                  - listitem [ref=e2842]:
+                    - link "Apply the filter True to narrow results" [ref=e2844] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015364874111%3A96329643031&dc&qid=1777713793&rnid=96329629031&ref=sr_nr_p_n_g-101015364874111_1&ds=v1%3AQKB%2BxkdWwqUL%2BCuzstkqCRy0DgHIbDf4SPXsHPimEFY
+                      - checkbox [ref=e2847]
+                      - text: "True"
+              - group "Purpose" [ref=e2849]:
+                - heading "Purpose" [level=2] [ref=e2850]
+                - list "Purpose" [ref=e2851]:
+                  - listitem [ref=e2852]:
+                    - link "Apply the filter Gaming to narrow results" [ref=e2854] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101016756045111%3A207854436031&dc&qid=1777713793&rnid=207854435031&ref=sr_nr_p_n_g-101016756045111_1&ds=v1%3A7u%2FLW46Ke2y4KBXm6gk%2FwYW6kVk6ctUX4EEAbKsh6WY
+                      - checkbox [ref=e2857]
+                      - text: Gaming
+                  - listitem [ref=e2859]:
+                    - link "Apply the filter Photography to narrow results" [ref=e2861] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101016756045111%3A207854437031&dc&qid=1777713793&rnid=207854435031&ref=sr_nr_p_n_g-101016756045111_2&ds=v1%3A%2B5jbyVyd0EVVy43Rx%2FR%2BWDBEGQVxDRuJo7fQDUvb13A
+                      - checkbox [ref=e2864]
+                      - text: Photography
+                  - listitem [ref=e2866]:
+                    - link "Apply the filter Streaming to narrow results" [ref=e2868] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101016756045111%3A207854438031&dc&qid=1777713793&rnid=207854435031&ref=sr_nr_p_n_g-101016756045111_3&ds=v1%3A5jvu4fPJj5yGgh7SFKYNsy1apj4C8%2FwNHsiPylnaB0w
+                      - checkbox [ref=e2871]
+                      - text: Streaming
+              - group "Battery Type" [ref=e2873]:
+                - heading "Battery Type" [level=2] [ref=e2874]
+                - list "Battery Type" [ref=e2875]:
+                  - listitem [ref=e2876]:
+                    - link "Apply the filter Lithium-Ion to narrow results" [ref=e2878] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101015500034111%3A100427319031&dc&qid=1777713793&rnid=100427310031&ref=sr_nr_p_n_g-101015500034111_1&ds=v1%3AO%2BwBDrVCAKcqDZhLzdM3BUqES2NbtjqVAkU666F176I
+                      - checkbox [ref=e2881]
+                      - text: Lithium-Ion
+              - group "Seller" [ref=e2883]:
+                - heading "Seller" [level=2] [ref=e2884]
+                - list "Seller" [ref=e2885]:
+                  - listitem [ref=e2886]:
+                    - link "Apply the filter SOLOMAN GADGETS MART to narrow results" [ref=e2888] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_6%3AA15KARM4QANRG3&dc&qid=1777713793&rnid=1318474031&ref=sr_nr_p_6_1&ds=v1%3Ay8xPiXiS0x2iVl55VgJDleJi7eio70Sfw8KNXKWZBIk
+                      - checkbox [ref=e2891]
+                      - text: SOLOMAN GADGETS MART
+                  - listitem [ref=e2893]:
+                    - link "Apply the filter AIMS International to narrow results" [ref=e2895] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_6%3AA2JEP7O2CQD4LK&dc&qid=1777713793&rnid=1318474031&ref=sr_nr_p_6_2&ds=v1%3AqGMid%2BllPZBcUV8pMOeS8Dm5jw8urRzEEF2U%2B9bX6GE
+                      - checkbox [ref=e2898]
+                      - text: AIMS International
+                  - listitem [ref=e2900]:
+                    - button "See more, Seller" [ref=e2903] [cursor=pointer]: See more
+              - group "Included Components" [ref=e2905]:
+                - heading "Included Components" [level=2] [ref=e2906]
+                - list "Included Components" [ref=e2907]:
+                  - listitem [ref=e2908]:
+                    - link "Apply the filter Screen Protector to narrow results" [ref=e2910] [cursor=pointer]:
+                      - /url: /s?k=XIAOMI+Redmi+phone&rh=p_n_g-101013594324111%3A66008622031&dc&qid=1777713793&rnid=66008593031&ref=sr_nr_p_n_g-101013594324111_1&ds=v1%3AJ4wlV3leTQSFA1VBHHDUxxFRfqBrhzMZuf1WkbKin4c
+                      - checkbox [ref=e2913]
+                      - text: Screen Protector
+            - generic [ref=e2918]:
+              - iframe [ref=e2919]:
+                - generic [ref=f4e4]:
+                  - generic [ref=f4e5]: Sponsored Ad. Brand logo. Product image. Layers Anarc Smart Watch–1.85” AMOLED Octagonal Display I Stainless Steel–Designed in London I HiSilicon Processor I 6-axis Motion Sensor I Precise Heart Rate & SpO2 Monitoring I IP68 Water Resistant 4799 Shop now
+                  - link "Click to navigate to product detail page" [ref=f4e8] [cursor=pointer]:
+                    - /url: https://aax-eu-zaz.amazon.in/x/c/RHLiWUzOuNehvChjGvtW5RkAAAGd5__MVAoAAAH_AQBvbm9fdHhuX2JpZDEgICBvbm9fdHhuX2ltcDEgICBXDnLL/clv1c_ek-4wnfWLcTSDdVvBNWzn6gIryGyL4h8fbG9c01V5C4MEnj1tVt5CcH6AAmHmS6nczjgWQhRf4Of3qlF_1VRQagYw7DogqijVLNkCpW-sZmdgbi9SwATzcXXuiGUxxJwZkY5DPuxZW2N3tES5Pe_tHVqYd-V0qUqkr0xT6ZR5b7Mx-F015ymTNZYTljfoj-_rQaefuRb-o5A4hv2qlnb6WKDRW8MzA7309wTq5vr6RXe_HI3hkHOY5xHip1_wrH6sVwzvv010fvNlg7RY8Dh2kM8vESMV4eVf8LsESFashgEQjj9Pj_W0slnqrJ6c6RriEtCtX6miG2o0YB0CzKC_SIds6dlTXgCTWHoQCGNH7yc6amHFHfcIwjnM0M8C-dlZSEvTPyN7LHCVBNa9ZUYmz7RFp4I0ksGTZewOK2ZTCiHGfdvs4xiRwBqJZxvOnfZzF7FfmdTBop5KByNfxyvV70dd9jJwZA5NWjnV_YBB_Mdw57elRKjfGQ9QA2_3qbcwN-56kkzveakHzZu6D_kQTHub-mXfG0l-vmMtozd-4bWLaqr_dNfmIt0YyqJRTUaO_n6VcHhA325yFjLEjpkhUYDCZAGHicT--4Rn-Zk4RA8tBeJ6LfzTE0SC1sKBFVwG7sYoFckIyWNYq0TMPxQH60KTpBrjgbmBF071HWA7vIjX4wggn87SYRvph2rZTUtYrgQe_nXVry2EVV5h1BfOyOzj-FrdoPhaSQHapvK1Bg2igvA7PfXGpbiSmWt14ZlaVd281Eqhz6Ur6Oi-C-2CP0m2Hg7STZcFQlYaitp3gXDvq49TE4nRw6P82f9bEwfTvXb49Hkviait-7vhkuE2h4DFh0UWAu_38zlGWhihL1scDcLie0MUQjD9ZDmf9TlN4QArupLvYmThQo2Y3-JfUbySFiBcdrHq2kHJ1YgrePVZFGcCObyRM5ne8Ah-T-H23GFCizSSz4-V4-ky8q18gtVgVsXM9tDzhgmg3Laj0H1gUsltZPn9a5I7SzBmz9ijjsFx1eNe-RBCo7q8viH61zLRCS3yPrBIydkd3Oeqh71DAUl1POwVdDa8H9UuNVitdOudEJZr4pl8QM0XWyntvw6rZm4IGJ0I1tw1qFYGpzBiLwkB9pmUA88fnp6fOI/http://www.amazon.in/dp/B0DVC8QQ3X/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=MMSHANeGPM
+                  - generic [ref=f4e9]:
+                    - img "Brand logo" [ref=f4e13]
+                    - generic [ref=f4e16]: Premium Smartwatch Experience Starts Here
+                    - img "Product image" [ref=f4e20]
+              - button "Leave feedback on Sponsored advertisement" [ref=e2921] [cursor=pointer]:
+                - generic [ref=e2922]: Sponsored
+            - generic [ref=e2927]:
+              - iframe [ref=e2928]:
+                - generic [ref=f5e4]:
+                  - generic [ref=f5e5]: Sponsored Ad. Brand logo. Product image. Layers Anarc Smart Watch–1.85” AMOLED Octagonal Display I Stainless Steel–Designed in London I HiSilicon Processor I 6-axis Motion Sensor I Precise Heart Rate & SpO2 Monitoring I IP68 Water Resistant 4799 Shop now
+                  - link "Click to navigate to product detail page" [ref=f5e8] [cursor=pointer]:
+                    - /url: https://aax-eu-zaz.amazon.in/x/c/RBEkhQi1wqNO2Rx4e7G8oTAAAAGd5__MVwoAAAH_AQBvbm9fdHhuX2JpZDEgICBvbm9fdHhuX2ltcDEgICCtjgDb/clv1c_ek-4AvHXLcTWXrBZWhcQII-UUp1VMvP8lp04WsH49g_xnGQoMqWtUbcx29wzkWJtJI7q6MR0OVggh-iQ__8bDSUgYcqGPsCkU-QtznBEym0UDyDB7Hh1rDEzklo15jW07dJfvvuRVRLDAvJCR-DNl-TN-P2cmVTCUtsYJ6WKyeFGUgwTm_ON5MurpwXUNvKqHHUjhBg91jtWrhH1WGqmmuo5vp3zpE63V-OLKBUoqOYnb_rUhkky24JEqn0apNjZ8LU-3UMPe3MnXwaUNlHceUOMm1OI4kHlAfGaczA57z4LSJt3S3uXdu1ls88S6wNGsxKixDfw3suMadFYRlYuNBIKf6DCdXlqjOGf6MdBXUzrTkxN83PkV_610e4pOHuWInFlIgIYsgxVIwNGmE1VyQNQ6DzZV_wDPyg6CrxxhlALu5KLpM_eWy-76m9JPbFedHzIeGjk8sYfiCzOzDs9i14w0hE_BXEYQ_KcPlb28Nf9SQw83wyuoc_s03xudKRc0BcUuyPEyrYcXjWuiDyRKtaQYSpw9DxKINE1dPr11Nv6pWLr0EPb459dgxxhxy09XAi6zorePEuGk68a3E_Iv_PG4yOn_RhraBnPrWAg8dA0VGANz27aNi9YVfaGFbQOrR3lxq6N0V8FLPK0YUhhHrHdd7hdQj8leGZpNN006pHbwDJLlnvcEIq91Szh7ZHiUUZI9kd6rlJrtsP8PgS1tFBBT_7mnxCROdE1EoKyo1jLGv0YJ-ArOFCeTjYA8FbR0x3UwdcKzj9SXRqBG8CmMe1SAY7w2icX5DARDrCOC0pjVR2nYQgxu0w1iEn2vBH8CgvaycftSiXBHSogcrJ3f6WmSkaH-AvFvPfqXGAotBOi6WPNuabJlKtgrFDhZzfbMf-5uXqwjQ4TmLYXRnOMie5Bi18A69dLpYfPEmEU5pOlZEF0qPMyBs5lWyBEIRK-6VeYjxhjpUsRKICOQiTVjsxtx7fv99BfCo0voNzxMFto_maM6XmSl0ojtrfSWTD5WL3fKuDLlZUhuqyqMzKV-QTKsVIYTkl-cu78RTr4xuNZp7dqQOtqrTth_ql-1RHGNcckfypZQAKOt09OGQZB_8tYYLAGWzyhet9g6oxa-dYg2elcCzJwPJzbIolT_Uc/http://www.amazon.in/dp/B0DVC8QQ3X/ref=syn_sd_onsite_desktop_0?ie=UTF8&psc=1&pd_rd_plhdr=t&aref=MMSHANeGPM
+                  - generic [ref=f5e9]:
+                    - img "Brand logo" [ref=f5e13]
+                    - generic [ref=f5e16]: Premium Smartwatch Experience Starts Here
+                    - img "Product image" [ref=f5e20]
+              - button "Leave feedback on Sponsored advertisement" [ref=e2930] [cursor=pointer]:
+                - generic [ref=e2931]: Sponsored
+  - complementary "Your recently viewed items and featured recommendations"
+  - generic [ref=e2933]:
+    - button "Back to top" [ref=e2934] [cursor=pointer]:
+      - generic [ref=e2935]: Back to top
+    - generic [ref=e2936]:
+      - generic [ref=e2937]:
+        - heading "Get to Know Us" [level=6] [ref=e2938]
+        - list [ref=e2939]:
+          - listitem [ref=e2940]:
+            - link "About Amazon" [ref=e2941] [cursor=pointer]:
+              - /url: https://www.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=e2942]:
+            - link "Careers" [ref=e2943] [cursor=pointer]:
+              - /url: https://amazon.jobs
+          - listitem [ref=e2944]:
+            - link "Press Releases" [ref=e2945] [cursor=pointer]:
+              - /url: https://press.aboutamazon.in/?utm_source=gateway&utm_medium=footer
+          - listitem [ref=e2946]:
+            - link "Amazon Science" [ref=e2947] [cursor=pointer]:
+              - /url: https://www.amazon.science
+      - generic [ref=e2949]:
+        - heading "Connect with Us" [level=6] [ref=e2950]
+        - list [ref=e2951]:
+          - listitem [ref=e2952]:
+            - link "Facebook" [ref=e2953] [cursor=pointer]:
+              - /url: https://www.facebook.com/AmazonIN
+          - listitem [ref=e2954]:
+            - link "Twitter" [ref=e2955] [cursor=pointer]:
+              - /url: https://x.com/AmazonIN
+          - listitem [ref=e2956]:
+            - link "Instagram" [ref=e2957] [cursor=pointer]:
+              - /url: https://www.instagram.com/amazondotin
+      - generic [ref=e2959]:
+        - heading "Make Money with Us" [level=6] [ref=e2960]
+        - list [ref=e2961]:
+          - listitem [ref=e2962]:
+            - link "Sell on Amazon" [ref=e2963] [cursor=pointer]:
+              - /url: /b/?node=2838698031&ld=AZINSOANavDesktopFooter_C&ref_=nav_footer_sell_C
+          - listitem [ref=e2964]:
+            - link "Sell under Amazon Accelerator" [ref=e2965] [cursor=pointer]:
+              - /url: https://accelerator.amazon.in/?ref_=map_1_b2b_GW_FT
+          - listitem [ref=e2966]:
+            - link "Protect and Build Your Brand" [ref=e2967] [cursor=pointer]:
+              - /url: https://brandservices.amazon.in/?ref=AOINABRLGNRFOOT&ld=AOINABRLGNRFOOT
+          - listitem [ref=e2968]:
+            - link "Amazon Global Selling" [ref=e2969] [cursor=pointer]:
+              - /url: https://sell.amazon.in/grow-your-business/amazon-global-selling.html?ld=AZIN_Footer_V1&ref=AZIN_Footer_V1
+          - listitem [ref=e2970]:
+            - link "Supply to Amazon" [ref=e2971] [cursor=pointer]:
+              - /url: https://supply.amazon.com/?ref_=footer_sta&lang=en-IN
+          - listitem [ref=e2972]:
+            - link "Become an Affiliate" [ref=e2973] [cursor=pointer]:
+              - /url: https://affiliate-program.amazon.in/?utm_campaign=assocshowcase&utm_medium=footer&utm_source=GW&ref_=footer_assoc
+          - listitem [ref=e2974]:
+            - link "Fulfilment by Amazon" [ref=e2975] [cursor=pointer]:
+              - /url: https://services.amazon.in/services/fulfilment-by-amazon/benefits.html/ref=az_footer_fba?ld=AWRGINFBAfooter
+          - listitem [ref=e2976]:
+            - link "Advertise Your Products" [ref=e2977] [cursor=pointer]:
+              - /url: https://advertising.amazon.in/?ref=Amz.in
+          - listitem [ref=e2978]:
+            - link "Amazon Pay on Merchants" [ref=e2979] [cursor=pointer]:
+              - /url: https://www.amazonpay.in/merchant
+      - generic [ref=e2981]:
+        - heading "Let Us Help You" [level=6] [ref=e2982]
+        - list [ref=e2983]:
+          - listitem [ref=e2984]:
+            - link "Your Account" [ref=e2985] [cursor=pointer]:
+              - /url: /gp/css/homepage.html?ref_=footer_ya
+          - listitem [ref=e2986]:
+            - link "Returns Centre" [ref=e2987] [cursor=pointer]:
+              - /url: /gp/css/returns/homepage.html?ref_=footer_hy_f_4
+          - listitem [ref=e2988]:
+            - link "Recalls and Product Safety Alerts" [ref=e2989] [cursor=pointer]:
+              - /url: https://www.amazon.in/your-product-safety-alerts?ref_=footer_bsx_ypsa
+          - listitem [ref=e2990]:
+            - link "100% Purchase Protection" [ref=e2991] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=201083470&ref_=footer_swc
+          - listitem [ref=e2992]:
+            - link "Amazon App Download" [ref=e2993] [cursor=pointer]:
+              - /url: /gp/browse.html?node=6967393031&ref_=footer_mobapp
+          - listitem [ref=e2994]:
+            - link "Help" [ref=e2995] [cursor=pointer]:
+              - /url: /gp/help/customer/display.html?nodeId=200507590&ref_=footer_gw_m_b_he
+    - generic [ref=e2997]:
+      - link "Amazon India Home" [ref=e3000] [cursor=pointer]:
+        - /url: /ref=footer_logo
+      - generic [ref=e3003]:
+        - generic [ref=e3004]:
+          - link "Choose a language for shopping. Current selection is English." [ref=e3005] [cursor=pointer]:
+            - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang
+            - generic [ref=e3007]: English
+          - button "Expand to Change Language or Country" [ref=e3008] [cursor=pointer]
+        - button "Choose a country/region for shopping. The current selection is India." [ref=e3009] [cursor=pointer]:
+          - generic [ref=e3011]: India
+    - generic "More on Amazon" [ref=e3012]:
+      - generic "More on Amazon" [ref=e3013]:
+        - list [ref=e3014]:
+          - listitem [ref=e3015]:
+            - link "AbeBooks Books, art & collectibles" [ref=e3016] [cursor=pointer]:
+              - /url: https://www.abebooks.com/
+              - heading "AbeBooks" [level=5] [ref=e3017]
+              - generic [ref=e3018]:
+                - text: Books, art
+                - text: "& collectibles"
+          - listitem [ref=e3019]
+          - listitem [ref=e3020]:
+            - link "Amazon Web Services Scalable Cloud Computing Services" [ref=e3021] [cursor=pointer]:
+              - /url: https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&sc_campaign=IN_amazonfooter
+              - heading "Amazon Web Services" [level=5] [ref=e3022]
+              - generic [ref=e3023]:
+                - text: Scalable Cloud
+                - text: Computing Services
+          - listitem [ref=e3024]
+          - listitem [ref=e3025]:
+            - link "Audible Download Audio Books" [ref=e3026] [cursor=pointer]:
+              - /url: https://www.audible.in/
+              - heading "Audible" [level=5] [ref=e3027]
+              - generic [ref=e3028]:
+                - text: Download
+                - text: Audio Books
+          - listitem [ref=e3029]
+          - listitem [ref=e3030]:
+            - link "IMDb Movies, TV & Celebrities" [ref=e3031] [cursor=pointer]:
+              - /url: https://www.imdb.com/
+              - heading "IMDb" [level=5] [ref=e3032]
+              - generic [ref=e3033]:
+                - text: Movies, TV
+                - text: "& Celebrities"
+        - list [ref=e3034]:
+          - listitem [ref=e3035]:
+            - link "Shopbop Designer Fashion Brands" [ref=e3036] [cursor=pointer]:
+              - /url: https://www.shopbop.com/
+              - heading "Shopbop" [level=5] [ref=e3037]
+              - generic [ref=e3038]:
+                - text: Designer
+                - text: Fashion Brands
+          - listitem [ref=e3039]
+          - listitem [ref=e3040]:
+            - link "Amazon Business Everything For Your Business" [ref=e3041] [cursor=pointer]:
+              - /url: /business?ref=footer_aingw
+              - heading "Amazon Business" [level=5] [ref=e3042]
+              - generic [ref=e3043]:
+                - text: Everything For
+                - text: Your Business
+          - listitem [ref=e3044]
+          - listitem [ref=e3045]:
+            - link "Amazon Prime Music 100 million songs, ad-free Over 15 million podcast episodes" [ref=e3046] [cursor=pointer]:
+              - /url: /music/prime?ref=footer_apm
+              - heading "Amazon Prime Music" [level=5] [ref=e3047]
+              - generic [ref=e3048]:
+                - text: 100 million songs, ad-free
+                - text: Over 15 million podcast episodes
+          - listitem [ref=e3049]
+          - listitem [ref=e3050]
+    - generic [ref=e3051]:
+      - list [ref=e3052]:
+        - listitem [ref=e3053]:
+          - link "Conditions of Use & Sale" [ref=e3054] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200545940&ref_=footer_cou
+        - listitem [ref=e3055]:
+          - link "Privacy Notice" [ref=e3056] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=200534380&ref_=footer_privacy
+        - listitem [ref=e3057]:
+          - link "Interest-Based Ads" [ref=e3058] [cursor=pointer]:
+            - /url: /gp/help/customer/display.html?nodeId=202075050&ref_=footer_iba
+      - generic [ref=e3059]: © 1996-2026, Amazon.com, Inc. or its affiliates
+  - iframe [ref=e3061]:
+    - iframe [ref=f7e2]:
+      - generic [active]:
+        - img [ref=f8e1]
+        - img [ref=f8e2]
+        - img [ref=f8e3]
+        - img [ref=f8e4]
+        - img [ref=f8e5]
+```
+
+# Test source
+
+```ts
+  31  | }
+  32  | 
+  33  | /**
+  34  |  * Click on Sign In using stable locators with fallback support
+  35  |  */
+  36  | async function openSignIn(page) {
+  37  |   const signInTrigger = page.locator('#nav-link-accountList, [data-nav-role="signin"]').first();
+  38  |   await expect(signInTrigger).toBeVisible({ timeout: 30000 });
+  39  |   await page.screenshot({ path: 'test-results/before-signin-click.png' });
+  40  |   await signInTrigger.click();
+  41  | 
+  42  |   await page.waitForTimeout(2000);
+  43  | 
+  44  |   const emailInput = page.locator('input[name="email"], #ap_email');
+  45  |   if (await emailInput.isVisible({ timeout: 5000 })) {
+  46  |     return;
+  47  |   }
+  48  | 
+  49  |   // Fallback: hover and click inline sign-in
+  50  |   const hoverTrigger = page.locator('#nav-link-accountList');
+  51  |   if (await hoverTrigger.isVisible({ timeout: 5000 })) {
+  52  |     await hoverTrigger.hover();
+  53  |     const inlineSignIn = page.locator('a, span, button', { hasText: /Sign in/i }).first();
+  54  |     if (await inlineSignIn.isVisible({ timeout: 5000 })) {
+  55  |       await inlineSignIn.click();
+  56  |       await page.waitForTimeout(2000);
+  57  |     }
+  58  |   }
+  59  | }
+  60  | 
+  61  | /**
+  62  |  * Fill input field with value (helper function)
+  63  |  */
+  64  | async function fillInput(page, selector, value) {
+  65  |   const field = page.locator(selector);
+  66  |   await expect(field).toBeVisible({ timeout: 30000 });
+  67  |   await field.fill(value);
+  68  | }
+  69  | 
+  70  | /**
+  71  |  * Main test: Add Xiaomi Redmi phone to Amazon list
+  72  |  */
+  73  | test('Add XIAOMI Redmi phone to Amazon wishlist and verify', async ({ page }) => {
+  74  |   // Step 1: Navigate to Amazon India
+  75  |   await page.goto(AMAZON_URL, { waitUntil: 'domcontentloaded' });
+  76  |   await page.waitForSelector('#twotabsearchtextbox', { timeout: 30000 });
+  77  | 
+  78  |   // Step 2: Handle interruptions
+  79  |   await handleInterruptions(page);
+  80  |   await expect(page.locator('#nav-link-accountList')).toBeVisible({ timeout: 30000 });
+  81  |   await page.screenshot({ path: 'test-results/01-homepage.png' });
+  82  | 
+  83  |   // Step 3: Sign In
+  84  |   await openSignIn(page);
+  85  | 
+  86  |   // Step 4: Enter mobile number
+  87  |   await fillInput(page, 'input[name="email"], #ap_email', AMAZON_MOBILE_NUMBER);
+  88  |   await page.screenshot({ path: 'test-results/02-email-entry.png' });
+  89  | 
+  90  |   // Step 5: Click Continue
+  91  |   const continueButton = page.locator('input#continue, button:has-text("Continue"), #continue').first();
+  92  |   await expect(continueButton).toBeVisible({ timeout: 20000 });
+  93  |   await continueButton.click();
+  94  | 
+  95  |   // Step 6: Enter password
+  96  |   await page.waitForSelector('input[name="password"], #ap_password', { timeout: 30000 });
+  97  |   await page.screenshot({ path: 'test-results/03-password-page.png' });
+  98  |   await fillInput(page, 'input[name="password"], #ap_password', AMAZON_PASSWORD);
+  99  | 
+  100 |   // Step 7: Click Sign In button
+  101 |   const signInButton = page.locator('input#signInSubmit, button:has-text("Sign in"), button:has-text("Sign-In"), #signInSubmit').first();
+  102 |   await expect(signInButton).toBeVisible({ timeout: 20000 });
+  103 |   await signInButton.click();
+  104 | 
+  105 |   // Step 8: Wait for successful login
+  106 |   await page.waitForSelector('#twotabsearchtextbox', { timeout: 30000 });
+  107 |   await page.screenshot({ path: 'test-results/04-after-login.png' });
+  108 | 
+  109 |   // Step 9: Search for Xiaomi Redmi phone
+  110 |   await page.fill('#twotabsearchtextbox', SEARCH_TERM);
+  111 |   await page.click('input#nav-search-submit-button');
+  112 |   await page.waitForSelector('div.s-main-slot, div[data-component-type="s-search-result"]', { timeout: 30000 });
+  113 |   await page.screenshot({ path: 'test-results/05-search-results.png' });
+  114 | 
+  115 |   // Step 10: Select first Redmi phone from search results
+  116 |   let productItem = page.locator('div[data-component-type="s-search-result"]', { hasText: /Redmi/i }).first();
+  117 |   if (await productItem.count() === 0) {
+  118 |     productItem = page.locator('div[data-component-type="s-search-result"]').first();
+  119 |   }
+  120 | 
+  121 |   let productLink = productItem.locator('h2 a').first();
+  122 |   if (await productLink.count() === 0) {
+  123 |     productLink = productItem.locator('a').first();
+  124 |   }
+  125 | 
+  126 |   await expect(productLink).toBeVisible({ timeout: 30000 });
+  127 |   await productLink.scrollIntoViewIfNeeded();
+  128 |   await productLink.click();
+  129 | 
+  130 |   // Step 11: Wait for product page to load
+> 131 |   await page.waitForSelector('#add-to-cart-button, button:has-text("Add to list"), a:has-text("Add to list")', { timeout: 30000 });
+      |              ^ Error: page.waitForSelector: Test timeout of 30000ms exceeded.
+  132 |   await page.screenshot({ path: 'test-results/06-product-page.png' });
+  133 | 
+  134 |   // Step 12: Click "Add to List" button
+  135 |   let addToListButton = page.locator('button:has-text("Add to list"), a:has-text("Add to list"), button[aria-label*="Add to list"], a[aria-label*="Add to list"]').first();
+  136 |   
+  137 |   // Fallback: Look for heart icon or wishlist button
+  138 |   if (await addToListButton.count() === 0) {
+  139 |     addToListButton = page.locator('i.a-icon-star, button:has-text("Add to Wish List"), a:has-text("Add to Wish List")').first();
+  140 |   }
+  141 | 
+  142 |   await expect(addToListButton).toBeVisible({ timeout: 30000 });
+  143 |   await addToListButton.click();
+  144 |   await page.waitForTimeout(2000);
+  145 |   await page.screenshot({ path: 'test-results/07-after-add-to-list.png' });
+  146 | 
+  147 |   // Step 13: Handle list selection/creation
+  148 |   let listDialog = page.locator('div[role="dialog"], div.a-popover, div.s-popover').first();
+  149 |   if (await listDialog.isVisible({ timeout: 10000 })) {
+  150 |     // Look for "Create List" button
+  151 |     const createListButton = page.locator('button:has-text("Create"), button:has-text("New list"), a:has-text("Create list")').first();
+  152 |     
+  153 |     // If not found, just click the first available list or default option
+  154 |     if (await createListButton.count() === 0) {
+  155 |       const defaultList = page.locator('button, a', { hasText: /Wishlist|Default|Your|Cart/ }).first();
+  156 |       if (await defaultList.isVisible({ timeout: 5000 })) {
+  157 |         await defaultList.click();
+  158 |       }
+  159 |     } else {
+  160 |       await createListButton.click();
+  161 |       await page.waitForTimeout(1000);
+  162 |       
+  163 |       // If list name input appears, fill it
+  164 |       const listNameInput = page.locator('input[placeholder*="list"], input[type="text"]').first();
+  165 |       if (await listNameInput.isVisible({ timeout: 5000 })) {
+  166 |         await listNameInput.fill('QA Automation Test List');
+  167 |         const createButton = page.locator('button:has-text("Create"), button[type="submit"]').first();
+  168 |         await expect(createButton).toBeVisible({ timeout: 10000 });
+  169 |         await createButton.click();
+  170 |       }
+  171 |     }
+  172 |   }
+  173 | 
+  174 |   await page.waitForTimeout(3000);
+  175 |   await page.screenshot({ path: 'test-results/08-after-list-selection.png' });
+  176 | 
+  177 |   // Step 14: Navigate to "Your Lists" or Wishlist page
+  178 |   await page.click('#nav-link-accountList');
+  179 |   await page.waitForTimeout(1000);
+  180 |   
+  181 |   const yourListsLink = page.locator('a', { hasText: /Your Lists|Your Wishlist|View your lists/i }).first();
+  182 |   if (await yourListsLink.isVisible({ timeout: 10000 })) {
+  183 |     await yourListsLink.click();
+  184 |   } else {
+  185 |     // Fallback: Navigate directly to wishlist page
+  186 |     await page.goto('https://www.amazon.in/gp/registry/wishlist/');
+  187 |   }
+  188 | 
+  189 |   await page.waitForSelector('h1, h2, div[data-component-type*="list"], span.a-truncate', { timeout: 30000 });
+  190 |   await page.screenshot({ path: 'test-results/09-wishlist-page.png' });
+  191 | 
+  192 |   // Step 15: Verify that the Redmi phone is in the list
+  193 |   const productInList = page.locator('span, div', { hasText: /Redmi/i }).first();
+  194 |   await expect(productInList).toBeVisible({ timeout: 30000 });
+  195 |   await page.screenshot({ path: 'test-results/10-product-in-list-verified.png' });
+  196 | 
+  197 |   console.log('✅ XIAOMI Redmi phone successfully added to list and verified!');
+  198 | 
+  199 |   // Step 16: Keep browser open for manual verification (long wait)
+  200 |   console.log('⏳ Keeping browser open for 5 minutes for manual verification...');
+  201 |   await page.waitForTimeout(300000); // 5 minutes
+  202 | });
+  203 | 
+```
