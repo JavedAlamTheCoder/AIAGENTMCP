@@ -1,8 +1,8 @@
 require('dotenv').config();
 const { test, expect } = require('@playwright/test');
 
-const AMAZON_URL = 'https://www.amazon.in/';
-const SEARCH_TERM = 'iPhone X';
+const AMAZON_URL = 'https://www.amazon.com/';
+const SEARCH_TERM = 'laptop';
 
 const AMAZON_MOBILE_NUMBER = process.env.AMAZON_MOBILE_NUMBER;
 const AMAZON_PASSWORD = process.env.AMAZON_PASSWORD;
@@ -12,112 +12,110 @@ if (!AMAZON_MOBILE_NUMBER || !AMAZON_PASSWORD) {
 }
 
 async function handleInterruptions(page) {
-  const trafficLink = page.locator('a', { hasText: 'Go to the Amazon.in home page to continue shopping' }).first();
-  if (await trafficLink.isVisible({ timeout: 5000 })) {
-    await trafficLink.click();
-    await page.waitForSelector('#nav-link-accountList', { timeout: 30000 });
-    return;
+  // Check for captcha or security verification
+  const captcha = page.locator('input[name="captcha"], #captchacharacters').first();
+  if (await captcha.isVisible({ timeout: 5000 })) {
+    console.log('Captcha detected. Pausing for manual completion.');
+    await page.pause();
   }
 
-  const continueShoppingButton = page.locator('button, a', { hasText: 'Continue shopping' }).first();
-  if (await continueShoppingButton.isVisible({ timeout: 5000 })) {
-    await continueShoppingButton.click();
-    await page.waitForSelector('#nav-link-accountList', { timeout: 30000 });
-  }
-}
-
-async function openSignIn(page) {
-  const signInTrigger = page.locator('#nav-link-accountList, [data-nav-role="signin"]').first();
-  await expect(signInTrigger).toBeVisible({ timeout: 30000 });
-  await page.screenshot({ path: 'test-results/before-signin-click.png' });
-  await signInTrigger.click();
-
-  await page.waitForTimeout(2000);
-
-  const emailInput = page.locator('input[name="email"], #ap_email');
-  if (await emailInput.isVisible({ timeout: 5000 })) {
-    return;
+  // Check for OTP or two-factor
+  const otpInput = page.locator('input[name="otp"], input[name="code"]').first();
+  if (await otpInput.isVisible({ timeout: 5000 })) {
+    console.log('OTP detected. Pausing for manual completion.');
+    await page.pause();
   }
 
-  const hoverTrigger = page.locator('#nav-link-accountList');
-  if (await hoverTrigger.isVisible({ timeout: 5000 })) {
-    await hoverTrigger.hover();
-    const inlineSignIn = page.locator('a, span, button', { hasText: /Sign in/i }).first();
-    if (await inlineSignIn.isVisible({ timeout: 5000 })) {
-      await inlineSignIn.click();
-      await page.waitForTimeout(2000);
-    }
+  // Check for alerts
+  const alert = page.locator('[role="alert"], .a-alert').first();
+  if (await alert.isVisible({ timeout: 5000 })) {
+    console.log('Alert detected, pausing for manual intervention.');
+    await page.pause();
+  }
+
+  // Other interruptions
+  const continueButton = page.locator('button, a', { hasText: 'Continue' }).first();
+  if (await continueButton.isVisible({ timeout: 5000 })) {
+    await continueButton.click();
+    await page.waitForTimeout(2000);
   }
 }
 
-async function fillInput(page, selector, value) {
-  const field = page.locator(selector);
-  await expect(field).toBeVisible({ timeout: 30000 });
-  await field.fill(value);
+async function login(page) {
+  // Click sign in
+  const signInLink = page.locator('#nav-link-accountList').first();
+  await expect(signInLink).toBeVisible({ timeout: 30000 });
+  await signInLink.click();
+
+  // Enter email/mobile
+  const emailInput = page.locator('input[name="email"], #ap_email').first();
+  await expect(emailInput).toBeVisible({ timeout: 30000 });
+  await emailInput.fill(AMAZON_MOBILE_NUMBER);
+
+  const continueBtn = page.locator('input#continue, #continue').first();
+  await expect(continueBtn).toBeVisible({ timeout: 20000 });
+  await continueBtn.click();
+
+  await handleInterruptions(page);
+
+  // Enter password
+  const passwordInput = page.locator('input[name="password"], #ap_password').first();
+  await passwordInput.waitFor({ state: 'visible', timeout: 30000 });
+  await passwordInput.fill(AMAZON_PASSWORD);
+
+  const signInBtn = page.locator('input#signInSubmit, #signInSubmit').first();
+  await signInBtn.waitFor({ state: 'visible', timeout: 20000 });
+  await signInBtn.click();
+
+  // Wait for login success
+  await page.waitForSelector('#nav-link-accountList', { timeout: 30000 });
 }
 
-test('Amazon sign-in, search iPhone X, add to cart, and verify', async ({ page }) => {
+test('Amazon cart flow: login, search laptop, add to cart, verify', async ({ page }) => {
+  // 1. Open Amazon
   await page.goto(AMAZON_URL, { waitUntil: 'domcontentloaded' });
   await page.waitForSelector('#twotabsearchtextbox', { timeout: 30000 });
 
   await handleInterruptions(page);
-  await expect(page.locator('#nav-link-accountList')).toBeVisible({ timeout: 30000 });
-  await page.screenshot({ path: 'test-results/homepage.png' });
 
-  await openSignIn(page);
+  // 2. Login
+  await login(page);
 
-  await fillInput(page, 'input[name="email"], #ap_email', AMAZON_MOBILE_NUMBER);
-  await page.screenshot({ path: 'test-results/email-entry.png' });
+  await handleInterruptions(page);
 
-  const continueButton = page.locator('input#continue, button:has-text("Continue"), #continue').first();
-  await expect(continueButton).toBeVisible({ timeout: 20000 });
-  await continueButton.click();
-
-  await page.waitForSelector('input[name="password"], #ap_password', { timeout: 30000 });
-  await page.screenshot({ path: 'test-results/password-page.png' });
-  await fillInput(page, 'input[name="password"], #ap_password', AMAZON_PASSWORD);
-
-  const signInButton = page.locator('input#signInSubmit, button:has-text("Sign in"), button:hasText("Sign-In"), #signInSubmit').first();
-  await expect(signInButton).toBeVisible({ timeout: 20000 });
-  await signInButton.click();
-
-  await page.waitForSelector('#twotabsearchtextbox', { timeout: 30000 });
-  await page.screenshot({ path: 'test-results/after-login.png' });
-
+  // 3. Search for laptop
   await page.fill('#twotabsearchtextbox', SEARCH_TERM);
   await page.click('input#nav-search-submit-button');
-  await page.waitForSelector('div.s-main-slot, div[data-component-type="s-search-result"]', { timeout: 30000 });
-  await page.screenshot({ path: 'test-results/search-results.png' });
+  await page.waitForSelector('.s-main-slot, [data-component-type="s-search-result"]', { timeout: 30000 });
 
-  let productItem = page.locator('div[data-component-type="s-search-result"]', { hasText: /iPhone/i }).first();
-  if (await productItem.count() === 0) {
-    productItem = page.locator('div[data-component-type="s-search-result"]').first();
-  }
-
-  const productLink = productItem.locator('h2 a').first();
+  // 4. Select any laptop
+  const productLink = page.locator('[data-component-type="s-search-result"] h2 a').first();
   await expect(productLink).toBeVisible({ timeout: 30000 });
-  await productLink.scrollIntoViewIfNeeded();
   await productLink.click();
 
+  // 5. Add to cart
   await page.waitForSelector('#add-to-cart-button', { timeout: 30000 });
-  await page.screenshot({ path: 'test-results/product-page.png' });
+  const addToCartBtn = page.locator('#add-to-cart-button').first();
+  await expect(addToCartBtn).toBeVisible({ timeout: 30000 });
+  await addToCartBtn.click();
 
-  const addToCartButton = page.locator('#add-to-cart-button');
-  await expect(addToCartButton).toBeVisible({ timeout: 30000 });
-  await addToCartButton.click();
+  // Wait for cart update
+  await page.waitForTimeout(2000);
 
-  await page.waitForSelector('#nav-cart-count', { timeout: 30000 });
-  await page.screenshot({ path: 'test-results/added-to-cart.png' });
+  // 6. Go to cart
+  await page.goto('https://www.amazon.com/gp/cart/view.html', { waitUntil: 'domcontentloaded' });
+  await page.waitForSelector('.sc-list-item, [data-name="Active Items"]', { timeout: 30000 });
 
-  await page.goto('https://www.amazon.in/gp/cart/view.html', { waitUntil: 'domcontentloaded' });
-  await page.waitForSelector('div.sc-list-body, span.a-truncate-cut, span.sc-product-title', { timeout: 30000 });
-  await page.screenshot({ path: 'test-results/cart-page.png' });
-
-  const cartItem = page.locator('span.a-truncate-cut, span.sc-product-title', { hasText: SEARCH_TERM }).first();
+  // 7. Verify laptop in cart
+  const cartItem = page.locator('.sc-product-title, .a-truncate-cut').first();
   await expect(cartItem).toBeVisible({ timeout: 30000 });
-  await expect(cartItem).toContainText('iPhone X');
+  await expect(cartItem).toContainText('laptop', { ignoreCase: true });
 
+  // Additional verification: cart count
   const cartCount = page.locator('#nav-cart-count');
-  await expect(cartCount).toHaveText(/^[1-9]\d*$/);
-  await page.screenshot({ path: 'test-results/final-verification.png' });
+  const countText = await cartCount.textContent();
+  expect(parseInt(countText)).toBeGreaterThan(0);
+
+  // Pause at end to keep browser open
+  await page.pause();
 });
